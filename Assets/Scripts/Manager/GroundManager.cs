@@ -23,7 +23,7 @@ public class GroundManager : ObjectBase
     /// <summary>
     /// 땅의 얼룩 자국들을 미리생성해서 리스트에 저장해둔다.(오브젝트풀)
     /// </summary>
-    private Queue<Transform> _list_Pool_Ground_Obj = new Queue<Transform>();
+    private Queue<Transform> _queue_Pool_Ground_Obj = new Queue<Transform>();
 
     [SerializeField]
     private Transform _pTransform_DotGroup = null;
@@ -31,6 +31,11 @@ public class GroundManager : ObjectBase
 
     private Transform _pTransfrom_LeftTop = null;
     private Transform _pTransform_RightBottom = null;
+
+    /// <summary>
+    /// 움직이는 중인 방향을 저장한다.
+    /// </summary>
+    private Vector2 _vecMoveDir = Vector2.zero;
 
     protected override void OnAwake()
     {
@@ -52,13 +57,13 @@ public class GroundManager : ObjectBase
             }
         }
 
-        if (_list_Pool_Ground_Obj.Count <= 0)
+        if (_queue_Pool_Ground_Obj.Count <= 0)
         {
             for (int i = 0; i < const_iMax_Pool_Count; ++i)
             {
                 var pNewObj = Create_New_Object_By_Random();
                 pNewObj.gameObject.SetActive(false);
-                _list_Pool_Ground_Obj.Enqueue(pNewObj);
+                _queue_Pool_Ground_Obj.Enqueue(pNewObj);
             }
         }
 
@@ -80,12 +85,12 @@ public class GroundManager : ObjectBase
 
         for (int i = 0; i < 2; ++i)
         {
-            var pObj1 = _list_Pool_Ground_Obj.Dequeue();
+            var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
             pObj1.localPosition = new Vector2(Random.Range(-7, -5), Random.Range(-3, -1));
             pObj1.SetParent(_pTransform_DotGroup);
             pObj1.gameObject.SetActive(true);
 
-            var pObj2 = _list_Pool_Ground_Obj.Dequeue();
+            var pObj2 = _queue_Pool_Ground_Obj.Dequeue();
             pObj2.localPosition = new Vector2(Random.Range(5, 7), Random.Range(1, 3));
             pObj2.SetParent(_pTransform_DotGroup);
             pObj2.gameObject.SetActive(true);
@@ -95,21 +100,15 @@ public class GroundManager : ObjectBase
 
     private void OnMove_Joystick_Func(PlayerManager.MoveJoystickMessage pMessage)
     {
-        Vector2 vecMoveDir = pMessage.vecMoveDir * -1f;
-
+        _vecMoveDir = pMessage.vecMoveDir * -1f;
+        
         Vector3 vecResult_LocalPos = _pTransform_DotGroup.transform.localPosition;
 
-        Vector2 vecPos = vecMoveDir *Time.deltaTime* const_fDot_Move_Speed;
+        Vector2 vecPos = _vecMoveDir * Time.deltaTime* const_fDot_Move_Speed;
 
         vecResult_LocalPos = new Vector3(vecResult_LocalPos.x + vecPos.x, vecResult_LocalPos.y + vecPos.y, vecResult_LocalPos.z);
 
         _pTransform_DotGroup.transform.localPosition = vecResult_LocalPos;
-
-        if (vecResult_LocalPos.x < -const_fCreate_Boundary || vecResult_LocalPos.y > const_fCreate_Boundary)
-        {
-            Vector3 vecCreatePos = _pTransform_RightBottom.localPosition;
-
-        }
     }
 
     private Transform Create_New_Object_By_Random()
@@ -118,5 +117,27 @@ public class GroundManager : ObjectBase
         pNewObj.localPosition = Vector2.zero;
 
         return pNewObj;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var pCollisionTransform = collision.transform;
+
+        pCollisionTransform.gameObject.SetActive(false);
+        _queue_Pool_Ground_Obj.Enqueue(pCollisionTransform);
+
+        bool bRemoveSucce = _list_Ground_Obj.Remove(pCollisionTransform);
+        if (bRemoveSucce)
+            Debug.Log("삭제 성공");
+        else
+            Debug.Log("삭제 실패");
+
+
+        //for (int i = 0; i < _list_Ground_Obj.Count; ++i)
+        //{ 
+        //    if(pCollisionTransform.name == _list_Ground_Obj[i].name)
+        //}
+
+        
     }
 }

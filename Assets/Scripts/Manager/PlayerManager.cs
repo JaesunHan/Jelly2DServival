@@ -69,7 +69,6 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             else
             {
                 _pCharacter.DoChange_Dir(EDir.Dir_Left);
-                DebugLogManager.Log("왼쪽");
             }
         }
     }

@@ -38,7 +38,7 @@ public class PlayerCharacter : ObjectBase
 
     public void DoChange_Dir(EDir eDir)
     {
-        DebugLogManager.Log($"Local scale X : {transform.localScale.x}");
+        //DebugLogManager.Log($"Local scale X : {transform.localScale.x}");
         transform.localScale = new Vector3((int)eDir, 1, 1);
     }
 
