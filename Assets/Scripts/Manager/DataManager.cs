@@ -1,0 +1,104 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public partial class DataManager : MonoSingleton<DataManager>
+{
+    public enum EBundleName
+    {
+        Font,
+        SO,
+        Sprite,
+        Animation,
+        material,
+        Prefabs,
+        texture,
+        Shader, 
+        Sounds,
+
+        MAX,
+    }
+
+    public BundleLoadManager.EBundleLoadLogic eLoadLogic_OnEditor = BundleLoadManager.EBundleLoadLogic.Editor;
+
+    public Observer_Pattern<bool> OnLoadAllResource { get; private set; } = new Observer_Pattern<bool>();
+
+    /// <summary>
+    /// 리소스를 모두 불러왔는지 체크
+    /// </summary>
+    public static bool bIsLoaded_AllResource { get; private set; }
+
+    protected override void OnAwake()
+    {
+        base.OnAwake();
+
+        //DontDestroyOnLoad(gameObject);
+
+#if UNITY_EDITOR
+        BundleLoadManager.instance.DoInit(eLoadLogic_OnEditor);
+#else
+    BundleLoadManager.instance.DoInit(BundleLoadManager.EBundleLoadLogic.StreamingAssets);
+#endif
+
+        StartCoroutine(nameof(ResourceLoadAll_Coroutine));
+
+    }
+
+    IEnumerator ResourceLoadAll_Coroutine()
+    {
+        bIsLoaded_AllResource = false;
+
+        List<Coroutine> listCoroutine = new List<Coroutine>();
+        for (int i = 0; i < (int)EBundleName.MAX; i++)
+            listCoroutine.Add(StartCoroutine(LoadBundle_Coroutine(((EBundleName)i).ToString())));
+        yield return listCoroutine.GetEnumerator();
+
+        yield return LoadBundleData_Coroutine();
+        //bIsLoaded_AllSODataResource = true;
+        yield return LoadLocalData_Coroutine();
+
+        bIsLoaded_AllResource = true;
+
+        OnLoadAllResource.DoNotify(bIsLoaded_AllResource);
+    }
+
+    /// <summary>
+    /// 번들 다운받는 코루틴
+    /// </summary>
+    /// <param name="strBundleName"></param>
+    /// <returns></returns>
+    private IEnumerator LoadBundle_Coroutine(string strBundleName)
+    {
+        bool bLoadResult = false;
+
+        yield return BundleLoadManager.instance.DoPreLoad_Bundle(strBundleName,
+            (strBundleNameParam, bResult) => {
+                bLoadResult = bResult;
+            });
+
+        if (bLoadResult)
+        {
+            Debug.Log($"LoadBundle Success - {strBundleName}");
+        }
+        else
+        {
+            Debug.LogError($"LoadBundle Fail - {strBundleName}");
+        }
+    }
+
+    IEnumerator LoadBundleData_Coroutine()
+    {
+        bool bIsUpdateChildAsset = eLoadLogic_OnEditor == BundleLoadManager.EBundleLoadLogic.Editor && Application.isPlaying;
+
+        //EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
+
+        yield break;
+    }
+
+
+    private T LoadData<T>()
+    where T : ScriptableObject
+    {
+        return BundleLoadManager.instance.DoLoad<T>("SO", $"{typeof(T).Name}.asset", false);
+    }
+}
