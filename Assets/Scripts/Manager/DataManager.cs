@@ -28,6 +28,32 @@ public partial class DataManager : MonoSingleton<DataManager>
     /// </summary>
     public static bool bIsLoaded_AllResource { get; private set; }
 
+    #region Reference Functions
+
+    /// <summary>
+    /// 현재 웨이브에 등장할 수 있는 적들을 리스트로 반환한다.
+    /// </summary>
+    /// <param name="iWave"></param>
+    /// <returns></returns>
+    public static List<EnemyData> DoGet_Random_EnemyData_ByStageWave(int iWave)
+    {
+        ///현재 웨이브에서 등장 가능한 적들의 리스트
+        List<EnemyData> list_CurWave_Enemy = new List<EnemyData>();
+        var listData = EnemyData_Container.instance.listData;
+        for (int i = 0; i < listData.Count; ++i)
+        {
+            if (listData[i].iAppearWave <= iWave)
+            {
+                list_CurWave_Enemy.Add(listData[i]);
+            }
+        }
+
+        return list_CurWave_Enemy;
+    }
+
+
+    #endregion
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -41,7 +67,6 @@ public partial class DataManager : MonoSingleton<DataManager>
 #endif
 
         StartCoroutine(nameof(ResourceLoadAll_Coroutine));
-
     }
 
     IEnumerator ResourceLoadAll_Coroutine()
@@ -90,7 +115,7 @@ public partial class DataManager : MonoSingleton<DataManager>
     {
         bool bIsUpdateChildAsset = eLoadLogic_OnEditor == BundleLoadManager.EBundleLoadLogic.Editor && Application.isPlaying;
 
-        //EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
+        EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
 
         yield break;
     }

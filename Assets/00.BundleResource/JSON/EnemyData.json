@@ -1,0 +1,25 @@
+{
+  "array": [
+    {
+      "strEnemyName": "EJelly_0",
+      "iHP": "5",
+      "iMoveSpeed": "3",
+      "iAppearWave": "0",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_0.prefab"
+    },
+    {
+      "strEnemyName": "EJelly_1",
+      "iHP": "3",
+      "iMoveSpeed": "5",
+      "iAppearWave": "1",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_1.prefab"
+    },
+    {
+      "strEnemyName": "EJelly_2",
+      "iHP": "10",
+      "iMoveSpeed": "2",
+      "iAppearWave": "2",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_2.prefab"
+    }
+  ]
+}

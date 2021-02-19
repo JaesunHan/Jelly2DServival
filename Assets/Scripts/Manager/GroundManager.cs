@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundManager : ObjectBase
 {
-    const int const_iMax_Pool_Count = 30;
+    const int const_iMax_Pool_Count = 50;
 
     const float const_fDot_Move_Speed = 2f;
 
@@ -17,13 +17,21 @@ public class GroundManager : ObjectBase
     //[SerializeField]
     //private List<Sprite> _list_Ground_Obj = new List<Sprite>();
 
+    /// <summary>
+    /// 그라운드 오브젝트들의 프리팹을 저장해두는 리스트이다. (프리팹 원본들로 구성된 리스트)
+    /// </summary>
     [SerializeField]
-    private List<Transform> _list_Ground_Obj = new List<Transform>();
+    private List<Transform> _list_Original_Ground_Obj = new List<Transform>();
 
     /// <summary>
     /// 땅의 얼룩 자국들을 미리생성해서 리스트에 저장해둔다.(오브젝트풀)
     /// </summary>
     private Queue<Transform> _queue_Pool_Ground_Obj = new Queue<Transform>();
+
+    /// <summary>
+    /// 현재 화면에 보여지고 있는 오브젝트들의 리스트이다.
+    /// </summary>
+    private List<Transform> _list_Cur_Seeing_Obj = new List<Transform>();
 
     [SerializeField]
     private Transform _pTransform_DotGroup = null;
@@ -33,9 +41,9 @@ public class GroundManager : ObjectBase
     private Transform _pTransform_RightBottom = null;
 
     /// <summary>
-    /// 움직이는 중인 방향을 저장한다.
+    /// 조이스틱이 향한 방향을 저장한다.
     /// </summary>
-    private Vector2 _vecMoveDir = Vector2.zero;
+    private Vector2 _vecJoystic_Move_Dir = Vector2.zero;
 
     protected override void OnAwake()
     {
@@ -82,29 +90,50 @@ public class GroundManager : ObjectBase
 
     public void DoInit()
     {
-
-        for (int i = 0; i < 2; ++i)
+        for(int i = 0; i< 10; ++i)
         {
             var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
-            pObj1.localPosition = new Vector2(Random.Range(-7, -5), Random.Range(-3, -1));
+            pObj1.localPosition = new Vector2(Random.Range(-15, -1), Random.Range(-8, -1));
             pObj1.SetParent(_pTransform_DotGroup);
             pObj1.gameObject.SetActive(true);
+            _list_Cur_Seeing_Obj.Add(pObj1);
 
             var pObj2 = _queue_Pool_Ground_Obj.Dequeue();
-            pObj2.localPosition = new Vector2(Random.Range(5, 7), Random.Range(1, 3));
+            pObj2.localPosition = new Vector2(Random.Range(1, 15), Random.Range(1, 8));
             pObj2.SetParent(_pTransform_DotGroup);
             pObj2.gameObject.SetActive(true);
-        }
-    }
+            _list_Cur_Seeing_Obj.Add(pObj2);
 
+            var pObj3 = _queue_Pool_Ground_Obj.Dequeue();
+            pObj3.localPosition = new Vector2(Random.Range(-15, 15), Random.Range(-8, 8));
+            pObj3.SetParent(_pTransform_DotGroup);
+            pObj3.gameObject.SetActive(true);
+            _list_Cur_Seeing_Obj.Add(pObj3);
+
+            //var pObj4 = _queue_Pool_Ground_Obj.Dequeue();
+            //pObj4.localPosition = new Vector2(Random.Range(1, 10), Random.Range(-6, -1));
+            //pObj4.SetParent(_pTransform_DotGroup);
+            //pObj4.gameObject.SetActive(true);
+            //_list_Cur_Seeing_Obj.Add(pObj4);
+
+        }
+        
+        //var pObj5 = _queue_Pool_Ground_Obj.Dequeue();
+        //pObj5.localPosition = new Vector2(Random.Range(1, -1), Random.Range(-1, 1));
+        //pObj5.SetParent(_pTransform_DotGroup);
+        //pObj5.gameObject.SetActive(true);
+        //_list_Cur_Seeing_Obj.Add(pObj5);
+    }
 
     private void OnMove_Joystick_Func(PlayerManager.MoveJoystickMessage pMessage)
     {
-        _vecMoveDir = pMessage.vecMoveDir * -1f;
+        _vecJoystic_Move_Dir = pMessage.vecMoveDir;
+
+        Vector2 vecMoveDir = pMessage.vecMoveDir * -1f;
         
         Vector3 vecResult_LocalPos = _pTransform_DotGroup.transform.localPosition;
 
-        Vector2 vecPos = _vecMoveDir * Time.deltaTime* const_fDot_Move_Speed;
+        Vector2 vecPos = vecMoveDir * Time.deltaTime* const_fDot_Move_Speed;
 
         vecResult_LocalPos = new Vector3(vecResult_LocalPos.x + vecPos.x, vecResult_LocalPos.y + vecPos.y, vecResult_LocalPos.z);
 
@@ -113,7 +142,7 @@ public class GroundManager : ObjectBase
 
     private Transform Create_New_Object_By_Random()
     {
-        Transform pNewObj = Instantiate(_list_Ground_Obj[Random.Range(0, _list_Ground_Obj.Count)]);
+        Transform pNewObj = Instantiate(_list_Original_Ground_Obj[Random.Range(0, _list_Original_Ground_Obj.Count)]);
         pNewObj.localPosition = Vector2.zero;
 
         return pNewObj;
@@ -125,19 +154,41 @@ public class GroundManager : ObjectBase
 
         pCollisionTransform.gameObject.SetActive(false);
         _queue_Pool_Ground_Obj.Enqueue(pCollisionTransform);
+        pCollisionTransform.SetParent(null);
 
-        bool bRemoveSucce = _list_Ground_Obj.Remove(pCollisionTransform);
-        if (bRemoveSucce)
-            Debug.Log("삭제 성공");
+        for (int i = 0; i < _list_Cur_Seeing_Obj.Count; ++i)
+        {
+            if (pCollisionTransform.name == _list_Cur_Seeing_Obj[i].name)
+            {
+                _list_Cur_Seeing_Obj.Remove(_list_Cur_Seeing_Obj[i]);
+                DebugLogManager.Log($"리스트에서 삭제. 남은 개수 : {_list_Cur_Seeing_Obj.Count}");
+                break;
+            }
+        }
+
+        var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
+
+        Vector2 vecRandRange = new Vector2(Random.Range(0, 0.8f), Random.Range(0, 0.8f));
+
+        float fCreateRange = 12f;
+        //가로로 이동중이므로 생성 위치값을 길게 설정
+        if (_vecJoystic_Move_Dir.x > _vecJoystic_Move_Dir.y)
+        {
+            fCreateRange = 11f;
+        }
+        //세로로 이동중이므로 생성 위치값을 짤게 설정한다.
         else
-            Debug.Log("삭제 실패");
+        {
+            fCreateRange = 7.5f;
+        }
 
+        float fRandDistRange = Random.Range(fCreateRange, fCreateRange+1);
 
-        //for (int i = 0; i < _list_Ground_Obj.Count; ++i)
-        //{ 
-        //    if(pCollisionTransform.name == _list_Ground_Obj[i].name)
-        //}
-
-        
+        pObj1.localPosition = (_vecJoystic_Move_Dir + vecRandRange).normalized * fRandDistRange;
+        pObj1.SetParent(_pTransform_DotGroup);
+        pObj1.gameObject.SetActive(true);
+        _list_Cur_Seeing_Obj.Add(pObj1);
     }
+    
+
 }
