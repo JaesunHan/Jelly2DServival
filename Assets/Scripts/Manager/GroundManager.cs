@@ -40,6 +40,8 @@ public class GroundManager : ObjectBase
     private Transform _pTransfrom_LeftTop = null;
     private Transform _pTransform_RightBottom = null;
 
+    private WaitForSeconds _ws_Check_OutOfRange;
+
     /// <summary>
     /// 조이스틱이 향한 방향을 저장한다.
     /// </summary>
@@ -75,6 +77,8 @@ public class GroundManager : ObjectBase
             }
         }
 
+        _ws_Check_OutOfRange = new WaitForSeconds(7f);
+
         PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Joystick_Func;
     }
 
@@ -90,7 +94,8 @@ public class GroundManager : ObjectBase
 
     public void DoInit()
     {
-        for(int i = 0; i< 10; ++i)
+        StopAllCoroutines();
+        for(int i = 0; i< 5; ++i)
         {
             var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
             pObj1.localPosition = new Vector2(Random.Range(-15, -1), Random.Range(-8, -1));
@@ -109,20 +114,9 @@ public class GroundManager : ObjectBase
             pObj3.SetParent(_pTransform_DotGroup);
             pObj3.gameObject.SetActive(true);
             _list_Cur_Seeing_Obj.Add(pObj3);
-
-            //var pObj4 = _queue_Pool_Ground_Obj.Dequeue();
-            //pObj4.localPosition = new Vector2(Random.Range(1, 10), Random.Range(-6, -1));
-            //pObj4.SetParent(_pTransform_DotGroup);
-            //pObj4.gameObject.SetActive(true);
-            //_list_Cur_Seeing_Obj.Add(pObj4);
-
         }
-        
-        //var pObj5 = _queue_Pool_Ground_Obj.Dequeue();
-        //pObj5.localPosition = new Vector2(Random.Range(1, -1), Random.Range(-1, 1));
-        //pObj5.SetParent(_pTransform_DotGroup);
-        //pObj5.gameObject.SetActive(true);
-        //_list_Cur_Seeing_Obj.Add(pObj5);
+
+        StartCoroutine(nameof(OnCoroutine_Check_OutOf_Range));
     }
 
     private void OnMove_Joystick_Func(PlayerManager.MoveJoystickMessage pMessage)
@@ -148,20 +142,97 @@ public class GroundManager : ObjectBase
         return pNewObj;
     }
 
+    /// <summary>
+    /// 주기적으로 일정 영역 박으로 나간 dot 오브젝트는 다시 재배치한다.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator OnCoroutine_Check_OutOf_Range()
+    {
+        while (true)
+        {
+            DebugLogManager.Log($"_list_Cur_Seeing_Obj[0].position : {_list_Cur_Seeing_Obj[0].position}");
+            for (int i = 0; i < _list_Cur_Seeing_Obj.Count; ++i)
+            {
+                var pTarnsform = _list_Cur_Seeing_Obj[i];
+                Vector2 vecCurPos = pTarnsform.transform.position;
+
+                //if ((vecCurPos.x < -20f && vecCurPos.y > 20f) || //왼쪽 위
+                //    (vecCurPos.x < -20f && vecCurPos.y < -20f)|| //왼쪽 아래
+                //    (vecCurPos.x > 20f && vecCurPos.y > 20f)  || //오른쪽 위
+                //    (vecCurPos.x > 20f && vecCurPos.y < -20f))   //오른쪽 아래
+                if (vecCurPos.x < -20f || //왼쪽 위
+                    vecCurPos.y < -20f || //왼쪽 아래
+                    vecCurPos.x > 20f || //오른쪽 위
+                    vecCurPos.y < -20f)   //오른쪽 아래
+                {
+                    Recycle_Object(pTarnsform);
+                }
+            }
+
+            yield return _ws_Check_OutOfRange;
+        }
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         var pCollisionTransform = collision.transform;
 
-        pCollisionTransform.gameObject.SetActive(false);
-        _queue_Pool_Ground_Obj.Enqueue(pCollisionTransform);
-        pCollisionTransform.SetParent(null);
+        Recycle_Object(pCollisionTransform);
+
+        //pCollisionTransform.gameObject.SetActive(false);
+        //_queue_Pool_Ground_Obj.Enqueue(pCollisionTransform);
+        //pCollisionTransform.SetParent(null);
+
+        //for (int i = 0; i < _list_Cur_Seeing_Obj.Count; ++i)
+        //{
+        //    if (pCollisionTransform.name == _list_Cur_Seeing_Obj[i].name)
+        //    {
+        //        _list_Cur_Seeing_Obj.Remove(_list_Cur_Seeing_Obj[i]);
+        //        DebugLogManager.Log($"리스트에서 삭제. 남은 개수 : {_list_Cur_Seeing_Obj.Count}");
+        //        break;
+        //    }
+        //}
+
+        //var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
+
+        //Vector2 vecRandRange = new Vector2(Random.Range(0, 0.8f), Random.Range(0, 0.8f));
+
+        //float fCreateRange = 12f;
+        ////가로로 이동중이므로 생성 위치값을 길게 설정
+        //if (_vecJoystic_Move_Dir.x > _vecJoystic_Move_Dir.y)
+        //{
+        //    fCreateRange = 11f;
+        //}
+        ////세로로 이동중이므로 생성 위치값을 짤게 설정한다.
+        //else
+        //{
+        //    fCreateRange = 7.5f;
+        //}
+
+        //float fRandDistRange = Random.Range(fCreateRange, fCreateRange+1);
+
+        //pObj1.localPosition = (_vecJoystic_Move_Dir + vecRandRange).normalized * fRandDistRange;
+        //pObj1.SetParent(_pTransform_DotGroup);
+        //pObj1.gameObject.SetActive(true);
+        //_list_Cur_Seeing_Obj.Add(pObj1);
+    }
+
+
+    private void Recycle_Object(Transform pTransform_Obj)
+    {
+        //var pCollisionTransform = collision.transform;
+
+        pTransform_Obj.gameObject.SetActive(false);
+        _queue_Pool_Ground_Obj.Enqueue(pTransform_Obj);
+        pTransform_Obj.SetParent(null);
 
         for (int i = 0; i < _list_Cur_Seeing_Obj.Count; ++i)
         {
-            if (pCollisionTransform.name == _list_Cur_Seeing_Obj[i].name)
+            if (pTransform_Obj.name == _list_Cur_Seeing_Obj[i].name)
             {
                 _list_Cur_Seeing_Obj.Remove(_list_Cur_Seeing_Obj[i]);
-                DebugLogManager.Log($"리스트에서 삭제. 남은 개수 : {_list_Cur_Seeing_Obj.Count}");
+                //DebugLogManager.Log($"리스트에서 삭제. 남은 개수 : {_list_Cur_Seeing_Obj.Count}");
                 break;
             }
         }
@@ -182,13 +253,11 @@ public class GroundManager : ObjectBase
             fCreateRange = 7.5f;
         }
 
-        float fRandDistRange = Random.Range(fCreateRange, fCreateRange+1);
+        float fRandDistRange = Random.Range(fCreateRange, fCreateRange + 1);
 
         pObj1.localPosition = (_vecJoystic_Move_Dir + vecRandRange).normalized * fRandDistRange;
         pObj1.SetParent(_pTransform_DotGroup);
         pObj1.gameObject.SetActive(true);
         _list_Cur_Seeing_Obj.Add(pObj1);
     }
-    
-
 }

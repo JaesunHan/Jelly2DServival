@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743761375}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 355d92b0d649098498b37aa812243279, type: 3}
   m_Name: 
@@ -1181,7 +1181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.59, y: 8.7}
+  m_Size: {x: 20, y: 10}
   m_EdgeRadius: 0
 --- !u!50 &1743761379
 Rigidbody2D:

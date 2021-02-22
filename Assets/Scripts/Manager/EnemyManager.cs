@@ -151,7 +151,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
             //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
             EnemyBase pEnemyBase_Spawn = GetNot_Using_EnemyBase();
-            pEnemyBase_Spawn.transform.localPosition = pTransform_Random_Point.localPosition;
+            pEnemyBase_Spawn.transform.position = pTransform_Random_Point.position;
             pEnemyBase_Spawn.SetActive(true);
 
             //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
