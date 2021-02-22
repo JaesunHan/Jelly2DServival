@@ -1,25 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2186340588030012778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
-  m_Name: EJelly_0
-  m_EditorClassIdentifier: 
-  strEnemyName: EJelly_0
-  iHP: 5
-  iMoveSpeed: 3
-  iAppearWave: 0
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_0.prefab
-  eEnemyType: 0
-  pFile: {fileID: 2823025893350551658, guid: d8ca3006e470f534e89e1c30b92c6188, type: 3}
---- !u!114 &-682769058662689428
+--- !u!114 &-8127083746129964937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,11 +15,11 @@ MonoBehaviour:
   strEnemyName: EJelly_2
   iHP: 10
   iMoveSpeed: 2
-  iAppearWave: 2
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_2.prefab
+  iAppearWave: 1
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 5.png
   eEnemyType: 2
-  pFile: {fileID: 2823025893350551658, guid: 006671b9e6978f940aee886b149bf443, type: 3}
---- !u!114 &11400000
+  pFile: {fileID: 21300000, guid: b8fd21ad16123364aaee0da8f1b3746b, type: 3}
+--- !u!114 &-3944037420183582773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,14 +28,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
-  m_Name: EnemyData_Container
+  m_Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
+  m_Name: EJelly_0
   m_EditorClassIdentifier: 
-  listData:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &6569018142771194946
+  strEnemyName: EJelly_0
+  iHP: 5
+  iMoveSpeed: 1
+  iAppearWave: 0
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 1.png
+  eEnemyType: 0
+  pFile: {fileID: 21300000, guid: 932ce8ce7b8fd8e4d9fb9bce6a7e0b7d, type: 3}
+--- !u!114 &-1003693481768310750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,8 +52,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strEnemyName: EJelly_1
   iHP: 3
-  iMoveSpeed: 5
-  iAppearWave: 1
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_1.prefab
+  iMoveSpeed: 3
+  iAppearWave: 0
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 7.png
   eEnemyType: 1
-  pFile: {fileID: 2823025893350551658, guid: 9eb95c2bffbe83e4a865e08a9ae765de, type: 3}
+  pFile: {fileID: 21300000, guid: 6de610ccbbc0a094b804153e2dea43a6, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
+  m_Name: EnemyData_Container
+  m_EditorClassIdentifier: 
+  listData:
+  - {fileID: -3944037420183582773}
+  - {fileID: -1003693481768310750}
+  - {fileID: -8127083746129964937}
+  - {fileID: 7380397196423192470}
+  - {fileID: 5877848571001767225}
+--- !u!114 &5877848571001767225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
+  m_Name: EJelly_4
+  m_EditorClassIdentifier: 
+  strEnemyName: EJelly_4
+  iHP: 10
+  iMoveSpeed: 2
+  iAppearWave: 2
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 11.png
+  eEnemyType: 4
+  pFile: {fileID: 21300000, guid: 764f930ba03e6324d805335eb66b8c98, type: 3}
+--- !u!114 &7380397196423192470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
+  m_Name: EJelly_3
+  m_EditorClassIdentifier: 
+  strEnemyName: EJelly_3
+  iHP: 8
+  iMoveSpeed: 3
+  iAppearWave: 1
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png
+  eEnemyType: 3
+  pFile: {fileID: 21300000, guid: 590b73e132435194da7d40dc8a3816f0, type: 3}

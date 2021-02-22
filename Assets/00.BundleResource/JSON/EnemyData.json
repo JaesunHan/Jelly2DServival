@@ -3,23 +3,37 @@
     {
       "strEnemyName": "EJelly_0",
       "iHP": "5",
-      "iMoveSpeed": "3",
+      "iMoveSpeed": "1",
       "iAppearWave": "0",
-      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_0.prefab"
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 1.png"
     },
     {
       "strEnemyName": "EJelly_1",
       "iHP": "3",
-      "iMoveSpeed": "5",
-      "iAppearWave": "1",
-      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_1.prefab"
+      "iMoveSpeed": "3",
+      "iAppearWave": "0",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 7.png"
     },
     {
       "strEnemyName": "EJelly_2",
       "iHP": "10",
       "iMoveSpeed": "2",
+      "iAppearWave": "1",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 5.png"
+    },
+    {
+      "strEnemyName": "EJelly_3",
+      "iHP": "8",
+      "iMoveSpeed": "3",
+      "iAppearWave": "1",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png"
+    },
+    {
+      "strEnemyName": "EJelly_4",
+      "iHP": "10",
+      "iMoveSpeed": "2",
       "iAppearWave": "2",
-      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly_2.prefab"
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 11.png"
     }
   ]
 }

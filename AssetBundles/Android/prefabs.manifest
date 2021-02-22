@@ -1,0 +1,53 @@
+ManifestFileVersion: 0
+CRC: 3459867879
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 87e56ac7cb535cd5a70080c5f0517bb5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a067dfd54092af7bff1f5a6bf7cbc575
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_1.prefab
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_2.prefab
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_3.prefab
+- Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_1.prefab
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_2.prefab
+- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_3.prefab
+- Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab
+Dependencies:
+- D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite

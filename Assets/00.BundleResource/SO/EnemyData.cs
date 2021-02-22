@@ -26,7 +26,7 @@ public class EnemyData : UnityEngine.ScriptableObject
     
     public int iAppearWave;
     
-    public string strPrefabPath;
+    public string strSpritePath;
     
     /// <summary>
     /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strEnemyName"/>
@@ -34,7 +34,7 @@ public class EnemyData : UnityEngine.ScriptableObject
     public EEnemyType eEnemyType;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strPrefabPath"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strSpritePath"/>
     /// </summary>
-    public UnityEngine.Transform pFile;
+    public UnityEngine.Sprite pFile;
 }

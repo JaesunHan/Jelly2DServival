@@ -35,7 +35,7 @@ public partial class DataManager : MonoSingleton<DataManager>
     /// </summary>
     /// <param name="iWave"></param>
     /// <returns></returns>
-    public static List<EnemyData> DoGet_Random_EnemyData_ByStageWave(int iWave)
+    public static List<EnemyData> DoGet_EnemyData_ByStageWave(int iWave)
     {
         ///현재 웨이브에서 등장 가능한 적들의 리스트
         List<EnemyData> list_CurWave_Enemy = new List<EnemyData>();
@@ -49,6 +49,24 @@ public partial class DataManager : MonoSingleton<DataManager>
         }
 
         return list_CurWave_Enemy;
+    }
+
+    /// <summary>
+    /// 현재 웨이브에 등장할 수 있는 적들 중에서 하나를 랜덤으로 선택해서 반환한다.
+    /// </summary>
+    /// <param name="iWave"></param>
+    /// <returns></returns>
+    public static EnemyData DoGet_Random_EnemyData_ByStageWave(int iWave)
+    {
+        EnemyData pEnemyData = null;
+
+        var list = DoGet_EnemyData_ByStageWave(iWave);
+
+        int iRandomIdx = Random.Range(0, list.Count);
+
+        pEnemyData = list[iRandomIdx];
+
+        return pEnemyData;
     }
 
 

@@ -19,9 +19,11 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     private PlayerCharacter _pOriginal_PlayerCharacter = null;
 
     [SerializeField]
-    private PlayerCharacter _pCharacter = null;
+    private PlayerCharacter _pCur_Character = null;
 
     private EDir _eDir = EDir.Dir_None;
+
+    private float _fCharacter_Move_Speed = 0f;
 
 
     public Observer_Pattern<MoveJoystickMessage> OnMove_Stick { get; private set; } = Observer_Pattern<MoveJoystickMessage>.instance;
@@ -29,21 +31,33 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     {
         base.OnAwake();
 
-        if (null == _pCharacter)
+        if (null == _pCur_Character)
         {
             if (null != _pOriginal_PlayerCharacter)
             {
-                _pCharacter = Instantiate<PlayerCharacter>(_pOriginal_PlayerCharacter);
-                _pCharacter.transform.localPosition = Vector2.zero;
+                _pCur_Character = Instantiate<PlayerCharacter>(_pOriginal_PlayerCharacter);
+                _pCur_Character.transform.localPosition = Vector2.zero;
 
-                _pCharacter.transform.SetParent(transform);
+                _pCur_Character.transform.SetParent(transform);
+
+                _pOriginal_PlayerCharacter.SetActive(false);
             }
         }
 
         OnMove_Stick.Subscribe += OnMove_Stick_Func;
 
+        _fCharacter_Move_Speed = 3f;
     }
 
+    public PlayerCharacter DoGet_Cur_Player_Character()
+    {
+        return _pCur_Character;
+    }
+
+    public float DoGet_Player_Move_Speed()
+    {
+        return _fCharacter_Move_Speed;
+    }
 
     private void OnDestroy()
     {
@@ -53,22 +67,22 @@ public class PlayerManager : MonoSingleton<PlayerManager>
 
     private void OnMove_Stick_Func(MoveJoystickMessage pMessage)
     {
-        Vector2 vecMoveDire = pMessage.vecMoveDir;
+        Vector2 vecMoveDir = pMessage.vecMoveDir;
 
         if (pMessage.vecMoveDir == Vector2.zero)
         {
-            _pCharacter.DoPlay_IdleAnim();
+            _pCur_Character.DoPlay_IdleAnim();
         }
         else
         {
-            _pCharacter.DoPlay_WalkAnim();
+            _pCur_Character.DoPlay_WalkAnim();
             if (pMessage.vecMoveDir.x > 0)
             {
-                _pCharacter.DoChange_Dir(EDir.Dir_Right);
+                _pCur_Character.DoChange_Dir(EDir.Dir_Right);
             }
             else
             {
-                _pCharacter.DoChange_Dir(EDir.Dir_Left);
+                _pCur_Character.DoChange_Dir(EDir.Dir_Left);
             }
         }
     }

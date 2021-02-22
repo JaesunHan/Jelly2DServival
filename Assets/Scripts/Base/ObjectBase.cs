@@ -10,7 +10,14 @@ public class ObjectBase : MonoBehaviour
     }
 
     protected virtual void OnAwake()
-    { 
-    
+    {
+        
     }
+
+    public virtual void SetActive(bool bIsActive)
+    {
+        gameObject.SetActive(bIsActive);
+    }
+
+    
 }

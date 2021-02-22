@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2823025892514904372}
   - component: {fileID: 2823025892514904375}
   m_Layer: 0
-  m_Name: Jelly 7
+  m_Name: Sprite_Jelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6de610ccbbc0a094b804153e2dea43a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 932ce8ce7b8fd8e4d9fb9bce6a7e0b7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,8 +175,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2823025893350551658}
   - component: {fileID: 1523745599706670739}
+  - component: {fileID: 4248779623673348383}
   m_Layer: 0
-  m_Name: Enemy_Jelly_2
+  m_Name: Enemy_Jelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,3 +217,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4248779623673348383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823025893350551661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pSprite_Jelly: {fileID: 2823025892514904375}

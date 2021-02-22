@@ -68,6 +68,10 @@ public enum EEnemyType
     EJelly_1,
     
     EJelly_2,
+    
+    EJelly_3,
+    
+    EJelly_4,
 }
 
 #region 

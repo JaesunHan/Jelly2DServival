@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 2869732949
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ccbc0ae0d7a4f748068460c8836aa7a6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 33a008d317960add9e0dc230a495563e
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/00.AssetBundlePath/SO/EnemyData_Container.asset
+Dependencies:
+- D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite
