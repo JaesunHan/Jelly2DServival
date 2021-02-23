@@ -20,9 +20,13 @@ public class EnemyData : UnityEngine.ScriptableObject
     
     public string strEnemyName;
     
-    public int iHP;
+    public float fHP;
     
-    public int iMoveSpeed;
+    public float fMoveSpeed;
+    
+    public float fColliderPosY;
+    
+    public float fColliderRadius;
     
     public int iAppearWave;
     

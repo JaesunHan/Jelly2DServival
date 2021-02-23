@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 932ce8ce7b8fd8e4d9fb9bce6a7e0b7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 764f930ba03e6324d805335eb66b8c98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,6 +176,8 @@ GameObject:
   - component: {fileID: 2823025893350551658}
   - component: {fileID: 1523745599706670739}
   - component: {fileID: 4248779623673348383}
+  - component: {fileID: 3242388545096530816}
+  - component: {fileID: 5460186868267369646}
   m_Layer: 0
   m_Name: Enemy_Jelly
   m_TagString: Untagged
@@ -229,4 +231,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pSprite_Jelly: {fileID: 2823025892514904375}
+--- !u!50 &3242388545096530816
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823025893350551661}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &5460186868267369646
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823025893350551661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.59}
+  serializedVersion: 2
+  m_Radius: 0.67

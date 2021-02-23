@@ -14,13 +14,16 @@ public class EnemyBase : ObjectBase
 
     private Vector2 _vecPlayer_Pos = Vector2.zero;
 
+    private Animator _pAnim = null;
+
+    private Collider2D _pCollider2d = null;
+
     protected override void OnAwake()
     {
         base.OnAwake();
 
-         if (null == _pSprite_Jelly)
+        if (null == _pSprite_Jelly)
         {
-            //var arrSprite = transform.GetComponentsInChildren<Sprite>(true);
             var arrSprite = transform.GetComponentsInChildren<SpriteRenderer>();
             for (int i = 0; i < arrSprite.Length; ++i)
             {
@@ -30,6 +33,16 @@ public class EnemyBase : ObjectBase
                     break;
                 }
             }
+        }
+
+        if (null == _pAnim)
+        {
+            _pAnim = GetComponent<Animator>();
+        }
+
+        if (null == _pCollider2d)
+        {
+            _pCollider2d = GetComponent<Collider2D>();
         }
     }
 
@@ -49,6 +62,7 @@ public class EnemyBase : ObjectBase
 
     private void Tracing_Player()
     {
+        _pAnim.SetBool("isWalk", true);
         StartCoroutine(nameof(OnCoroutine_Tracing_Player));
     }
 
@@ -59,7 +73,7 @@ public class EnemyBase : ObjectBase
             Vector2 vecCurPos = transform.position;
             Vector2 vecMoveDir = (_vecPlayer_Pos - vecCurPos).normalized;
 
-            transform.position += (Vector3)(vecMoveDir * Time.deltaTime * (_pEnemyData.iMoveSpeed) );
+            transform.position += (Vector3)(vecMoveDir * Time.deltaTime * (_pEnemyData.fMoveSpeed) );
             
             yield return null;
         }

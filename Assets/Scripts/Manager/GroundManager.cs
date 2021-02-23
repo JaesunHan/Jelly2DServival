@@ -239,7 +239,7 @@ public class GroundManager : ObjectBase
 
         var pObj1 = _queue_Pool_Ground_Obj.Dequeue();
 
-        Vector2 vecRandRange = new Vector2(Random.Range(0, 0.8f), Random.Range(0, 0.8f));
+        Vector2 vecRandRange = new Vector2(Random.Range(0, 0.9f), Random.Range(0, 0.9f));
 
         float fCreateRange = 12f;
         //가로로 이동중이므로 생성 위치값을 길게 설정
@@ -255,7 +255,7 @@ public class GroundManager : ObjectBase
 
         float fRandDistRange = Random.Range(fCreateRange, fCreateRange + 1);
 
-        pObj1.localPosition = (_vecJoystic_Move_Dir + vecRandRange).normalized * fRandDistRange;
+        pObj1.position = (_vecJoystic_Move_Dir + vecRandRange).normalized * fRandDistRange;
         pObj1.SetParent(_pTransform_DotGroup);
         pObj1.gameObject.SetActive(true);
         _list_Cur_Seeing_Obj.Add(pObj1);

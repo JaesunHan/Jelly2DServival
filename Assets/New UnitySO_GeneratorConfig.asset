@@ -16,6 +16,6 @@ MonoBehaviour:
   strSOScript_FolderPath: Assets/00.BundleResource/SO
   strJsonData_FolderPath: Assets/00.BundleResource/JSON
   strDataExport_FolderPath: Assets/00.AssetBundlePath/SO
-  strSheetID: 
+  strSheetID: 1_v3VWMcu7mSp7VZhQK1JLQp16RC4gswPiMYz-x3UFrE
   strSOCommandLine: 
   pTypeDataFile: {fileID: 4900000, guid: 23b87a3078945034ebb2cdcb72c1cd38, type: 3}

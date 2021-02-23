@@ -2,36 +2,46 @@
   "array": [
     {
       "strEnemyName": "EJelly_0",
-      "iHP": "5",
-      "iMoveSpeed": "1",
+      "fHP": "5",
+      "fMoveSpeed": "1",
+      "fColliderPosY": "0.5",
+      "fColliderRadius": "0.5",
       "iAppearWave": "0",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 1.png"
     },
     {
       "strEnemyName": "EJelly_1",
-      "iHP": "3",
-      "iMoveSpeed": "3",
+      "fHP": "3",
+      "fMoveSpeed": "2",
+      "fColliderPosY": "0.5",
+      "fColliderRadius": "0.5",
       "iAppearWave": "0",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 7.png"
     },
     {
       "strEnemyName": "EJelly_2",
-      "iHP": "10",
-      "iMoveSpeed": "2",
+      "fHP": "10",
+      "fMoveSpeed": "2",
+      "fColliderPosY": "0.5",
+      "fColliderRadius": "0.6",
       "iAppearWave": "1",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 5.png"
     },
     {
       "strEnemyName": "EJelly_3",
-      "iHP": "8",
-      "iMoveSpeed": "3",
+      "fHP": "8",
+      "fMoveSpeed": "3",
+      "fColliderPosY": "0.5",
+      "fColliderRadius": "0.5",
       "iAppearWave": "1",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png"
     },
     {
       "strEnemyName": "EJelly_4",
-      "iHP": "10",
-      "iMoveSpeed": "2",
+      "fHP": "10",
+      "fMoveSpeed": "2",
+      "fColliderPosY": "0.59",
+      "fColliderRadius": "0.67",
       "iAppearWave": "2",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 11.png"
     }
