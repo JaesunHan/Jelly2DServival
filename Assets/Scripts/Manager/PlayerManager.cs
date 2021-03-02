@@ -5,6 +5,7 @@ using CommonData;
 
 public class PlayerManager : MonoSingleton<PlayerManager>
 {
+    const float const_fFire_Bullet_Term = 1f;
     public struct MoveJoystickMessage
     {
         public Vector2 vecMoveDir;
@@ -21,10 +22,16 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     [SerializeField]
     private PlayerCharacter _pCur_Character = null;
 
-    private EDir _eDir = EDir.Dir_None;
+    //private EDir _eDir = EDir.Dir_None;
 
     private float _fCharacter_Move_Speed = 0f;
 
+    private WaitForSeconds _ws_Fire_Bullet_Term;
+
+    private Bullet _pOriginal_Bullet = null;
+
+    private Pooling_Component<Bullet> _pPool_Bullet = Pooling_Component<Bullet>.instance;
+    private List<Bullet> _list_Cur_Using_Bullet = new List<Bullet>();
 
     public Observer_Pattern<MoveJoystickMessage> OnMove_Stick { get; private set; } = Observer_Pattern<MoveJoystickMessage>.instance;
     protected override void OnAwake()
@@ -44,14 +51,35 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             }
         }
 
+        if (null == _list_Cur_Using_Bullet)
+        {
+            _list_Cur_Using_Bullet = new List<Bullet>();
+        }
+        
+
         OnMove_Stick.Subscribe += OnMove_Stick_Func;
 
         _fCharacter_Move_Speed = 3f;
+
+        _ws_Fire_Bullet_Term = new WaitForSeconds(const_fFire_Bullet_Term);
+
+        if (null == _pOriginal_Bullet)
+        {
+            _pOriginal_Bullet = GetComponentInChildren<Bullet>();
+            _pOriginal_Bullet.SetActive(false);
+        }
+
+        _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
     }
 
     public PlayerCharacter DoGet_Cur_Player_Character()
     {
         return _pCur_Character;
+    }
+
+    public Vector2 DoGet_Cur_Player_WorldPos()
+    {
+        return _pCur_Character.transform.position;
     }
 
     public float DoGet_Player_Move_Speed()
@@ -63,6 +91,11 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     {
         OnMove_Stick.Subscribe -= OnMove_Stick_Func;
 
+    }
+
+    private void Start()
+    {
+        StartCoroutine(nameof(OnCoroutine_Fire_Bullet));
     }
 
     private void OnMove_Stick_Func(MoveJoystickMessage pMessage)
@@ -86,4 +119,36 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             }
         }
     }
+
+    /// <summary>
+    /// 주기적으로 불렛을 발사하는 코루틴 함수
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator OnCoroutine_Fire_Bullet()
+    {
+        while (true)
+        {
+            var pNewBullet = _pPool_Bullet.DoPop(_pOriginal_Bullet);
+            pNewBullet.SetActive(true);
+            pNewBullet.transform.SetParent(transform);
+            
+            _list_Cur_Using_Bullet.Add(pNewBullet);
+
+            Vector2 vecTargetPos = Vector2.one;
+            if (null == EnemyManager.instance.DoGet_Enemy_Near_By_Player())
+            {
+                vecTargetPos = new Vector2(Random.Range(-2f, 2f), Random.Range(-2f, 2f)).normalized * 12f;
+            }
+            else
+            {
+                vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
+            }
+            //DebugLogManager.Log($"Target Pos : {vecTargetPos}");
+            pNewBullet.DoFire(vecTargetPos);
+
+            yield return _ws_Fire_Bullet_Term;
+        }
+
+    }
+
 }

@@ -9,6 +9,8 @@ public class PlayerCharacter : ObjectBase
 
     private Transform _pSprite_Transform = null;
 
+    
+
 
     protected override void OnAwake()
     {

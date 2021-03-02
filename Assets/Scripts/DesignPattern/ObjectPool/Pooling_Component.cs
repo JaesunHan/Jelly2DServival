@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingManager_Component<CLASS_POOL_TARGER>>
+public class Pooling_Component<CLASS_POOL_TARGER> : Singleton<Pooling_Component<CLASS_POOL_TARGER>>
     where CLASS_POOL_TARGER : Component
 {
     const int const_iPool_Default_Count = 30;
@@ -21,7 +21,7 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingMana
         _objRoot.name = $"{pOriginalObjectTarget.name} 풀 생성";
     }
 
-    public Component DoPop(CLASS_POOL_TARGER pObjectOriginal, bool bDefaultActive = false)
+    public CLASS_POOL_TARGER DoPop(CLASS_POOL_TARGER pObjectOriginal, bool bDefaultActive = false) //Component
     {
         GameObject pDequeueObj = null;
         if (_qPool.Count <= 0)
@@ -48,7 +48,7 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingMana
     {
         _qPool.Enqueue(pObject.gameObject);
         pObject.hideFlags = HideFlags.HideInHierarchy;
-        pObject.transform.SetParent(_objRoot.transform);
+        pObject.transform.SetParent(null); //_objRoot.transform
     }
 
     /// <summary>

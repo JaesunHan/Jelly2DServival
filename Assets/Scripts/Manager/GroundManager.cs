@@ -77,7 +77,7 @@ public class GroundManager : ObjectBase
             }
         }
 
-        _ws_Check_OutOfRange = new WaitForSeconds(7f);
+        _ws_Check_OutOfRange = new WaitForSeconds(5f);
 
         PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Joystick_Func;
     }
@@ -150,7 +150,7 @@ public class GroundManager : ObjectBase
     {
         while (true)
         {
-            DebugLogManager.Log($"_list_Cur_Seeing_Obj[0].position : {_list_Cur_Seeing_Obj[0].position}");
+            //DebugLogManager.Log($"_list_Cur_Seeing_Obj[0].position : {_list_Cur_Seeing_Obj[0].position}");
             for (int i = 0; i < _list_Cur_Seeing_Obj.Count; ++i)
             {
                 var pTarnsform = _list_Cur_Seeing_Obj[i];
@@ -160,10 +160,10 @@ public class GroundManager : ObjectBase
                 //    (vecCurPos.x < -20f && vecCurPos.y < -20f)|| //왼쪽 아래
                 //    (vecCurPos.x > 20f && vecCurPos.y > 20f)  || //오른쪽 위
                 //    (vecCurPos.x > 20f && vecCurPos.y < -20f))   //오른쪽 아래
-                if (vecCurPos.x < -20f || //왼쪽 위
-                    vecCurPos.y < -20f || //왼쪽 아래
-                    vecCurPos.x > 20f || //오른쪽 위
-                    vecCurPos.y < -20f)   //오른쪽 아래
+                if (vecCurPos.x < -15f || 
+                    vecCurPos.y < -15f || 
+                    vecCurPos.x > 15f || 
+                    vecCurPos.y > 15f)   
                 {
                     Recycle_Object(pTarnsform);
                 }
@@ -221,8 +221,6 @@ public class GroundManager : ObjectBase
 
     private void Recycle_Object(Transform pTransform_Obj)
     {
-        //var pCollisionTransform = collision.transform;
-
         pTransform_Obj.gameObject.SetActive(false);
         _queue_Pool_Ground_Obj.Enqueue(pTransform_Obj);
         pTransform_Obj.SetParent(null);

@@ -14,17 +14,17 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// <summary>
     /// 오브젝트 풀
     /// </summary>
-    private PoolingManager_Component<EnemyBase> _pPool_EnemyData = PoolingManager_Component<EnemyBase>.instance;
+    private Pooling_Component<EnemyBase> _pPool_EnemyData = Pooling_Component<EnemyBase>.instance;
     [SerializeField]
     private EnemyBase _pEnemyBase_Original = null;
     /// <summary>
     /// 현재 맵에 배치된 적들을 저장하는 리스트
     /// </summary>
-    private List<EnemyBase> _list_Transform_Enemy = new List<EnemyBase>();
+    private List<EnemyBase> _list_Enemy = new List<EnemyBase>();
 
     private int iCurWave = 0;
 
-    [SerializeField]
+    //[SerializeField]
     private List<Transform> _list_Respawn_Point = new List<Transform>();
 
     /// <summary>
@@ -96,10 +96,6 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         //처음 시작할 때 웨이브는 0부터 시작한다. 
         iCurWave = 0;
 
-        if (_list_Transform_Enemy.Count <= 0)
-        {
-            Create_List();
-        }
         //임시로 Init과 동시에 true 로 변경한다.  
         bIsPlaying = true;
 
@@ -107,6 +103,37 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
         StartGame();
         AddSubScribe();
+    }
+
+    /// <summary>
+    /// 현재 살아있는 에너미중에서 플레이어 캐릭터랑 가장 가까이 있는 적의 정보를 반환한다.
+    /// </summary>
+    /// <returns></returns>
+    public EnemyBase DoGet_Enemy_Near_By_Player()
+    {
+        EnemyBase pEnemyBase = null;
+
+        float fMinDist = 100f;
+        Vector2 vecPlayerPos = PlayerManager.instance.DoGet_Cur_Player_WorldPos();
+
+        for (int i = 0; i < _list_Enemy.Count; ++i)
+        {
+            if (_list_Enemy[i].gameObject.activeSelf)
+            {
+                Vector2 vecPos = _list_Enemy[i].transform.position;
+                float fDist = (vecPlayerPos - vecPos).magnitude;
+
+                if (fDist < fMinDist)
+                {
+                    fMinDist = fDist;
+                    //DebugLogManager.Log($"fMinDist : {fMinDist} / fDist : {fDist}");
+                    pEnemyBase = _list_Enemy[i];
+                    //DebugLogManager.Log($"이름 : {pEnemyBase.name}");
+                }
+            }
+        }
+
+        return pEnemyBase;
     }
 
     private void AddSubScribe()
@@ -117,24 +144,6 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     private void OnDestroy()
     {
         PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Stick_Func;
-    }
-
-    private void Create_List()
-    {
-        if (null == _pEnemyBase_Original)
-        {
-            DebugLogManager.Log("복제할 오리지널 EnemyBase가 null 이므로 새로 세팅한다.");
-        }
-
-        for (int i = 0; i < const_iDefault_EnemCount; ++i)
-        {
-            //var pEnemyBaseClone = (EnemyBase)_pPool_EnemyData.DoPop(_pEnemyBase_Original);
-            //pEnemyBaseClone.SetActive(false);
-            //pEnemyBaseClone.transform.SetParent(transform);
-
-            //_list_Transform_Enemy.Add(pEnemyBaseClone);
-            Pop_EnemyBase_In_Pool();
-        }
     }
 
     private void StartGame()
@@ -150,7 +159,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             Transform pTransform_Random_Point = _list_Respawn_Point[iRandomIdx];
 
             //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
-            EnemyBase pEnemyBase_Spawn = GetNot_Using_EnemyBase();
+            EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();
             pEnemyBase_Spawn.transform.position = pTransform_Random_Point.position;
             pEnemyBase_Spawn.SetActive(true);
 
@@ -167,41 +176,17 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// 없으면 Pool 에서 꺼내서 반환한다.
     /// </summary>
     /// <returns></returns>
-    private EnemyBase GetNot_Using_EnemyBase()
+    private EnemyBase GetEnemyBase_In_Pool()
     {
-        EnemyBase pEnemyBase = null;
-
-        for (int i = 0; i < _list_Transform_Enemy.Count; ++i)
-        {
-            if (!_list_Transform_Enemy[i].gameObject.activeSelf)
-            {
-                pEnemyBase = _list_Transform_Enemy[i];
-                break;
-            }
-        }
-
-        if (null == pEnemyBase)
-        {
-            pEnemyBase = Pop_EnemyBase_In_Pool();
-        }
-
-        return pEnemyBase;
-    }
-
-    /// <summary>
-    /// 풀에서 EnemyBase 를 꺼내고, 리스트에 저장하는 코드이다.
-    /// </summary>
-    /// <returns></returns>
-    private EnemyBase Pop_EnemyBase_In_Pool()
-    {
-        var pEnemyBaseClone = (EnemyBase)_pPool_EnemyData.DoPop(_pEnemyBase_Original);
+        var pEnemyBaseClone = _pPool_EnemyData.DoPop(_pEnemyBase_Original);
         pEnemyBaseClone.SetActive(false);
         pEnemyBaseClone.transform.SetParent(_pTransform_MovingGroup);
 
-        _list_Transform_Enemy.Add(pEnemyBaseClone);
+        _list_Enemy.Add(pEnemyBaseClone);
 
         return pEnemyBaseClone;
     }
+
 
     private void OnMove_Stick_Func(PlayerManager.MoveJoystickMessage pMessage)
     {
@@ -216,5 +201,44 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         vecResult_LocalPos = new Vector3(vecResult_LocalPos.x + vecPos.x, vecResult_LocalPos.y + vecPos.y, vecResult_LocalPos.z);
 
         _pTransform_MovingGroup.transform.localPosition = vecResult_LocalPos;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var pEnemyTarget = collision.transform.GetComponentInChildren<EnemyBase>();
+
+        if (null != pEnemyTarget)
+        {
+            pEnemyTarget.SetActive(false);
+            _pPool_EnemyData.DoPush(pEnemyTarget);
+            for (int i = 0; i < _list_Enemy.Count; ++i)
+            {
+                if (_list_Enemy[i] == pEnemyTarget)
+                {
+                    _list_Enemy.Remove(_list_Enemy[i]);
+                    DebugLogManager.Log("풀에 에너미를 반환하고 리스트에서 삭제한다.");
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var pEnemyTarget = collision.GetComponentInChildren<EnemyBase>();
+
+        if (null != pEnemyTarget)
+        {
+            _pPool_EnemyData.DoPush(pEnemyTarget);
+
+            for (int i = 0; i < _list_Enemy.Count; ++i)
+            {
+                if (_list_Enemy[i] == pEnemyTarget)
+                {
+                    _list_Enemy.Remove(_list_Enemy[i]);
+                    DebugLogManager.Log("풀에 에너미를 반환하고 리스트에서 삭제한다.");
+                }
+            }
+            pEnemyTarget.SetActive(false);
+        }
     }
 }

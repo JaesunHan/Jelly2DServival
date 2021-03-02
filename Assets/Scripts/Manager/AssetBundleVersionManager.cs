@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class AssetBundleVersionManager : MonoBehaviour
 {
-    private void Start()
-    {
+    //private void Start()
+    //{
         
-    }
+    //}
 
-    private IEnumerator OnCoroutine_Download()
-    {
-        WWW www = new WWW("http://54.180.92.211:3000/");
-        yield return www;
+    //private IEnumerator OnCoroutine_Download()
+    //{
+    //    WWW www = new WWW("http://54.180.92.211:3000/");
+    //    yield return www;
 
-        string strVersion = www.text;
+    //    string strVersion = www.text;
 
-        Debug.Log($"Server AssetBundle Version : {strVersion}");
-    }
+    //    Debug.Log($"Server AssetBundle Version : {strVersion}");
+    //}
 }

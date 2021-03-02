@@ -12,7 +12,7 @@
     {
       "strEnemyName": "EJelly_1",
       "fHP": "3",
-      "fMoveSpeed": "2",
+      "fMoveSpeed": "1.5",
       "fColliderPosY": "0.5",
       "fColliderRadius": "0.5",
       "iAppearWave": "0",
@@ -21,7 +21,7 @@
     {
       "strEnemyName": "EJelly_2",
       "fHP": "10",
-      "fMoveSpeed": "2",
+      "fMoveSpeed": "1.5",
       "fColliderPosY": "0.5",
       "fColliderRadius": "0.6",
       "iAppearWave": "1",
@@ -30,7 +30,7 @@
     {
       "strEnemyName": "EJelly_3",
       "fHP": "8",
-      "fMoveSpeed": "3",
+      "fMoveSpeed": "1",
       "fColliderPosY": "0.5",
       "fColliderRadius": "0.5",
       "iAppearWave": "1",
