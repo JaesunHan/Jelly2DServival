@@ -156,10 +156,6 @@ public class GroundManager : ObjectBase
                 var pTarnsform = _list_Cur_Seeing_Obj[i];
                 Vector2 vecCurPos = pTarnsform.transform.position;
 
-                //if ((vecCurPos.x < -20f && vecCurPos.y > 20f) || //왼쪽 위
-                //    (vecCurPos.x < -20f && vecCurPos.y < -20f)|| //왼쪽 아래
-                //    (vecCurPos.x > 20f && vecCurPos.y > 20f)  || //오른쪽 위
-                //    (vecCurPos.x > 20f && vecCurPos.y < -20f))   //오른쪽 아래
                 if (vecCurPos.x < -15f || 
                     vecCurPos.y < -15f || 
                     vecCurPos.x > 15f || 
