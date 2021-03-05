@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public partial class DataManager : MonoSingleton<DataManager>
 {
@@ -144,4 +145,22 @@ public partial class DataManager : MonoSingleton<DataManager>
     {
         return BundleLoadManager.instance.DoLoad<T>("SO", $"{typeof(T).Name}.asset", false);
     }
+
+    #region GetSprite
+
+    public static Sprite GetSprite_InAtlas(string strAtlasName, string strSpriteName)
+    {
+        Sprite pSprite = null;
+
+        pSprite = BundleLoadManager.instance.DoLoadSprite_InAtlas(nameof(EBundleName.Sprite), strAtlasName, strSpriteName);
+        
+        return pSprite;
+    }
+
+    public static SpriteAtlas GetSpriteAtlas(string strAtlasName)
+    {
+        return BundleLoadManager.instance.DoLoadSpriteAtlas(nameof(EBundleName.Sprite), strAtlasName);
+    }
+
+    #endregion GetSprite
 }

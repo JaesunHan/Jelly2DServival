@@ -11,10 +11,25 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// </summary>
     const float const_fDefault_Respawn_Term_Time = 2f;
 
+    public struct ReturnEnemyMessage
+    {
+        public EnemyBase pEnemyBase;
+
+        public bool bIsAlive;
+
+        public ReturnEnemyMessage(EnemyBase pEnemyBase, bool bIsAlive)
+        {
+            this.pEnemyBase = pEnemyBase;
+            this.bIsAlive = bIsAlive;
+        }
+    }
+
+    public Observer_Pattern<ReturnEnemyMessage> OnReturn_Enemy { get; private set; } = Observer_Pattern<ReturnEnemyMessage>.instance;
+
     /// <summary>
     /// 오브젝트 풀
     /// </summary>
-    private Pooling_Component<EnemyBase> _pPool_EnemyData = Pooling_Component<EnemyBase>.instance;
+    private Pooling_Component<EnemyBase> _pPool_EnemyBase = Pooling_Component<EnemyBase>.instance;
     [SerializeField]
     private EnemyBase _pEnemyBase_Original = null;
     /// <summary>
@@ -27,11 +42,11 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     //[SerializeField]
     private List<Transform> _list_Respawn_Point = new List<Transform>();
 
-    /// <summary>
-    /// 플레이어가 움직이는 방향의 반대방향으로 적들을 이동시키기 위한 부모 트랜스폼
-    /// </summary>
-    [SerializeField]
-    private Transform _pTransform_MovingGroup = null;
+    ///// <summary>
+    ///// 플레이어가 움직이는 방향의 반대방향으로 적들을 이동시키기 위한 부모 트랜스폼
+    ///// </summary>
+    //[SerializeField]
+    //private Transform _pTransform_MovingGroup = null;
 
     private bool bIsPlaying = false;
 
@@ -73,7 +88,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             }
         }
         
-        _pPool_EnemyData.DoInit_Pool(_pEnemyBase_Original);
+        _pPool_EnemyBase.DoInit_Pool(_pEnemyBase_Original);
 
         if (_list_Respawn_Point.Count <= 0)
         {
@@ -138,12 +153,16 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
     private void AddSubScribe()
     {
-        PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Stick_Func;
+        //PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Stick_Func;
+        OnReturn_Enemy.Subscribe += OnReturn_Enemy_Func;
+        PlayerManager.instance.OnMove_Stick.Subscribe += OnJoystick_Move_Func;
     }
 
     private void OnDestroy()
     {
-        PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Stick_Func;
+        //PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Stick_Func;
+        OnReturn_Enemy.Subscribe -= OnReturn_Enemy_Func;
+        PlayerManager.instance.OnMove_Stick.Subscribe -= OnJoystick_Move_Func;
     }
 
     private void StartGame()
@@ -155,12 +174,18 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         while (bIsPlaying)
         {
-            int iRandomIdx = Random.Range(0, _list_Respawn_Point.Count);
-            Transform pTransform_Random_Point = _list_Respawn_Point[iRandomIdx];
+            //int iRandomIdx = Random.Range(0, _list_Respawn_Point.Count);
+            //Transform pTransform_Random_Point = _list_Respawn_Point[iRandomIdx];
+
+            //Vector3 vecRespawnPosition = PlayerManager.instance.DoGet_Cur_Player_WorldPos() +  _vecJoystic_Move_Dir.normalized * 50f;
+            if (_vecJoystic_Move_Dir == Vector2.zero)
+                _vecJoystic_Move_Dir = Vector2.one;
+
+            Vector3 vecRespawnPosition = PlayerManager.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *10, _vecJoystic_Move_Dir.y * 10);
 
             //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
             EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();
-            pEnemyBase_Spawn.transform.position = pTransform_Random_Point.position;
+            pEnemyBase_Spawn.transform.position = vecRespawnPosition;
             pEnemyBase_Spawn.SetActive(true);
 
             //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
@@ -178,67 +203,37 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// <returns></returns>
     private EnemyBase GetEnemyBase_In_Pool()
     {
-        var pEnemyBaseClone = _pPool_EnemyData.DoPop(_pEnemyBase_Original);
+        var pEnemyBaseClone = _pPool_EnemyBase.DoPop(_pEnemyBase_Original);
         pEnemyBaseClone.SetActive(false);
-        pEnemyBaseClone.transform.SetParent(_pTransform_MovingGroup);
+        pEnemyBaseClone.transform.SetParent(transform); //_pTransform_MovingGroup
 
         _list_Enemy.Add(pEnemyBaseClone);
 
         return pEnemyBaseClone;
     }
 
+    private void OnReturn_Enemy_Func(ReturnEnemyMessage pMessage)
+    {
+        if (!pMessage.bIsAlive)
+        {
+            var pReturnEnemy = pMessage.pEnemyBase;
 
-    private void OnMove_Stick_Func(PlayerManager.MoveJoystickMessage pMessage)
+            for (int i = 0; i < _list_Enemy.Count; ++i)
+            {
+                if (_list_Enemy[i].transform == pReturnEnemy.transform)
+                {
+                    _list_Enemy[i].SetActive(false);
+                    
+                    _pPool_EnemyBase.DoPush(_list_Enemy[i]);
+                    _list_Enemy.Remove(_list_Enemy[i]);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void OnJoystick_Move_Func(PlayerManager.MoveJoystickMessage pMessage)
     {
         _vecJoystic_Move_Dir = pMessage.vecMoveDir;
-
-        Vector2 vecMoveDir = pMessage.vecMoveDir * -1f;
-
-        Vector3 vecResult_LocalPos = _pTransform_MovingGroup.transform.localPosition;
-
-        Vector2 vecPos = vecMoveDir * Time.deltaTime * _fPlayer_Move_Speed;
-
-        vecResult_LocalPos = new Vector3(vecResult_LocalPos.x + vecPos.x, vecResult_LocalPos.y + vecPos.y, vecResult_LocalPos.z);
-
-        _pTransform_MovingGroup.transform.localPosition = vecResult_LocalPos;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        var pEnemyTarget = collision.transform.GetComponentInChildren<EnemyBase>();
-
-        if (null != pEnemyTarget)
-        {
-            pEnemyTarget.SetActive(false);
-            _pPool_EnemyData.DoPush(pEnemyTarget);
-            for (int i = 0; i < _list_Enemy.Count; ++i)
-            {
-                if (_list_Enemy[i] == pEnemyTarget)
-                {
-                    _list_Enemy.Remove(_list_Enemy[i]);
-                    DebugLogManager.Log("풀에 에너미를 반환하고 리스트에서 삭제한다.");
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        var pEnemyTarget = collision.GetComponentInChildren<EnemyBase>();
-
-        if (null != pEnemyTarget)
-        {
-            _pPool_EnemyData.DoPush(pEnemyTarget);
-
-            for (int i = 0; i < _list_Enemy.Count; ++i)
-            {
-                if (_list_Enemy[i] == pEnemyTarget)
-                {
-                    _list_Enemy.Remove(_list_Enemy[i]);
-                    DebugLogManager.Log("풀에 에너미를 반환하고 리스트에서 삭제한다.");
-                }
-            }
-            pEnemyTarget.SetActive(false);
-        }
     }
 }

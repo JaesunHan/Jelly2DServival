@@ -30,6 +30,8 @@ public class EnemyData : UnityEngine.ScriptableObject
     
     public int iAppearWave;
     
+    public float fGetMP;
+    
     public string strSpritePath;
     
     /// <summary>

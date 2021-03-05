@@ -13,6 +13,11 @@ public class Bullet : ObjectBase
 
     public bool bIsAlive { get; private set; } = false;
 
+    /// <summary>
+    /// 탄환의 데미지 
+    /// </summary>
+    public float fDamage { get; private set; } = 1f;
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -51,7 +56,7 @@ public class Bullet : ObjectBase
         float fMovingTime = 0;
 
         //일정 시간동안 총알이 정해진 방향으로 날아간다.
-        while (fMovingTime <= 2f)
+        while (fMovingTime <= 0.3f)
         {
             fMovingTime += Time.fixedDeltaTime;
 
@@ -61,16 +66,24 @@ public class Bullet : ObjectBase
         bIsAlive = false;
 
         _pRigidyBody.velocity = Vector2.zero;
+
+        PlayerManager.instance.OnReturn_Bullet.DoNotify(new PlayerManager.ReturnBulletMessage(this, bIsAlive));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var pColTarget = collision.GetComponent<EnemyBase>();
 
-        if (null == pColTarget)
+        if (null != pColTarget)
         {
-            //DebugLogManager.Log($"충돌한 객체에 EnemyBase 가 없다. 이름 : {collision.name}");
-            return;
+            bIsAlive = false;
+
+            _pRigidyBody.velocity = Vector2.zero;
+            pColTarget.DoKnockback(_vecMoveDir);
+
+            PlayerManager.instance.OnReturn_Bullet.DoNotify(new PlayerManager.ReturnBulletMessage(this, bIsAlive));
         }
     }
+
+    
 }

@@ -261,6 +261,19 @@ public class BundleLoadManager : MonoSingleton<BundleLoadManager>
         return pSprite;
     }
 
+    public SpriteAtlas DoLoadSpriteAtlas(string strBundleName, string strAtlasFileName, bool bNotLoad_IsError = true)
+    {
+        SpriteAtlas pSpriteAtlas = _pLoadLogic.DoLoad<SpriteAtlas>(strBundleName.ToLower(), strAtlasFileName + ".spriteatlas", bNotLoad_IsError);
+        if (null == pSpriteAtlas)
+        {
+            Debug.LogError($"{name} pSpriteAltas == null");
+            return null;
+        }
+
+        return pSpriteAtlas;
+
+    }
+
     // ========================================================================== //
 
     /* protected - Override & Unity API         */

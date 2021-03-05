@@ -5,14 +5,34 @@ using CommonData;
 
 public class PlayerManager : MonoSingleton<PlayerManager>
 {
-    const float const_fFire_Bullet_Term = 1f;
+    const float const_fFire_Bullet_Term = 0.5f;
+
     public struct MoveJoystickMessage
     {
+        /// <summary>
+        /// 조이스틱이 바라보는 방향
+        /// </summary>
         public Vector2 vecMoveDir;
 
         public MoveJoystickMessage(Vector2 vecMoveDir)
         {
             this.vecMoveDir = vecMoveDir;
+        }
+    }
+
+    /// <summary>
+    /// 더이상 사용하지 않는 불렛을 반환한다.
+    /// </summary>
+    public struct ReturnBulletMessage
+    {
+        public Bullet pBullet;
+
+        public bool bIsAlive;
+
+        public ReturnBulletMessage(Bullet pBullet, bool bIsAlive)
+        {
+            this.pBullet = pBullet;
+            this.bIsAlive = bIsAlive;
         }
     }
 
@@ -34,6 +54,9 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     private List<Bullet> _list_Cur_Using_Bullet = new List<Bullet>();
 
     public Observer_Pattern<MoveJoystickMessage> OnMove_Stick { get; private set; } = Observer_Pattern<MoveJoystickMessage>.instance;
+
+    public Observer_Pattern<ReturnBulletMessage> OnReturn_Bullet { get; private set; } = Observer_Pattern<ReturnBulletMessage>.instance;
+    //public Observer_Pattern<>
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -58,6 +81,8 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         
 
         OnMove_Stick.Subscribe += OnMove_Stick_Func;
+        OnReturn_Bullet.Subscribe += OnReturn_Bullet_Message;
+
 
         _fCharacter_Move_Speed = 3f;
 
@@ -90,6 +115,7 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     private void OnDestroy()
     {
         OnMove_Stick.Subscribe -= OnMove_Stick_Func;
+        OnReturn_Bullet.Subscribe -= OnReturn_Bullet_Message;
 
     }
 
@@ -105,6 +131,7 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         if (pMessage.vecMoveDir == Vector2.zero)
         {
             _pCur_Character.DoPlay_IdleAnim();
+            _pCur_Character.DoStop();
         }
         else
         {
@@ -117,6 +144,7 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             {
                 _pCur_Character.DoChange_Dir(EDir.Dir_Left);
             }
+            _pCur_Character.DoMove(vecMoveDir);
         }
     }
 
@@ -131,7 +159,8 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             var pNewBullet = _pPool_Bullet.DoPop(_pOriginal_Bullet);
             pNewBullet.SetActive(true);
             pNewBullet.transform.SetParent(transform);
-            
+            pNewBullet.transform.position = _pCur_Character.transform.position + new Vector3(0, 0.5f, 0);
+
             _list_Cur_Using_Bullet.Add(pNewBullet);
 
             Vector2 vecTargetPos = Vector2.one;
@@ -148,7 +177,26 @@ public class PlayerManager : MonoSingleton<PlayerManager>
 
             yield return _ws_Fire_Bullet_Term;
         }
+    }
 
+    private void OnReturn_Bullet_Message(ReturnBulletMessage pMessage)
+    {
+        if (!pMessage.bIsAlive)
+        {
+            var pReturnBullet = pMessage.pBullet;
+
+            for (int i = 0; i < _list_Cur_Using_Bullet.Count; ++i)
+            {
+                if (_list_Cur_Using_Bullet[i].transform == pReturnBullet.transform)
+                {
+                    _list_Cur_Using_Bullet[i].SetActive(false);
+                    
+                    _pPool_Bullet.DoPush(_list_Cur_Using_Bullet[i]);
+                    _list_Cur_Using_Bullet.Remove(_list_Cur_Using_Bullet[i]);
+                    break;
+                }
+            }
+        }
     }
 
 }
