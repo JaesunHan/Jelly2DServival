@@ -9,21 +9,22 @@ public class Panel_Main : PanelBase
     public float fMax_MP = 100;
     public float fCur_MP { get; private set; } = 0f;
 
-    private Image _pImage_Slider_Front = null;
+    //private Image _pImage_Slider_Front = null;
+    private Slider _pSlider_MP = null;
     
     protected override void OnAwake()
     {
         base.OnAwake();
 
-        if (null == _pImage_Slider_Front)
+        if (null == _pSlider_MP)
         {
-            var arrImages = GetComponentsInChildren<Image>();
+            var arrImages = GetComponentsInChildren<Slider>();
 
             for (int i = 0; i < arrImages.Length; ++i)
             {
-                if ("Image_Slider_Front" == arrImages[i].name)
+                if ("Slider_MP" == arrImages[i].name)
                 {
-                    _pImage_Slider_Front = arrImages[i];
+                    _pSlider_MP = arrImages[i];
 
                     break;
                 }
@@ -48,7 +49,9 @@ public class Panel_Main : PanelBase
     public void DoInit()
     {
         fCur_MP = 1;
-        _pImage_Slider_Front.fillAmount = fCur_MP / fMax_MP;
+        //_pImage_Slider_Front.fillAmount = fCur_MP / fMax_MP;
+        _pSlider_MP.maxValue = fMax_MP;
+        _pSlider_MP.value = (float)fCur_MP / (float)fMax_MP;
     }
 
     /// <summary>
@@ -59,8 +62,8 @@ public class Panel_Main : PanelBase
         if (!pMessage.bIsAlive)
         {
             fCur_MP += pMessage.pEnemyBase.pEnemyData.fGetMP;
-
-            _pImage_Slider_Front.fillAmount = fCur_MP / fMax_MP;
+            
+            _pSlider_MP.value = fCur_MP / fMax_MP;
         }
     
     }

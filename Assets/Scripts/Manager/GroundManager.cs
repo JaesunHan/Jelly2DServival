@@ -79,12 +79,12 @@ public class GroundManager : ObjectBase
 
         _ws_Check_OutOfRange = new WaitForSeconds(5f);
 
-        PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Joystick_Func;
+        PlayerManager_HJS.instance.OnMove_Stick.Subscribe += OnMove_Joystick_Func;
     }
 
     private void OnDestroy()
     {
-        PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Joystick_Func;
+        PlayerManager_HJS.instance.OnMove_Stick.Subscribe -= OnMove_Joystick_Func;
     }
 
     private void Start()
@@ -119,7 +119,7 @@ public class GroundManager : ObjectBase
         StartCoroutine(nameof(OnCoroutine_Check_OutOf_Range));
     }
 
-    private void OnMove_Joystick_Func(PlayerManager.MoveJoystickMessage pMessage)
+    private void OnMove_Joystick_Func(PlayerManager_HJS.MoveJoystickMessage pMessage)
     {
         _vecJoystic_Move_Dir = pMessage.vecMoveDir;
 

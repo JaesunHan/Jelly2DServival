@@ -67,7 +67,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         _vecDrag_Dir = Vector2.zero;
         StopAllCoroutines();
         _pRectTransform_Stick.anchoredPosition = Vector2.zero;
-        PlayerManager.instance.OnMove_Stick.DoNotify(new PlayerManager.MoveJoystickMessage(_vecDrag_Dir));
+        PlayerManager_HJS.instance.OnMove_Stick.DoNotify(new PlayerManager_HJS.MoveJoystickMessage(_vecDrag_Dir));
     }
 
 
@@ -77,7 +77,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         {
             //_pRectTransform_Stick.anchoredPosition = _vecDrag_Dir * Time.deltaTime * 1000f;
             //DebugLogManager.Log($"SendMessage / vecDragDir : {_vecDrag_Dir}");
-            PlayerManager.instance.OnMove_Stick.DoNotify(new PlayerManager.MoveJoystickMessage(_vecDrag_Dir));
+            PlayerManager_HJS.instance.OnMove_Stick.DoNotify(new PlayerManager_HJS.MoveJoystickMessage(_vecDrag_Dir));
 
             yield return null;
         }

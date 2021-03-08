@@ -9,7 +9,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// <summary>
     /// 기본적으로 2초에 하나씩 적이 생성된다.
     /// </summary>
-    const float const_fDefault_Respawn_Term_Time = 2f;
+    const float const_fDefault_Respawn_Term_Time = 1.5f;
 
     public struct ReturnEnemyMessage
     {
@@ -114,7 +114,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         //임시로 Init과 동시에 true 로 변경한다.  
         bIsPlaying = true;
 
-        _fPlayer_Move_Speed = PlayerManager.instance.DoGet_Player_Move_Speed();
+        _fPlayer_Move_Speed = PlayerManager_HJS.instance.DoGet_Player_Move_Speed();
 
         StartGame();
         AddSubScribe();
@@ -129,7 +129,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         EnemyBase pEnemyBase = null;
 
         float fMinDist = 100f;
-        Vector2 vecPlayerPos = PlayerManager.instance.DoGet_Cur_Player_WorldPos();
+        Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
 
         for (int i = 0; i < _list_Enemy.Count; ++i)
         {
@@ -155,14 +155,14 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         //PlayerManager.instance.OnMove_Stick.Subscribe += OnMove_Stick_Func;
         OnReturn_Enemy.Subscribe += OnReturn_Enemy_Func;
-        PlayerManager.instance.OnMove_Stick.Subscribe += OnJoystick_Move_Func;
+        PlayerManager_HJS.instance.OnMove_Stick.Subscribe += OnJoystick_Move_Func;
     }
 
     private void OnDestroy()
     {
         //PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Stick_Func;
         OnReturn_Enemy.Subscribe -= OnReturn_Enemy_Func;
-        PlayerManager.instance.OnMove_Stick.Subscribe -= OnJoystick_Move_Func;
+        PlayerManager_HJS.instance.OnMove_Stick.Subscribe -= OnJoystick_Move_Func;
     }
 
     private void StartGame()
@@ -181,7 +181,9 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             if (_vecJoystic_Move_Dir == Vector2.zero)
                 _vecJoystic_Move_Dir = Vector2.one;
 
-            Vector3 vecRespawnPosition = PlayerManager.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *10, _vecJoystic_Move_Dir.y * 10);
+            int iRandomRangeX = Random.Range(10, 17);
+            int iRandomRangeY = Random.Range(9, 11);
+            Vector3 vecRespawnPosition = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *iRandomRangeX, _vecJoystic_Move_Dir.y * iRandomRangeY);
 
             //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
             EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();
@@ -232,7 +234,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         }
     }
 
-    private void OnJoystick_Move_Func(PlayerManager.MoveJoystickMessage pMessage)
+    private void OnJoystick_Move_Func(PlayerManager_HJS.MoveJoystickMessage pMessage)
     {
         _vecJoystic_Move_Dir = pMessage.vecMoveDir;
     }

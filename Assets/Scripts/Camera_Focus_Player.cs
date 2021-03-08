@@ -12,7 +12,7 @@ public class Camera_Focus_Player : ObjectBase
 
         if (null == _pPlayerCharacter)
         {
-            _pPlayerCharacter = PlayerManager.instance.DoGet_Cur_Player_Character();
+            _pPlayerCharacter = PlayerManager_HJS.instance.DoGet_Cur_Player_Character();
         }
     }
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class Camera_Focus_Player : ObjectBase
         }
         else
         {
-            _pPlayerCharacter = PlayerManager.instance.DoGet_Cur_Player_Character();
+            _pPlayerCharacter = PlayerManager_HJS.instance.DoGet_Cur_Player_Character();
         }
     }
 }

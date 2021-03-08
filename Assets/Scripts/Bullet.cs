@@ -41,7 +41,7 @@ public class Bullet : ObjectBase
         bIsAlive = true;
         _vecTargetPos = vecDestPos;
 
-        Vector2 vecPlayerPos = PlayerManager.instance.DoGet_Cur_Player_WorldPos();
+        Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
 
         _vecMoveDir = (vecDestPos - vecPlayerPos).normalized;
         Vector2 vecForce = _vecMoveDir * _fMoveSpeed;
@@ -67,7 +67,7 @@ public class Bullet : ObjectBase
 
         _pRigidyBody.velocity = Vector2.zero;
 
-        PlayerManager.instance.OnReturn_Bullet.DoNotify(new PlayerManager.ReturnBulletMessage(this, bIsAlive));
+        PlayerManager_HJS.instance.OnReturn_Bullet.DoNotify(new PlayerManager_HJS.ReturnBulletMessage(this, bIsAlive));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,7 +81,7 @@ public class Bullet : ObjectBase
             _pRigidyBody.velocity = Vector2.zero;
             pColTarget.DoKnockback(_vecMoveDir);
 
-            PlayerManager.instance.OnReturn_Bullet.DoNotify(new PlayerManager.ReturnBulletMessage(this, bIsAlive));
+            PlayerManager_HJS.instance.OnReturn_Bullet.DoNotify(new PlayerManager_HJS.ReturnBulletMessage(this, bIsAlive));
         }
     }
 

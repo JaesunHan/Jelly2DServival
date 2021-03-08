@@ -67,7 +67,7 @@ public class EnemyBase : ObjectBase
         _pCollider2d.offset = new Vector2(0, this.pEnemyData.fColliderPosY);
         _pCollider2d.radius = this.pEnemyData.fColliderRadius;
 
-        _vecPlayer_Pos = PlayerManager.instance.DoGet_Cur_Player_Character().transform.position;
+        _vecPlayer_Pos = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform.position;
 
         //_pRigidbody.velocity = Vector2.zero;
         Tracing_Player();
@@ -112,7 +112,7 @@ public class EnemyBase : ObjectBase
         {
             Vector2 vecCurPos = transform.position;
 
-            _vecPlayer_Pos = PlayerManager.instance.DoGet_Cur_Player_Character().transform.position;
+            _vecPlayer_Pos = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform.position;
             Vector2 vecMoveDir = (_vecPlayer_Pos - vecCurPos).normalized;
 
             transform.position += (Vector3)(vecMoveDir * Time.deltaTime * (pEnemyData.fMoveSpeed) );
