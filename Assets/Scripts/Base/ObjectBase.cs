@@ -11,7 +11,7 @@ public class ObjectBase : MonoBehaviour
 
     protected virtual void OnAwake()
     {
-        
+        GetComponentAttributeSetter.DoUpdate_GetComponentAttribute(this);
     }
 
     public virtual void SetActive(bool bIsActive)

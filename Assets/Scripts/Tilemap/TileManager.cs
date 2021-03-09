@@ -9,9 +9,13 @@ public class TileManager : MonoSingleton<TileManager>
     /// <summary>
     /// 0을 기준으로 좌우로 25만큼씩 기본타일 생성
     /// </summary>
-    const int const_iDefault_Count_OneSide = 25;
+    const int const_iDefault_Count_OneSide = 500;
 
     private Tilemap _pTilemap = null;
+
+    private WaitForSeconds _ws_Check_Term = null;
+
+    private int iMaxMovePos = 0;
 
     protected override void OnAwake()
     {
@@ -21,6 +25,8 @@ public class TileManager : MonoSingleton<TileManager>
         {
             _pTilemap = GetComponentInChildren<Tilemap>();
         }
+
+        _ws_Check_Term = new WaitForSeconds(2);
     }
 
     private void Start()
@@ -41,5 +47,31 @@ public class TileManager : MonoSingleton<TileManager>
                 _pTilemap.SetTile(pos, newTile);
             }
         }
+
+        iMaxMovePos = const_iDefault_Count_OneSide - 12;
     }
+
+    ///// <summary>
+    ///// 플레이어가 움직였다는 신호를 받았을 때  플레이어의 위치를 체크해서 맵을 넓힌다.
+    ///// </summary>
+    ///// <returns></returns>
+    //private void OnMove_Joystick_Func(PlayerManager_HJS.MoveJoystickMessage pMessage)
+    //{
+    //    Vector2 vecMoveDir = pMessage.vecMoveDir;
+
+    //    Vector2 vecCurPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
+
+    //    if(vecCurPlayerPos.x < -iMaxMovePos || vecCurPlayerPos.x > iMaxMovePos ||
+    //        vecCurPlayerPos.y < - iMaxMovePos || vecCurPlayerPos.y > iMaxMovePos)
+    //    {
+    //        for (int i = iMaxMovePos; i < const_iDefault_Count_OneSide; ++i)
+    //        {
+    //            iMaxMovePos += const_iDefault_Count_OneSide;
+    //            Vector3Int posLeft = new Vector3Int(i, j, 0);
+    //            //_pTilemap.
+    //        }
+
+    //    }
+    //}
+
 }

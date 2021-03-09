@@ -7,19 +7,25 @@ public class PlayerCharacter : ObjectBase
 {
     const float const_fMove_Speed = 1.5f;
 
-    private Animator _pAnim = null;
+    //private Animator _pAnim = null;
 
     private Transform _pSprite_Transform = null;
 
     private Rigidbody2D _pRigidbody = null;
+
+    [GetComponentInChildren]
+    private SPUM_Prefabs _pSPUM_Prefabs = null;
+
+    [GetComponentInChildren("Pos_MagicFire")]
+    private Transform _pTransform_Pos_Magic_Fire = null;
     protected override void OnAwake()
     {
         base.OnAwake();
-        if (null == _pAnim)
-        {
-            _pAnim = GetComponentInChildren<Animator>(true);
-            _pSprite_Transform = _pAnim.transform;
-        }
+        //if (null == _pAnim)
+        //{
+        //    _pAnim = GetComponentInChildren<Animator>(true);
+        //    _pSprite_Transform = _pAnim.transform;
+        //}
 
         if (null == _pRigidbody)
         {
@@ -29,18 +35,25 @@ public class PlayerCharacter : ObjectBase
 
     public void DoPlay_WalkAnim()
     {
-        if (false == IsExist_Anim())
-            return;
+        _pSPUM_Prefabs.PlayAnimation((int)EPlayerState.Run);
+        //if (false == IsExist_Anim())
+        //    return;
 
-        _pAnim.SetBool("isWalk", true);
+        //_pAnim.SetBool("Run", true);
     }
 
     public void DoPlay_IdleAnim()
     {
-        if (false == IsExist_Anim())
-            return;
+        _pSPUM_Prefabs.PlayAnimation((int)EPlayerState.Idle);
+        //if (false == IsExist_Anim())
+        //    return;
 
-        _pAnim.SetBool("isWalk", false);
+        //_pAnim.SetBool("isWalk", false);
+    }
+
+    public void DoPlay_AttackMagicAnim()
+    {
+        _pSPUM_Prefabs.PlayAnimation((int)EPlayerState.Attack_Magic);
     }
 
     public void DoChange_Dir(EDir eDir)
@@ -58,17 +71,12 @@ public class PlayerCharacter : ObjectBase
         _pRigidbody.velocity = Vector2.zero;
     }
 
-    private bool IsExist_Anim()
+    /// <summary>
+    /// 마법 공격시 발사 지점 반환
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 DoGet_Pos_Magic_Fire()
     {
-        if (null != _pAnim)
-            return true;
-        else
-        {
-            DebugLogManager.LogError("There's no Animator Component");
-            return false;
-        }
+        return _pTransform_Pos_Magic_Fire.position;
     }
-
-    
-
 }

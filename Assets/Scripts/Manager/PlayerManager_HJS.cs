@@ -5,7 +5,7 @@ using CommonData;
 
 public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 {
-    const float const_fFire_Bullet_Term = 0.5f;
+    const float const_fFire_Bullet_Term = 1f;
 
     public struct MoveJoystickMessage
     {
@@ -112,6 +112,11 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         return _fCharacter_Move_Speed;
     }
 
+    public Vector3 DoGet_Pos_Magic_Fire()
+    {
+        return _pCur_Character.DoGet_Pos_Magic_Fire();
+    }
+
     private void OnDestroy()
     {
         //OnMove_Stick.Subscribe -= OnMove_Stick_Func;
@@ -161,7 +166,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
             var pNewBullet = _pPool_Bullet.DoPop(_pOriginal_Bullet);
             pNewBullet.SetActive(true);
             pNewBullet.transform.SetParent(transform);
-            pNewBullet.transform.position = _pCur_Character.transform.position + new Vector3(0, 0.5f, 0);
+            //pNewBullet.transform.position = _pCur_Character.transform.position + new Vector3(0, 0.5f, 0);
 
             _list_Cur_Using_Bullet.Add(pNewBullet);
 
@@ -175,11 +180,20 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
                 vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
             }
             //DebugLogManager.Log($"Target Pos : {vecTargetPos}");
+            
+            _pCur_Character.DoPlay_AttackMagicAnim();
+
             pNewBullet.DoFire(vecTargetPos);
+
+            //if (vecTargetPos.x > _pCur_Character.transform.position.x)
+            //    _pCur_Character.DoChange_Dir(EDir.Dir_Right);
+            //else
+            //    _pCur_Character.DoChange_Dir(EDir.Dir_Left);
 
             yield return _ws_Fire_Bullet_Term;
         }
     }
+
 
     private void OnReturn_Bullet_Message(ReturnBulletMessage pMessage)
     {

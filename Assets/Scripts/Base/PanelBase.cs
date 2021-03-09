@@ -14,6 +14,7 @@ public class PanelBase : MonoBehaviour
     protected virtual void OnAwake()
     {
         ButtonHelper.DoInit_HasUIElement(this);
+        GetComponentAttributeSetter.DoUpdate_GetComponentAttribute(this);
     }
 
     //public virtual void DoInit()

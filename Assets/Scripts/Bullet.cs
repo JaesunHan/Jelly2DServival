@@ -18,6 +18,8 @@ public class Bullet : ObjectBase
     /// </summary>
     public float fDamage { get; private set; } = 1f;
 
+    private Vector2 _vecDestPos = Vector2.zero;
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -41,11 +43,19 @@ public class Bullet : ObjectBase
         bIsAlive = true;
         _vecTargetPos = vecDestPos;
 
+        Invoke(nameof(Fire_Term), 0.3f);
+    }
+
+    private void Fire_Term()
+    {
         Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
 
-        _vecMoveDir = (vecDestPos - vecPlayerPos).normalized;
+        _vecMoveDir = (_vecTargetPos - vecPlayerPos).normalized;
         Vector2 vecForce = _vecMoveDir * _fMoveSpeed;
-        
+
+        Vector3 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
+        vecFireStartPos.z = 0;
+        transform.localPosition = vecFireStartPos;
         _pRigidyBody.velocity = vecForce;
 
         StartCoroutine(nameof(OnCoroutine_Move_Bullet));

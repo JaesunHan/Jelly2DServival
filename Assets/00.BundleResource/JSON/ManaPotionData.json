@@ -1,0 +1,28 @@
+{
+  "array": [
+    {
+      "strManaPotion": "Potion_0",
+      "fGetMP": "5",
+      "iAppearWave": "0",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/0_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_1",
+      "fGetMP": "7",
+      "iAppearWave": "1",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/1_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_2",
+      "fGetMP": "11",
+      "iAppearWave": "2",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/2_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_3",
+      "fGetMP": "17",
+      "iAppearWave": "3",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/3_Potion.png"
+    }
+  ]
+}
