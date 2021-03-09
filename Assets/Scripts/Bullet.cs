@@ -10,6 +10,8 @@ public class Bullet : ObjectBase
     private Vector2 _vecTargetPos = Vector2.zero;
 
     private Rigidbody2D _pRigidyBody = null;
+    [GetComponent]
+    private SpriteRenderer _pSpriteRender = null;
 
     public bool bIsAlive { get; private set; } = false;
 
@@ -30,6 +32,8 @@ public class Bullet : ObjectBase
         }
 
         _fMoveSpeed = 30;
+
+        _pSpriteRender.enabled = false;
     }
 
     /// <summary>
@@ -40,22 +44,28 @@ public class Bullet : ObjectBase
     {
         StopAllCoroutines();
 
-        bIsAlive = true;
+        _pSpriteRender.enabled = false;
         _vecTargetPos = vecDestPos;
+
+        Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
+        transform.position = vecFireStartPos;
 
         Invoke(nameof(Fire_Term), 0.3f);
     }
 
     private void Fire_Term()
     {
-        Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
+        bIsAlive = true;
+        _pSpriteRender.enabled = true;
+        //Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire(); //DoGet_Cur_Player_WorldPos
+        Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
 
-        _vecMoveDir = (_vecTargetPos - vecPlayerPos).normalized;
+        _vecMoveDir = (_vecTargetPos - vecFireStartPos).normalized;
         Vector2 vecForce = _vecMoveDir * _fMoveSpeed;
 
-        Vector3 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
-        vecFireStartPos.z = 0;
-        transform.localPosition = vecFireStartPos;
+        //Vector3 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
+        //vecFireStartPos = 0;
+        transform.position = vecFireStartPos;
         _pRigidyBody.velocity = vecForce;
 
         StartCoroutine(nameof(OnCoroutine_Move_Bullet));
@@ -82,6 +92,9 @@ public class Bullet : ObjectBase
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!bIsAlive)
+            return;
+
         var pColTarget = collision.GetComponent<EnemyBase>();
 
         if (null != pColTarget)
