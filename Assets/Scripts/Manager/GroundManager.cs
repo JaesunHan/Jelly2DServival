@@ -84,7 +84,7 @@ public class GroundManager : ObjectBase
 
     private void OnDestroy()
     {
-        PlayerManager_HJS.instance.OnMove_Stick.Subscribe -= OnMove_Joystick_Func;
+        //PlayerManager_HJS.instance.OnMove_Stick.Subscribe -= OnMove_Joystick_Func;
     }
 
     private void Start()

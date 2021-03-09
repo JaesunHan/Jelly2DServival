@@ -114,9 +114,11 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     private void OnDestroy()
     {
-        OnMove_Stick.Subscribe -= OnMove_Stick_Func;
-        OnReturn_Bullet.Subscribe -= OnReturn_Bullet_Message;
+        //OnMove_Stick.Subscribe -= OnMove_Stick_Func;
+        //OnReturn_Bullet.Subscribe -= OnReturn_Bullet_Message;
 
+        OnMove_Stick.DoRemove_All_Observer();
+        OnReturn_Bullet.DoRemove_All_Observer();
     }
 
     private void Start()

@@ -36,7 +36,7 @@ public class Panel_Main : PanelBase
 
     private void OnDestroy()
     {
-        EnemyManager.instance.OnReturn_Enemy.Subscribe -= OnRetrun_Enemy_Func;
+        //EnemyManager.instance.OnReturn_Enemy.Subscribe -= OnRetrun_Enemy_Func;
     }
 
     public override void DoShow()

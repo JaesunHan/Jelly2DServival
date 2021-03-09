@@ -64,6 +64,11 @@ public class Observer_Pattern<Args> : Singleton<Observer_Pattern<Args>>
             _mapObserver.Remove(OnNotify);
     }
 
+    public void DoRemove_All_Observer()
+    {
+        _mapObserver.Clear();
+    }
+
     public void DoNotify(Args arg)
     {
         _bIsNotifying = true;

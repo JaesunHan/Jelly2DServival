@@ -61,7 +61,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         base.OnAwake();
 
         iCurWave = 0;
-        _pEnemyBase_Original.SetActive(false);
+        if(null != _pEnemyBase_Original)
+            _pEnemyBase_Original.SetActive(false);
 
         StartCoroutine(nameof(OnCoroutine_Awake));
     }
@@ -160,9 +161,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
     private void OnDestroy()
     {
-        //PlayerManager.instance.OnMove_Stick.Subscribe -= OnMove_Stick_Func;
-        OnReturn_Enemy.Subscribe -= OnReturn_Enemy_Func;
-        PlayerManager_HJS.instance.OnMove_Stick.Subscribe -= OnJoystick_Move_Func;
+        OnReturn_Enemy.DoRemove_All_Observer();
     }
 
     private void StartGame()
