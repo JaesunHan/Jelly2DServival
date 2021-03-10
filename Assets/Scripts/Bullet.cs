@@ -18,7 +18,7 @@ public class Bullet : ObjectBase
     /// <summary>
     /// 탄환의 데미지 
     /// </summary>
-    public float fDamage { get; private set; } = 1f;
+    public float fDamage { get; private set; } = 3f;
 
     private Vector2 _vecDestPos = Vector2.zero;
 
@@ -31,7 +31,9 @@ public class Bullet : ObjectBase
             _pRigidyBody = GetComponent<Rigidbody2D>();
         }
 
-        _fMoveSpeed = 30;
+        _fMoveSpeed = 7;
+
+        fDamage = 2f;
 
         _pSpriteRender.enabled = false;
     }
@@ -50,21 +52,19 @@ public class Bullet : ObjectBase
         Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
         transform.position = vecFireStartPos;
 
-        Invoke(nameof(Fire_Term), 0.3f);
+        Invoke(nameof(Fire_Term), 0.7f);
     }
 
     private void Fire_Term()
     {
         bIsAlive = true;
         _pSpriteRender.enabled = true;
-        //Vector2 vecPlayerPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire(); //DoGet_Cur_Player_WorldPos
+        
         Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
 
         _vecMoveDir = (_vecTargetPos - vecFireStartPos).normalized;
         Vector2 vecForce = _vecMoveDir * _fMoveSpeed;
 
-        //Vector3 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
-        //vecFireStartPos = 0;
         transform.position = vecFireStartPos;
         _pRigidyBody.velocity = vecForce;
 
@@ -76,10 +76,11 @@ public class Bullet : ObjectBase
         float fMovingTime = 0;
 
         //일정 시간동안 총알이 정해진 방향으로 날아간다.
-        while (fMovingTime <= 0.3f)
+        transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        while (fMovingTime <= 1.5f)
         {
             fMovingTime += Time.fixedDeltaTime;
-
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * 0.5f, Time.fixedDeltaTime * 2f);
             yield return new WaitForFixedUpdate();
         }
 

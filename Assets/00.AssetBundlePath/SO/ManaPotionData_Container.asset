@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-736301445580506596
+--- !u!114 &-8198810397138130748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
-  m_Name: Potion_0
+  m_Name: Potion_3
   m_EditorClassIdentifier: 
-  strManaPotion: Potion_0
-  fGetMP: 5
-  iAppearWave: 0
-  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/0_Potion.png
-  eManaPotion: 0
-  pFile: {fileID: 21300000, guid: bb78bd373ac22a14797246378a9cd219, type: 3}
+  strManaPotion: Potion_3
+  fGetMP: 80
+  iAppearWave: 3
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/3_Potion.png
+  eManaPotion: 3
+  pFile: {fileID: 21300000, guid: 6d4822e8fcff5864396243adb251b488, type: 3}
+--- !u!114 &-1904187167842739577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
+  m_Name: Potion_1
+  m_EditorClassIdentifier: 
+  strManaPotion: Potion_1
+  fGetMP: 30
+  iAppearWave: 1
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/1_Potion.png
+  eManaPotion: 1
+  pFile: {fileID: 21300000, guid: 62b09031e266eb54693b441cbbd14efc, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,11 +49,11 @@ MonoBehaviour:
   m_Name: ManaPotionData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &1608754311844329823
+  - {fileID: 4953221108202965189}
+  - {fileID: -1904187167842739577}
+  - {fileID: 9145576557446099407}
+  - {fileID: -8198810397138130748}
+--- !u!114 &4953221108202965189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,15 +63,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
-  m_Name: Potion_1
+  m_Name: Potion_0
   m_EditorClassIdentifier: 
-  strManaPotion: Potion_1
-  fGetMP: 7
-  iAppearWave: 1
-  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/1_Potion.png
-  eManaPotion: 1
-  pFile: {fileID: 21300000, guid: 62b09031e266eb54693b441cbbd14efc, type: 3}
---- !u!114 &1978925670848729579
+  strManaPotion: Potion_0
+  fGetMP: 20
+  iAppearWave: 0
+  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/0_Potion.png
+  eManaPotion: 0
+  pFile: {fileID: 21300000, guid: bb78bd373ac22a14797246378a9cd219, type: 3}
+--- !u!114 &9145576557446099407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,26 +84,8 @@ MonoBehaviour:
   m_Name: Potion_2
   m_EditorClassIdentifier: 
   strManaPotion: Potion_2
-  fGetMP: 11
+  fGetMP: 50
   iAppearWave: 2
   strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/2_Potion.png
   eManaPotion: 2
   pFile: {fileID: 21300000, guid: 0d140b19128bd154c826e1d8ed8b0c52, type: 3}
---- !u!114 &3410413275616943205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
-  m_Name: Potion_3
-  m_EditorClassIdentifier: 
-  strManaPotion: Potion_3
-  fGetMP: 17
-  iAppearWave: 3
-  strSpritePath: Assets/00.AssetBundlePath/Sprite/InGame/Potion/3_Potion.png
-  eManaPotion: 3
-  pFile: {fileID: 21300000, guid: 6d4822e8fcff5864396243adb251b488, type: 3}

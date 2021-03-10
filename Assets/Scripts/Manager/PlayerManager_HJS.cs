@@ -5,7 +5,7 @@ using CommonData;
 
 public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 {
-    const float const_fFire_Bullet_Term = 1f;
+    const float const_fFire_Bullet_Term = 2f;
 
     public struct MoveJoystickMessage
     {
@@ -36,6 +36,20 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         }
     }
 
+    /// <summary>
+    /// 마나를 획득했을 때 발생하는 메시지이다.
+    /// </summary>
+    public struct GetMPMessage
+    {
+        public float fGetMP;
+
+        public GetMPMessage(float fGetMP)
+        {
+            this.fGetMP = fGetMP;
+        }
+        
+    }
+
     [SerializeField]
     private PlayerCharacter _pOriginal_PlayerCharacter = null;
 
@@ -53,10 +67,38 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     private Pooling_Component<Bullet> _pPool_Bullet = Pooling_Component<Bullet>.instance;
     private List<Bullet> _list_Cur_Using_Bullet = new List<Bullet>();
 
+    /// <summary>
+    /// 현재 타겟의 위치를 멤버 변수에 저장한다.
+    /// </summary>
+    private Vector2 _vec_CurTarget = Vector2.zero;
+
     public Observer_Pattern<MoveJoystickMessage> OnMove_Stick { get; private set; } = Observer_Pattern<MoveJoystickMessage>.instance;
 
     public Observer_Pattern<ReturnBulletMessage> OnReturn_Bullet { get; private set; } = Observer_Pattern<ReturnBulletMessage>.instance;
-    //public Observer_Pattern<>
+    /// <summary>
+    /// 마나를 획득했을 때의 옵저버패턴이다.
+    /// </summary>
+    public Observer_Pattern<GetMPMessage> OnGet_MP { get; private set; } = Observer_Pattern<GetMPMessage>.instance;
+
+    /// <summary>
+    /// 마나 포인트 값이 변경되었는지를 체크하는 옵저버패턴이다.
+    /// </summary>
+    public Observer_Pattern<float> OnChange_MP { get; private set; } = Observer_Pattern<float>.instance;
+    private float _fCur_MP = 0;
+
+    public float fCur_MP
+    {
+        get { return _fCur_MP; }
+    }
+
+    //public float fCur_MP {
+    //    get 
+    //    {
+    //        return _fCur_MP;
+    //    }
+        
+    //}
+    
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -78,15 +120,6 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         {
             _list_Cur_Using_Bullet = new List<Bullet>();
         }
-        
-
-        OnMove_Stick.Subscribe += OnMove_Stick_Func;
-        OnReturn_Bullet.Subscribe += OnReturn_Bullet_Message;
-
-
-        _fCharacter_Move_Speed = 3f;
-
-        _ws_Fire_Bullet_Term = new WaitForSeconds(const_fFire_Bullet_Term);
 
         if (null == _pOriginal_Bullet)
         {
@@ -94,7 +127,11 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
             _pOriginal_Bullet.SetActive(false);
         }
 
-        _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
+        _ws_Fire_Bullet_Term = new WaitForSeconds(const_fFire_Bullet_Term);
+
+        OnMove_Stick.Subscribe += OnMove_Stick_Func;
+        OnReturn_Bullet.Subscribe += OnReturn_Bullet_Message;
+        OnGet_MP.Subscribe += OnGet_MP_Func;
     }
 
     public PlayerCharacter DoGet_Cur_Player_Character()
@@ -119,15 +156,24 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     private void OnDestroy()
     {
-        //OnMove_Stick.Subscribe -= OnMove_Stick_Func;
-        //OnReturn_Bullet.Subscribe -= OnReturn_Bullet_Message;
-
         OnMove_Stick.DoRemove_All_Observer();
         OnReturn_Bullet.DoRemove_All_Observer();
+        OnGet_MP.DoRemove_All_Observer();
     }
 
-    private void Start()
+    //private void Start()
+    //{
+    //    StartCoroutine(nameof(OnCoroutine_Fire_Bullet));
+    //}
+
+    public void DoInit()
     {
+        _fCharacter_Move_Speed = 3f;
+
+        _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
+
+        _fCur_MP = 0;
+
         StartCoroutine(nameof(OnCoroutine_Fire_Bullet));
     }
 
@@ -185,10 +231,10 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
             pNewBullet.DoFire(vecTargetPos);
 
-            //if (vecTargetPos.x > _pCur_Character.transform.position.x)
-            //    _pCur_Character.DoChange_Dir(EDir.Dir_Right);
-            //else
-            //    _pCur_Character.DoChange_Dir(EDir.Dir_Left);
+            if (vecTargetPos.x > _pCur_Character.transform.position.x)
+                _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Right);
+            else
+                _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Left);
 
             yield return _ws_Fire_Bullet_Term;
         }
@@ -215,4 +261,9 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         }
     }
 
+    private void OnGet_MP_Func(GetMPMessage pMessage)
+    {
+        _fCur_MP = _fCur_MP + pMessage.fGetMP;
+        OnChange_MP.DoNotify(_fCur_MP);
+    }
 }

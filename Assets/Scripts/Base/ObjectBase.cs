@@ -19,5 +19,8 @@ public class ObjectBase : MonoBehaviour
         gameObject.SetActive(bIsActive);
     }
 
-    
+    public void DoAwake()
+    {
+        Awake();
+    }
 }

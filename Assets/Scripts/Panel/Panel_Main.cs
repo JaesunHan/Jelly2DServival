@@ -31,7 +31,8 @@ public class Panel_Main : PanelBase
             }
         }
 
-        EnemyManager.instance.OnReturn_Enemy.Subscribe += OnRetrun_Enemy_Func;
+        //EnemyManager.instance.OnReturn_Enemy.Subscribe += OnRetrun_Enemy_Func;
+        PlayerManager_HJS.instance.OnChange_MP.Subscribe += OnChange_MP_Func;
     }
 
     private void OnDestroy()
@@ -50,21 +51,26 @@ public class Panel_Main : PanelBase
     {
         fCur_MP = 1;
         //_pImage_Slider_Front.fillAmount = fCur_MP / fMax_MP;
-        _pSlider_MP.maxValue = fMax_MP;
+        _pSlider_MP.maxValue = 1;
         _pSlider_MP.value = (float)fCur_MP / (float)fMax_MP;
     }
 
-    /// <summary>
-    /// 적을 처치했을 때 구독하고 있는 OnReturn_Enemy 로부터 정보를 받는다.
-    /// </summary>
-    private void OnRetrun_Enemy_Func(EnemyManager.ReturnEnemyMessage pMessage)
+    ///// <summary>
+    ///// 적을 처치했을 때 구독하고 있는 OnReturn_Enemy 로부터 정보를 받는다.
+    ///// </summary>
+    //private void OnRetrun_Enemy_Func(EnemyManager.ReturnEnemyMessage pMessage)
+    //{
+    //    if (!pMessage.bIsAlive)
+    //    {
+    //        fCur_MP += pMessage.pEnemyBase.pEnemyData.fGetMP;
+
+    //        _pSlider_MP.value = fCur_MP / fMax_MP;
+    //    }
+    //}
+
+    private void OnChange_MP_Func(float fCurMP)
     {
-        if (!pMessage.bIsAlive)
-        {
-            fCur_MP += pMessage.pEnemyBase.pEnemyData.fGetMP;
-            
-            _pSlider_MP.value = fCur_MP / fMax_MP;
-        }
-    
+        fCur_MP = fCurMP;
+        _pSlider_MP.value = fCur_MP / fMax_MP;
     }
 }

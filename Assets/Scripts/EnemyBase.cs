@@ -115,13 +115,33 @@ public class EnemyBase : ObjectBase
             _vecPlayer_Pos = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform.position;
             Vector2 vecMoveDir = (_vecPlayer_Pos - vecCurPos).normalized;
 
+            if (_vecPlayer_Pos.x < transform.position.x)
+                _pSprite_Jelly.transform.localScale = new Vector3(-1, 1, 1);
+            else
+                _pSprite_Jelly.transform.localScale = new Vector3(1, 1, 1);
+
             transform.position += (Vector3)(vecMoveDir * Time.deltaTime * (pEnemyData.fMoveSpeed) );
             //_pRigidbody.velocity = vecMoveDir * _pEnemyData.fMoveSpeed;
 
             yield return null;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet pBullet = collision.GetComponent<Bullet>();
 
+        if (null != pBullet)
+        {
+            float fDamage = pBullet.fDamage;
+            _fHP -= fDamage;
+            if (0 >= _fHP)
+            {
+                bIsAlive = false;
+                EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
+                PlayerManager_HJS.instance.OnGet_MP.DoNotify(new PlayerManager_HJS.GetMPMessage(pEnemyData.fGetMP));
+            }
+        }
+    }
 
     #region Legacy_Code
 
@@ -138,21 +158,7 @@ public class EnemyBase : ObjectBase
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Bullet pBullet = collision.GetComponent<Bullet>();
-
-        if (null != pBullet)
-        {
-            float fDamage = pBullet.fDamage;
-            _fHP -= fDamage;
-            if (0 >= _fHP)
-            {
-                bIsAlive = false;
-                EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
-            }
-        }
-    }
+    
 
     #endregion
 }

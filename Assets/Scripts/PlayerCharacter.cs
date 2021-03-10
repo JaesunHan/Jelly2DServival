@@ -18,6 +18,12 @@ public class PlayerCharacter : ObjectBase
 
     [GetComponentInChildren("Pos_MagicFire")]
     private Transform _pTransform_Pos_Magic_Fire = null;
+
+    /// <summary>
+    /// 마법 발사 애니메이터
+    /// </summary>
+    [GetComponentInChildren("MagicFire")]
+    private Animator _pAnim_Magic_Fire = null;
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -35,6 +41,7 @@ public class PlayerCharacter : ObjectBase
 
     public void DoPlay_WalkAnim()
     {
+        //if(_pSPUM_Prefabs.ePlayerState != EPlayerState.Attack_Magic)
         _pSPUM_Prefabs.PlayAnimation((int)EPlayerState.Run);
         //if (false == IsExist_Anim())
         //    return;
@@ -54,9 +61,21 @@ public class PlayerCharacter : ObjectBase
     public void DoPlay_AttackMagicAnim()
     {
         _pSPUM_Prefabs.PlayAnimation((int)EPlayerState.Attack_Magic);
+        
+        _pAnim_Magic_Fire.SetTrigger("trigger_Magic_Fire");
     }
 
     public void DoChange_Dir(EDir eDir)
+    {
+        if(_pSPUM_Prefabs.ePlayerState == EPlayerState.Run)
+            transform.localScale = new Vector3((int)eDir, 1, 1);
+    }
+
+    /// <summary>
+    /// 현재 발사하려는 방향을 바라보게 한다.
+    /// </summary>
+    /// <param name="eDir"></param>
+    public void DoLook_Fire_Dir(EDir eDir)
     {
         transform.localScale = new Vector3((int)eDir, 1, 1);
     }

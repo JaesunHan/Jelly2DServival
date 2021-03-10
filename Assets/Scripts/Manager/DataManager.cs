@@ -57,7 +57,7 @@ public partial class DataManager : MonoSingleton<DataManager>
     /// </summary>
     /// <param name="iWave"></param>
     /// <returns></returns>
-    public static EnemyData DoGet_Random_EnemyData_ByStageWave(int iWave)
+    public static EnemyData DoGet_Random_EnemyDatas_ByStageWave(int iWave)
     {
         EnemyData pEnemyData = null;
 
@@ -68,6 +68,44 @@ public partial class DataManager : MonoSingleton<DataManager>
         pEnemyData = list[iRandomIdx];
 
         return pEnemyData;
+    }
+
+    /// <summary>
+    /// 현재 웨이브에서 등장할 수 있는 마나포션 데이터들을 리스트로 반환한다
+    /// </summary>
+    /// <param name="iWave"></param>
+    /// <returns></returns>
+    public static List<ManaPotionData> DoGet_ManaPotionDatas_ByStageWave(int iWave)
+    {
+        List<ManaPotionData> list_CurWave_MP = new List<ManaPotionData>();
+        var listData = ManaPotionData_Container.instance.listData;
+        for (int i = 0; i < listData.Count; ++i)
+        {
+            if (listData[i].iAppearWave <= iWave)
+            {
+                list_CurWave_MP.Add(listData[i]);
+            }
+        }
+
+        return list_CurWave_MP;
+    }
+
+    /// <summary>
+    /// 현재 웨이브에 등장할 수 있는 마나 포션 중에서 하나를 랜덤으로 선택해서 반환한다.
+    /// </summary>
+    /// <param name="iWave"></param>
+    /// <returns></returns>
+    public static ManaPotionData DoGet_Random_ManaPotionData_ByStageWave(int iWave)
+    {
+        ManaPotionData pMPData = null;
+
+        var list = DoGet_ManaPotionDatas_ByStageWave(iWave);
+
+        int iRandomIdx = Random.Range(0, list.Count);
+
+        pMPData = list[iRandomIdx];
+
+        return pMPData;
     }
 
 
@@ -82,7 +120,7 @@ public partial class DataManager : MonoSingleton<DataManager>
 #if UNITY_EDITOR
         BundleLoadManager.instance.DoInit(eLoadLogic_OnEditor);
 #else
-    BundleLoadManager.instance.DoInit(BundleLoadManager.EBundleLoadLogic.StreamingAssets);
+        BundleLoadManager.instance.DoInit(BundleLoadManager.EBundleLoadLogic.StreamingAssets);
 #endif
 
         StartCoroutine(nameof(ResourceLoadAll_Coroutine));
@@ -135,6 +173,7 @@ public partial class DataManager : MonoSingleton<DataManager>
         bool bIsUpdateChildAsset = eLoadLogic_OnEditor == BundleLoadManager.EBundleLoadLogic.Editor && Application.isPlaying;
 
         EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
+        ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
 
         yield break;
     }

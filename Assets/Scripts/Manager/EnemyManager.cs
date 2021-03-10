@@ -101,7 +101,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             }
         }
 
-        DoInit();
+        //DoInit();
     }
 
     public void DoInit()
@@ -190,7 +190,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             pEnemyBase_Spawn.SetActive(true);
 
             //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
-            var pEnemyData = DataManager.DoGet_Random_EnemyData_ByStageWave(iCurWave);
+            var pEnemyData = DataManager.DoGet_Random_EnemyDatas_ByStageWave(iCurWave);
             pEnemyBase_Spawn.DoInit(pEnemyData);
 
             yield return _ws_Respawn_Term;
