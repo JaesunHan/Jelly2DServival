@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2643540392
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 86b5f4062cf1831795b7540f0c4d2cf2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 834bb62117003403c32d38d7ee9bed80
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/00.AssetBundlePath/Animation/MagicFire.controller
+- Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX10_0.controller
+- Assets/00.AssetBundlePath/Animation/Charging.anim
+- Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy11_0.anim
+- Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX11_0.controller
+- Assets/00.AssetBundlePath/Animation/Magic_Idle.anim
+- Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy10_0.anim
+Dependencies: []

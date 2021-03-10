@@ -1,59 +1,86 @@
 ManifestFileVersion: 0
-CRC: 1250628493
+CRC: 1843211448
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6f070760b591ae4b5ea868e57144ae68
+    Hash: bb38b4040f345b8f23ef50f229c7c528
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7c92feb8daf166311b3e47737bd87795
+    Hash: b7506faad1b59f65dda6f99a4bb3e78a
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/Sprite/UI/Medal.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Room.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 0.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile8.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile5.png
+- Assets/00.AssetBundlePath/Sprite/SpriteAtlas_Tile.spriteatlas
+- Assets/00.AssetBundlePath/Sprite/InGame/Potion/1_Potion.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile12.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 5.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 3.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 6.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile16.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile15.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Left Over.png
+- Assets/00.AssetBundlePath/Sprite/InGame/SlimeBullet.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Cloud A.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 4.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 4.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 1.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Right Over.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile13.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile3.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 6.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 10.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Cloud B.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 3.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 2 Over.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile2.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 8.png
+- Assets/00.AssetBundlePath/Sprite/Weapon/Arrow.png
+- Assets/00.AssetBundlePath/Sprite/InGame/Potion/0_Potion.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile1.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Right.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Left.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile4.png
+- Assets/00.AssetBundlePath/Sprite/InGame/Potion/3_Potion.png
+- Assets/00.AssetBundlePath/Sprite/InGame/Potion/2_Potion.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile14.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 4 Over.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile7.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 3 Over.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 7.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Shadow.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 11.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile6.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 2.png
 - Assets/00.AssetBundlePath/Sprite/Icon.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Under.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 7.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile10.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile9.png
 - Assets/00.AssetBundlePath/Sprite/UI/Lock.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 5.png
+- Assets/00.AssetBundlePath/Sprite/TileSet.spriteatlas
 - Assets/00.AssetBundlePath/Sprite/InGame/Shin.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 5 Over.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 0.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Sky.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile0.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon Shadow.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Border.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 1.png
+- Assets/00.AssetBundlePath/Sprite/TileSet/Tile11.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 9.png
 Dependencies: []

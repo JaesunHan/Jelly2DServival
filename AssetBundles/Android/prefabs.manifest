@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3459867879
+CRC: 3757508977
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 87e56ac7cb535cd5a70080c5f0517bb5
+    Hash: 18e3a3217f9be7f8251ad402be55b469
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a067dfd54092af7bff1f5a6bf7cbc575
+    Hash: 75ce3f2110041a067a5d84165bd5ea18
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,7 +21,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 50
   Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
 - Class: 61
+  Script: {instanceID: 0}
+- Class: 70
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -30,24 +34,45 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7c562f92f3b8b435d98ac3b65547b755, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f73e0556b3433ef4590eef96252b67a6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: baea2e9758e554909b2367e396d9c5a4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e2e7102de0548e1408aac02d532d9313, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 210
   Script: {instanceID: 0}
 - Class: 212
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/00.AssetBundlePath/Prefabs/Bullet/Bullet.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_1.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_2.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_3.prefab
 - Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
+- Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit4.prefab
+- Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit2.prefab
+- Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_1.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_2.prefab
+- Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit1.prefab
 - Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_3.prefab
+- Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit3.prefab
 - Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab
 Dependencies:
+- D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/animation
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite
