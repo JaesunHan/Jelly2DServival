@@ -26,6 +26,8 @@ public class EnemyData : UnityEngine.ScriptableObject
     
     public float fColliderPosY;
     
+    public float fCrashDamage;
+    
     public float fColliderRadius;
     
     public int iAppearWave;

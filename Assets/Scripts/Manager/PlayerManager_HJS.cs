@@ -170,6 +170,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     {
         _fCharacter_Move_Speed = 3f;
 
+        _pCur_Character.DoInit();
+
         _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
 
         _fCur_MP = 0;

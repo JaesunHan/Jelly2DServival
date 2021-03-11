@@ -5,9 +5,10 @@
       "fHP": "5",
       "fMoveSpeed": "0.8",
       "fColliderPosY": "0.25",
+      "fCrashDamage": "2",
       "fColliderRadius": "0.25",
       "iAppearWave": "0",
-      "fGetMP": "5",
+      "fGetMP": "2",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 1.png"
     },
     {
@@ -15,9 +16,10 @@
       "fHP": "3",
       "fMoveSpeed": "1.2",
       "fColliderPosY": "0.25",
+      "fCrashDamage": "3",
       "fColliderRadius": "0.25",
       "iAppearWave": "0",
-      "fGetMP": "8",
+      "fGetMP": "4",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 7.png"
     },
     {
@@ -25,9 +27,10 @@
       "fHP": "10",
       "fMoveSpeed": "1.2",
       "fColliderPosY": "0.25",
+      "fCrashDamage": "5",
       "fColliderRadius": "0.3",
       "iAppearWave": "1",
-      "fGetMP": "12",
+      "fGetMP": "7",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 5.png"
     },
     {
@@ -35,9 +38,10 @@
       "fHP": "8",
       "fMoveSpeed": "0.8",
       "fColliderPosY": "0.25",
+      "fCrashDamage": "8",
       "fColliderRadius": "0.25",
       "iAppearWave": "1",
-      "fGetMP": "17",
+      "fGetMP": "11",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png"
     },
     {
@@ -45,9 +49,10 @@
       "fHP": "10",
       "fMoveSpeed": "1.8",
       "fColliderPosY": "0.295",
+      "fCrashDamage": "12",
       "fColliderRadius": "0.3",
       "iAppearWave": "2",
-      "fGetMP": "23",
+      "fGetMP": "16",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 11.png"
     }
   ]

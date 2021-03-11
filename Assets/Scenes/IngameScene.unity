@@ -1019,6 +1019,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Jelly
       objectReference: {fileID: 0}
+    - target: {fileID: 5032053254742782568, guid: d8ca3006e470f534e89e1c30b92c6188, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032053254742782568, guid: d8ca3006e470f534e89e1c30b92c6188, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ca3006e470f534e89e1c30b92c6188, type: 3}
 --- !u!1 &1432271238
@@ -1729,7 +1737,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1070735231}
   m_HandleRect: {fileID: 0}
@@ -1906,10 +1914,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaPotion
       objectReference: {fileID: 0}
-    - target: {fileID: 345419282324475943, guid: 48066e5838d46f6438203185f5c2a0ba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48066e5838d46f6438203185f5c2a0ba, type: 3}
 --- !u!1001 &5331728002105592033
@@ -1919,6 +1923,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 546760391}
     m_Modifications:
+    - target: {fileID: 3178667827367542226, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178667827367542226, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5237577739247670147, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1973,6 +1985,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5331728002186395971, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960409550080352336, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

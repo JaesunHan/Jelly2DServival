@@ -23,6 +23,9 @@ public class EnemyBase : ObjectBase
     private float _fHP = 0f;
     private bool bIsAlive = false;
 
+    [GetComponentInChildren]
+    private HPBar _pHPBar = null;
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -62,6 +65,7 @@ public class EnemyBase : ObjectBase
         this.pEnemyData = pEnemyData;
 
         _fHP = this.pEnemyData.fHP;
+        _pHPBar.DoInit(_fHP);
         _pSprite_Jelly.sprite = pEnemyData.pFile;
 
         _pCollider2d.offset = new Vector2(0, this.pEnemyData.fColliderPosY);
@@ -79,6 +83,13 @@ public class EnemyBase : ObjectBase
         StopAllCoroutines();
         if(gameObject.activeSelf)
             StartCoroutine(OnCoroutine_Knockback(vecBulletDir));
+    }
+
+    public void DoCrash_With_Player(float fDamage)
+    {
+        _fHP -= fDamage;
+
+        Check_HP();
     }
 
     private IEnumerator OnCoroutine_Knockback(Vector2 vecBulletDir)
@@ -134,13 +145,19 @@ public class EnemyBase : ObjectBase
         {
             float fDamage = pBullet.fDamage;
             _fHP -= fDamage;
-            if (0 >= _fHP)
-            {
-                bIsAlive = false;
-                EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
-                PlayerManager_HJS.instance.OnGet_MP.DoNotify(new PlayerManager_HJS.GetMPMessage(pEnemyData.fGetMP));
-            }
+            Check_HP();
         }
+    }
+
+    private void Check_HP()
+    {
+        if (0 >= _fHP)
+        {
+            bIsAlive = false;
+            EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
+            PlayerManager_HJS.instance.OnGet_MP.DoNotify(new PlayerManager_HJS.GetMPMessage(pEnemyData.fGetMP));
+        }
+        _pHPBar.DoSetHP(_fHP);
     }
 
     #region Legacy_Code

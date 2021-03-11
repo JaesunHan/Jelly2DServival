@@ -9,7 +9,7 @@ public class StageManager : MonoSingleton<StageManager>
     /// 플탐 45초 : 1 wave -> 2 wave
     /// 플탐 90초 : 2 wave -> 3 wave
     /// </summary>
-    const float const_fUpdate_Wave_Term = 15f;
+    const float const_fUpdate_Wave_Term = 60f;
     public int iCurWave { get; private set; } = 0;
 
 

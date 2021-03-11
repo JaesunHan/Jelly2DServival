@@ -38,13 +38,9 @@ public class ManaPotionBase : ObjectBase
         {
             bIsAlive = false;
 
-            DebugLogManager.Log("플레이어가 포션을 먹었다.");
+            //DebugLogManager.Log("플레이어가 포션을 먹었다.");
             PlayerManager_HJS.instance.OnGet_MP.DoNotify(new PlayerManager_HJS.GetMPMessage(_pManaPotionData.fGetMP));
             ManaManager.instance.OnReturn_ManaPotion.DoNotify(new ManaManager.ReturnManaPotionMessage(this, bIsAlive));
-        }
-        else
-        {
-            DebugLogManager.Log("마나포션과 충돌한 객체가 플레이이거 아니다.");
         }
     }
 
