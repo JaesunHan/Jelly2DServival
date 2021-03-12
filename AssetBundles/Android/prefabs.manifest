@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3757508977
+CRC: 1865330822
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 18e3a3217f9be7f8251ad402be55b469
+    Hash: 5d11cea4587decd0c0f2182d6f41742d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 75ce3f2110041a067a5d84165bd5ea18
+    Hash: 07fc8d9d994d741222a67db0e07317c6
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,8 +23,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 58
   Script: {instanceID: 0}
-- Class: 61
-  Script: {instanceID: 0}
 - Class: 70
   Script: {instanceID: 0}
 - Class: 74
@@ -34,7 +32,13 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 7c562f92f3b8b435d98ac3b65547b755, type: 3}
 - Class: 114
@@ -46,6 +50,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: baea2e9758e554909b2367e396d9c5a4, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a84273dcf66d3c3418303706fd731138, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: e2e7102de0548e1408aac02d532d9313, type: 3}
 - Class: 115
   Script: {instanceID: 0}
@@ -55,22 +63,21 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/Prefabs/Bullet/Bullet.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_1.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_2.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_3.prefab
+- Assets/00.AssetBundlePath/Prefabs/HPBar.prefab
 - Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit4.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit2.prefab
 - Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_1.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_2.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit1.prefab
-- Assets/00.AssetBundlePath/Prefabs/GroundDot/DotGroup_Small_3.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit3.prefab
 - Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab
 Dependencies:

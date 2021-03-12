@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 177273513
+CRC: 4281090378
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6a4f1ad1a0cc6d3b5261f06790f91f81
+    Hash: ebd8ac4196a30ffe827c5172e10482ef
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 834fbfbc38cb15a767f2613411b92057
+    Hash: f160fabaadff43d4fdfe3081d656fe75
 HashAppended: 0
 ClassTypes:
 - Class: 114
@@ -17,6 +17,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 82ab858f4c3ba28498ca36e9afb5c418, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 78020b4c1e38ce34a9d3f36a38810c7d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -24,6 +28,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/SO/ManaPotionData_Container.asset
+- Assets/00.AssetBundlePath/SO/GlobalData_Container.asset
 - Assets/00.AssetBundlePath/SO/EnemyData_Container.asset
 Dependencies:
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite
