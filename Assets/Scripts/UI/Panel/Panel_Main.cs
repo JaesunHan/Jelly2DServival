@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Panel_Main : PanelBase
 {
-
-    public float fMax_MP = 100;
+    /// <summary>
+    /// 백분율로 표시한다.
+    /// </summary>
+    public float fMax_Value = 100;
     public float fCur_MP { get; private set; } = 0f;
 
     //private Image _pImage_Slider_Front = null;
@@ -32,7 +34,7 @@ public class Panel_Main : PanelBase
         }
 
         //EnemyManager.instance.OnReturn_Enemy.Subscribe += OnRetrun_Enemy_Func;
-        PlayerManager_HJS.instance.OnChange_MP.Subscribe += OnChange_MP_Func;
+        ManaManager.instance.OnChange_MP.Subscribe += OnChange_MP_Func;
     }
 
     private void OnDestroy()
@@ -52,8 +54,9 @@ public class Panel_Main : PanelBase
         fCur_MP = 1;
         //_pImage_Slider_Front.fillAmount = fCur_MP / fMax_MP;
         _pSlider_MP.interactable = false;
-        _pSlider_MP.maxValue = 1;
-        _pSlider_MP.value = (float)fCur_MP / (float)fMax_MP;
+        _pSlider_MP.maxValue = fMax_Value;
+        _pSlider_MP.minValue = 1;
+        _pSlider_MP.value = ((float)fCur_MP / (float)fMax_Value ) * (float)100;
     }
 
     ///// <summary>
@@ -69,9 +72,11 @@ public class Panel_Main : PanelBase
     //    }
     //}
 
-    private void OnChange_MP_Func(float fCurMP)
+    private void OnChange_MP_Func(ManaManager.ChangeMPMessage pMessage)
     {
-        fCur_MP = fCurMP;
-        _pSlider_MP.value = fCur_MP / fMax_MP;
+        fCur_MP = pMessage.fCurMP;
+        fMax_Value = pMessage.fMaxMP;
+
+        _pSlider_MP.value = (fCur_MP / fMax_Value) * (float)100;
     }
 }

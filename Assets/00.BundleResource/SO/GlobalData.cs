@@ -11,40 +11,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
 
-public class EnemyData : UnityEngine.ScriptableObject
+public class GlobalData : UnityEngine.ScriptableObject
 {
     
-    public string strEnemyName;
+    public string strValue;
     
-    public float fHP;
-    
-    public float fMoveSpeed;
-    
-    public float fColliderPosY;
-    
-    public float fCrashDamage;
-    
-    public float fColliderRadius;
-    
-    public int iAppearWave;
-    
-    public float fGetMP;
-    
-    public string strSpritePath;
+    public string strType;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strEnemyName"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
     /// </summary>
-    public EEnemyType eEnemyType;
+    public EGlobalKey_float eGlobalKey_float;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strSpritePath"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
     /// </summary>
-    public UnityEngine.Sprite pFile;
+    public EGlobalKey_int eGlobalKey_int;
 }

@@ -7,6 +7,12 @@ public class ManaManager : MonoSingleton<ManaManager>
 {
     private int iCurWave = 0;
 
+    /// <summary>
+    /// 게임을 처을 시작하면 최대 마나 게이지는 100으로 시작한다.
+    /// 100 다 채우고 나면 다음은 200 -> 400 -> 800 -> 1600 -> ... 으로 늘어난다.
+    /// </summary>
+    const float const_fDefault_MP = 100;
+
     public struct ReturnManaPotionMessage
     {
         public ManaPotionBase pManaPotionBase;
@@ -19,6 +25,36 @@ public class ManaManager : MonoSingleton<ManaManager>
             this.bIsAlive = bIsAlive;
         }
     }
+
+    /// <summary>
+    /// 마나를 획득했을 때 발생하는 메시지이다.
+    /// </summary>
+    public struct GetMPMessage
+    {
+        public float fGetMP;
+
+        public GetMPMessage(float fGetMP)
+        {
+            this.fGetMP = fGetMP;
+        }
+    }
+
+    /// <summary>
+    /// 최종 MP 가 변경되면, 현재 MP와 Maximum MP 값을 메시지로 전송한다.
+    /// </summary>
+    public struct ChangeMPMessage
+    {
+        public float fCurMP;
+
+        public float fMaxMP;
+
+        public ChangeMPMessage(float fCurMP, float fMaxMP)
+        {
+            this.fCurMP = fCurMP;
+            this.fMaxMP = fMaxMP;
+        }
+    }
+
 
     /// <summary>
     /// 복제할 오리지널 마나 프리팹
@@ -36,16 +72,34 @@ public class ManaManager : MonoSingleton<ManaManager>
     /// </summary>
     Pooling_Component<ManaPotionBase> _pPool_ManaPotion = Pooling_Component<ManaPotionBase>.instance;
 
+    private float _fMax_MP = 0;
+    private float _fCur_MP = 0;
+
+    public float fCur_MP
+    {
+        get { return _fCur_MP; }
+    }
+
     public Observer_Pattern<ReturnManaPotionMessage> OnReturn_ManaPotion { get; private set; } = Observer_Pattern<ReturnManaPotionMessage>.instance;
+    /// <summary>
+    /// 마나를 획득했을 때의 옵저버패턴이다.
+    /// </summary>
+    public Observer_Pattern<GetMPMessage> OnGet_MP { get; private set; } = Observer_Pattern<GetMPMessage>.instance;
+    /// <summary>
+    /// 마나 포인트 값이 변경되었는지를 체크하는 옵저버패턴이다.
+    /// </summary>
+    public Observer_Pattern<ChangeMPMessage> OnChange_MP { get; private set; } = Observer_Pattern<ChangeMPMessage>.instance;
 
     protected override void OnAwake()
     {
         base.OnAwake();
+        
     }
 
     private void OnDestroy()
     {
-        OnReturn_ManaPotion.Subscribe -= OnReturn_ManaPotion_Func;
+        OnGet_MP.DoRemove_All_Observer();
+        OnReturn_ManaPotion.DoRemove_All_Observer();
     }
 
     public void DoInit()
@@ -64,7 +118,11 @@ public class ManaManager : MonoSingleton<ManaManager>
 
         _list_Alive_ManaPotion.Clear();
 
+        _fCur_MP = 0;
+        _fMax_MP = EGlobalKey_float.최대_MP_기본값.Getfloat();
+
         OnReturn_ManaPotion.Subscribe += OnReturn_ManaPotion_Func;
+        OnGet_MP.Subscribe += OnGet_MP_Func;
 
         StartCoroutine(nameof(OnCoroutine_Respawn_ManaPotion));
     }
@@ -94,13 +152,14 @@ public class ManaManager : MonoSingleton<ManaManager>
                 pNewPotion.DoAwake();
                 pNewPotion.DoInit(pNewMPData);
                 pNewPotion.SetActive(true);
-                pNewPotion.transform.SetParent(transform);
                 
                 Vector3 vecSpawnPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
                 vecSpawnPos.x += Random.Range(14f * (int)eDir, 8f * (int)eDir);
                 vecSpawnPos.y += Random.Range(12f * (int)eDir, 6f * (int)eDir);
 
                 pNewPotion.transform.position = vecSpawnPos;
+
+                pNewPotion.transform.SetParent(transform);
 
                 _list_Alive_ManaPotion.Add(pNewPotion);
             }
@@ -125,5 +184,22 @@ public class ManaManager : MonoSingleton<ManaManager>
                 }
             }
         }
+    }
+
+
+    private void OnGet_MP_Func(GetMPMessage pMessage)
+    {
+        _fCur_MP = _fCur_MP + pMessage.fGetMP;
+
+        if (_fCur_MP >= _fMax_MP)
+        {
+            _fCur_MP = _fCur_MP - _fMax_MP;
+            if (0 == _fCur_MP)
+                _fCur_MP = 1;
+
+            _fMax_MP = _fMax_MP * EGlobalKey_float.최대_MP_값_증가_비율.Getfloat();
+        }
+
+        OnChange_MP.DoNotify(new ChangeMPMessage(_fCur_MP, _fMax_MP));
     }
 }

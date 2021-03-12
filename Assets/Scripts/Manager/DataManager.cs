@@ -175,6 +175,8 @@ public partial class DataManager : MonoSingleton<DataManager>
         EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
         ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
 
+        GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);
+
         yield break;
     }
 

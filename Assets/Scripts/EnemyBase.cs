@@ -155,7 +155,7 @@ public class EnemyBase : ObjectBase
         {
             bIsAlive = false;
             EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
-            PlayerManager_HJS.instance.OnGet_MP.DoNotify(new PlayerManager_HJS.GetMPMessage(pEnemyData.fGetMP));
+            ManaManager.instance.OnGet_MP.DoNotify(new ManaManager.GetMPMessage(pEnemyData.fGetMP));
         }
         _pHPBar.DoSetHP(_fHP);
     }

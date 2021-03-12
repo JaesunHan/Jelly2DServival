@@ -1,0 +1,34 @@
+{
+  "array": [
+    {
+      "strGlobalKey": "최대_MP_기본값",
+      "strValue": "100",
+      "strType": "float"
+    },
+    {
+      "strGlobalKey": "최대_MP_값_증가_비율",
+      "strValue": "2",
+      "strType": "float"
+    },
+    {
+      "strGlobalKey": "웨이브_갱신_주기",
+      "strValue": "60",
+      "strType": "float"
+    },
+    {
+      "strGlobalKey": "불렛_기본_발사_속도 ",
+      "strValue": "2",
+      "strType": "float"
+    },
+    {
+      "strGlobalKey": "적_리스폰_주기",
+      "strValue": "1.5",
+      "strType": "float"
+    },
+    {
+      "strGlobalKey": "스테이지당_최대_웨이브_수",
+      "strValue": "6",
+      "strType": "int"
+    }
+  ]
+}

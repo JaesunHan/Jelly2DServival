@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5041896be7d9e2a4fa70034285129627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMax_MP: 100
+  fMax_Value: 100
 --- !u!1 &1458795086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1930,10 @@ PrefabInstance:
     - target: {fileID: 3178667827367542226, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249377126732410525, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 5237577739247670147, guid: c4eec42e758c4764ba0d70d49adea579, type: 3}
       propertyPath: m_Controller

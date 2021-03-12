@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoSingleton<EnemyManager>
 {
-    const int const_iDefault_EnemCount = 10;
+    const int const_iDefault_EnemyCount = 10;
 
     /// <summary>
     /// 기본적으로 2초에 하나씩 적이 생성된다.
@@ -54,7 +54,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
     private Vector2 _vecJoystic_Move_Dir = Vector2.zero;
 
-    private float _fPlayer_Move_Speed = 0f;
+    //private float _fPlayer_Move_Speed = 0f;
 
     protected override void OnAwake()
     {
@@ -107,7 +107,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     public void DoInit()
     {
         StopAllCoroutines();
-        _ws_Respawn_Term = new WaitForSeconds(const_fDefault_Respawn_Term_Time);
+        _ws_Respawn_Term = new WaitForSeconds(EGlobalKey_float.적_리스폰_주기.Getfloat());//const_fDefault_Respawn_Term_Time
 
         //처음 시작할 때 웨이브는 0부터 시작한다. 
         iCurWave = 0;
@@ -115,7 +115,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         //임시로 Init과 동시에 true 로 변경한다.  
         bIsPlaying = true;
 
-        _fPlayer_Move_Speed = PlayerManager_HJS.instance.DoGet_Player_Move_Speed();
+        //_fPlayer_Move_Speed = PlayerManager_HJS.instance.DoGet_Player_Move_Speed();
 
         StartGame();
         AddSubScribe();
