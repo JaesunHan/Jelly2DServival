@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 9206425fd46913f4d94e20dafc325d61, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9396d80065b15fb4e9f5fa16deb1841a, type: 3}
+  - {fileID: 21300000, guid: feabaf7052f4d8e4daf77e40668bc2b6, type: 3}
+  - {fileID: 21300000, guid: 7ea52d616d157c947a0765439d1ae441, type: 3}
+  - {fileID: 21300000, guid: 1edfcc716ab5b4940a23aa75e0352142, type: 3}
+  - {fileID: 21300000, guid: 0c0bada3cbd3c2041b3742457d590faf, type: 3}
+  - {fileID: 21300000, guid: f752d344d11683842a810ca1ce47728d, type: 3}
+  - {fileID: 21300000, guid: 4a4e38441adaaf64c9251018be41c8f6, type: 3}
+  - {fileID: 21300000, guid: dcfc8a54a5261b4488cae020699f3975, type: 3}
+  - {fileID: 21300000, guid: b1d81fd4029ff3f47bbb0da5379cd31d, type: 3}
+  - {fileID: 21300000, guid: 526edf75fa93d364fbb3eeb1a06a6f47, type: 3}
+  - {fileID: 21300000, guid: 18f348779f4feae45a6195ae06cbc32e, type: 3}
+  - {fileID: 21300000, guid: 64678e98cfb9c2a45a4ed1019c6d2941, type: 3}
+  - {fileID: 21300000, guid: 11b75f9856d512244900631455ab3c8d, type: 3}
+  - {fileID: 21300000, guid: 86f68579e1c470645a783c40f4271052, type: 3}
+  - {fileID: 21300000, guid: 0cc98cf945627544e8761d70cbbbb24a, type: 3}
+  - {fileID: 21300000, guid: 7d1b8c1a026022641af7b846a3d34c63, type: 3}
+  - {fileID: 21300000, guid: 2bd3abfaadb2b154498beefbb21e6ab0, type: 3}
+  - {fileID: 21300000, guid: d4bb5b2bf799cbe48896bb8c60334f41, type: 3}
+  - {fileID: 21300000, guid: 8e85598c65aa8204f98aac13d6aedf6f, type: 3}
+  - {fileID: 21300000, guid: 14cbb79d17bbcb4488f2f84c10898056, type: 3}
+  - {fileID: 21300000, guid: 22fafc3e4b16258438fb4240603b1949, type: 3}
+  - {fileID: 21300000, guid: a2b1efbe52bb7e8469a0f71be94ca717, type: 3}
+  - {fileID: 21300000, guid: bf2b31ceb6a9bab4d93edffe34b2eae6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Medal
+  - Icon 0
+  - Icon 5
+  - Icon 3
+  - Panel Left Over
+  - Icon 4
+  - Icon 1
+  - Panel Right Over
+  - Icon 6
+  - Icon 2 Over
+  - Panel
+  - Panel Right
+  - Panel Left
+  - Icon 4 Over
+  - Icon 3 Over
+  - Icon 7
+  - Icon26
+  - Icon 2
+  - Panel Under
+  - Lock
+  - Icon 5 Over
+  - Icon Shadow
+  - Panel Border
+  m_Tag: UI
+  m_IsVariant: 0
