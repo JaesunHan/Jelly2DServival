@@ -11,26 +11,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
 
-public class GlobalData : UnityEngine.ScriptableObject
+public partial class LanguageData : UnityEngine.ScriptableObject
 {
     
-    public string strValue;
+    public string strLanguageKey;
     
-    public string strType;
+    public string strKorean;
     
-    /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
-    /// </summary>
-    public EGlobalKey_float eGlobalKey_float;
+    public string strEnglish;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strLanguageKey"/>
     /// </summary>
-    public EGlobalKey_int eGlobalKey_int;
+    public ELanguageKey eLanguageKey;
 }

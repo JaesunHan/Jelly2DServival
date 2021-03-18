@@ -172,13 +172,22 @@ public partial class DataManager : MonoSingleton<DataManager>
     {
         bool bIsUpdateChildAsset = eLoadLogic_OnEditor == BundleLoadManager.EBundleLoadLogic.Editor && Application.isPlaying;
 
-        //LanguageData_Container.DoInit(LoadData<LanguageData_Container>(), bIsUpdateChildAsset);
+        LanguageData_Container.DoInit(LoadData<LanguageData_Container>(), bIsUpdateChildAsset);
         EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
         ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
-        //SkillData_Container.DoInit(LoadData<SkillData_Container>(), bIsUpdateChildAsset);
+        SkillData_Container.DoInit(LoadData<SkillData_Container>(), bIsUpdateChildAsset);
 
 
         GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);
+
+        LanguageManager.instance.DoInit_LanguageData(LanguageData_Container.instance.listData.ToArray());
+
+        //Font 
+        Font pFont = BundleLoadManager.instance.DoLoad<Font>("Font", "DungGeunMo.ttf");
+        FontDataDefault[] arrFontData = { new FontDataDefault(SystemLanguage.Korean, pFont) };
+        LanguageManager.instance.DoInit_FontData(arrFontData);
+        LanguageManager.instance.DoSetLanguage(SystemLanguage.Korean);
+
 
         yield break;
     }

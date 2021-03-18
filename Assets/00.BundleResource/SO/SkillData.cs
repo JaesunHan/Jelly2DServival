@@ -17,20 +17,35 @@ using UnityEngine;
 
 
 
-public class GlobalData : UnityEngine.ScriptableObject
+public class SkillData : UnityEngine.ScriptableObject
 {
     
-    public string strValue;
+    public string strSkillType;
     
-    public string strType;
+    public string strSkill;
+    
+    public string strIconAtlasName;
+    
+    public string strIconSpriteName;
+    
+    public string eSkillName;
+    
+    public string eSkillDesc;
+    
+    public string strPrefabPath;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=""/>
     /// </summary>
-    public EGlobalKey_float eGlobalKey_float;
+    public ESkillType eSkillType;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strGlobalKey"/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strPrefabPath"/>
     /// </summary>
-    public EGlobalKey_int eGlobalKey_int;
+    public UnityEngine.Transform pFilePrefab;
+    
+    /// <summary>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strSkill"/>
+    /// </summary>
+    public ESkill eSkill;
 }

@@ -1,0 +1,22 @@
+{
+  "array": [
+    {
+      "strSkillType": "Skill_Deal_Support",
+      "strSkill": "Skill_Summon_Fairy",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Icon26",
+      "eSkillName": "Skill_Summon_Fairy",
+      "eSkillDesc": "Skill_Summon_Fairy_Desc",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
+    },
+    {
+      "strSkillType": "Skill_Deal_Support",
+      "strSkill": "Skill_Psychokinesis",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Icon26",
+      "eSkillName": "Skill_Summon_Fairy",
+      "eSkillDesc": "Skill_Summon_Fairy_Desc",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
+    }
+  ]
+}

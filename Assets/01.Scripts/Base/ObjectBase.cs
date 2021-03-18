@@ -13,6 +13,12 @@ public class ObjectBase : MonoBehaviour
     {
         GetComponentAttributeSetter.DoUpdate_GetComponentAttribute(this);
     }
+
+    private void OnEnable()
+    {
+        OnEnableObject();
+    }
+
     protected virtual void OnEnableObject()
     {
 #if UNITY_EDITOR
@@ -25,6 +31,11 @@ public class ObjectBase : MonoBehaviour
             StopCoroutine(nameof(OnEnableCoroutine));
             StartCoroutine(nameof(OnEnableCoroutine));
         }
+    }
+
+    private void OnDisable()
+    {
+        OnDisableObject(false);
     }
 
     protected virtual void OnDisableObject(bool bIsQuit_Application) { }

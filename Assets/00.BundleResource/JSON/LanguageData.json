@@ -1,0 +1,14 @@
+{
+  "array": [
+    {
+      "strLanguageKey": "Skill_Summon_Fairy",
+      "strKorean": "요정 소환",
+      "strEnglish": "Summon fairy"
+    },
+    {
+      "strLanguageKey": "Skill_Summon_Fairy_Desc",
+      "strKorean": "요정을 소환합니다. 요정이 일정 주기로 마법을 발사합니다. ",
+      "strEnglish": "EN - Skill_Summon_Fairy_Desc"
+    }
+  ]
+}
