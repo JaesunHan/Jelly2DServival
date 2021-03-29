@@ -1,34 +1,49 @@
 ManifestFileVersion: 0
-CRC: 4281090378
+CRC: 3663023872
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ebd8ac4196a30ffe827c5172e10482ef
+    Hash: a3a902fba17c2f0c3f5a5d393de991d3
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f160fabaadff43d4fdfe3081d656fe75
+    Hash: 44c941737e5e8cd05fcd946a47af60ed
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
+  Script: {fileID: 11500000, guid: a62634f5ab4cc0544acd4095b924b0d8, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 82ab858f4c3ba28498ca36e9afb5c418, type: 3}
+  Script: {fileID: 11500000, guid: bf6e96e69caee894dbc967769643c7fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 78020b4c1e38ce34a9d3f36a38810c7d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 82ab858f4c3ba28498ca36e9afb5c418, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/00.AssetBundlePath/SO/LanguageData_Container.asset
 - Assets/00.AssetBundlePath/SO/ManaPotionData_Container.asset
+- Assets/00.AssetBundlePath/SO/SkillData_Container.asset
 - Assets/00.AssetBundlePath/SO/GlobalData_Container.asset
 - Assets/00.AssetBundlePath/SO/EnemyData_Container.asset
 Dependencies:
+- D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/prefabs
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3765361020
+CRC: 2222668548
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -11,10 +11,15 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: animation
         Dependency_1: sprite
+        Dependency_2: font
     Info_2:
       Name: so
       Dependencies:
-        Dependency_0: sprite
+        Dependency_0: prefabs
+        Dependency_1: sprite
     Info_3:
       Name: sprite
+      Dependencies: {}
+    Info_4:
+      Name: font
       Dependencies: {}

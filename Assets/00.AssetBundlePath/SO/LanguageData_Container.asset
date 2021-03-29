@@ -1,21 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62634f5ab4cc0544acd4095b924b0d8, type: 3}
-  m_Name: LanguageData_Container
-  m_EditorClassIdentifier: 
-  listData:
-  - {fileID: 7407905288359697119}
-  - {fileID: 7203180889911090329}
---- !u!114 &7203180889911090329
+--- !u!114 &-7378137290054299073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31,8 +16,57 @@ MonoBehaviour:
   strKorean: "\uC694\uC815\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4. \uC694\uC815\uC774
     \uC77C\uC815 \uC8FC\uAE30\uB85C \uB9C8\uBC95\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4. "
   strEnglish: EN - Skill_Summon_Fairy_Desc
+  eLanguageKey: 3
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62634f5ab4cc0544acd4095b924b0d8, type: 3}
+  m_Name: LanguageData_Container
+  m_EditorClassIdentifier: 
+  listData:
+  - {fileID: 5876184913172089243}
+  - {fileID: 4430847314459909562}
+  - {fileID: 6250328107263672173}
+  - {fileID: -7378137290054299073}
+--- !u!114 &4430847314459909562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Select_Scroll
+  m_EditorClassIdentifier: 
+  strLanguageKey: Select_Scroll
+  strKorean: "\uC2A4\uD06C\uB864 \uC120\uD0DD"
+  strEnglish: Select scroll
   eLanguageKey: 1
---- !u!114 &7407905288359697119
+--- !u!114 &5876184913172089243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Confirm
+  m_EditorClassIdentifier: 
+  strLanguageKey: Confirm
+  strKorean: "\uD655\uC778"
+  strEnglish: Confirm
+  eLanguageKey: 0
+--- !u!114 &6250328107263672173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,6 +79,6 @@ MonoBehaviour:
   m_Name: Skill_Summon_Fairy
   m_EditorClassIdentifier: 
   strLanguageKey: Skill_Summon_Fairy
-  strKorean: "\uC694\uC815 \uC18C\uD658"
+  strKorean: "\uC694\uC815\uC774 \uAE43\uB4E0 \uBAA9\uAC78\uC774"
   strEnglish: Summon fairy
-  eLanguageKey: 0
+  eLanguageKey: 2

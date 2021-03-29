@@ -7,7 +7,8 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
     public enum EPanel
     {
         Panel_Joystick,
-        Panel_Main, 
+        Panel_Main,
+        Panel_Select_Scroll,
 
         Panel_Count,
     }
@@ -33,8 +34,25 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
         }
     }
 
+    protected override IEnumerator OnEnableCoroutine()
+    {
+        yield return base.OnEnableCoroutine();
 
-    private void Start()
+        while (!DataManager.bIsLoaded_AllResource)
+        {
+            yield return null;  
+        }
+
+        Init();
+    }
+
+    public void DoShowPanel(EPanel eShowPanelType)
+    {
+        _mapPanel[eShowPanelType].DoShow();
+    }
+
+
+    private void Init()
     {
         for (int i = 0; i < _mapPanel.Count; ++i)
         {
@@ -43,6 +61,5 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
 
         _mapPanel[EPanel.Panel_Joystick].DoShow();
         _mapPanel[EPanel.Panel_Main].DoShow();
-        
     }
 }

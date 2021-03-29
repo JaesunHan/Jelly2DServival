@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1865330822
+CRC: 2606329776
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5d11cea4587decd0c0f2182d6f41742d
+    Hash: a0803d6a227debdaa51260033de3baaf
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 07fc8d9d994d741222a67db0e07317c6
+    Hash: c466f1a075970038193d042e181bb9ed
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,28 +34,50 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 7c562f92f3b8b435d98ac3b65547b755, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 82324cf28d835724d884d7024ed12e2a, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f73e0556b3433ef4590eef96252b67a6, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: d3f6b876616d54c4a9a661e3ec44ec73, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: baea2e9758e554909b2367e396d9c5a4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7354686a456c84c4ca4612745ddc34f8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5041896be7d9e2a4fa70034285129627, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a84273dcf66d3c3418303706fd731138, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e2e7102de0548e1408aac02d532d9313, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8eefd6e900f9865448cbb6389b177d82, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 69a38700f1b10034486cfc01ad8211a0, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 128
   Script: {instanceID: 0}
 - Class: 210
   Script: {instanceID: 0}
@@ -75,11 +97,17 @@ Assets:
 - Assets/00.AssetBundlePath/Prefabs/HPBar.prefab
 - Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit4.prefab
+- Assets/00.AssetBundlePath/Prefabs/Widget/Widget_Scroll.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit2.prefab
+- Assets/00.AssetBundlePath/Prefabs/UI/Panel_Main.prefab
 - Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
+- Assets/00.AssetBundlePath/Prefabs/UI/Panel_Joystick.prefab
+- Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit1.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit3.prefab
 - Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab
+- Assets/00.AssetBundlePath/Prefabs/UI/Panel_Select_Scroll.prefab
 Dependencies:
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/animation
+- D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/font
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite

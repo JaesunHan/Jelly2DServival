@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2298651985379732571
+--- !u!114 &-4988315611198622879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,9 +35,9 @@ MonoBehaviour:
   m_Name: SkillData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: -2298651985379732571}
-  - {fileID: 2588836690665362124}
---- !u!114 &2588836690665362124
+  - {fileID: -4988315611198622879}
+  - {fileID: 8357711564501235374}
+--- !u!114 &8357711564501235374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

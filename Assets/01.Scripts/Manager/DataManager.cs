@@ -199,6 +199,34 @@ public partial class DataManager : MonoSingleton<DataManager>
         return BundleLoadManager.instance.DoLoad<T>("SO", $"{typeof(T).Name}.asset", false);
     }
 
+    #region GetLocalText
+
+
+    #endregion
+    public static string GetLocalText(ELanguageKey eLanguageKey)
+    {
+        return LanguageManager.instance.GetText(eLanguageKey.ToString());
+    }
+
+    public static string GetLocalText_Format(ELanguageKey eLanguageKey, params object[] arrParam)
+    {
+        return LanguageManager.instance.GetText_Format(eLanguageKey.ToString(), arrParam);
+    }
+
+    public static string GetLocalText_Format_Random(ELanguageKey eLanguageKey, params object[] arrParam)
+    {
+        return LanguageManager.instance.GetText_Format_Random(eLanguageKey.ToString(), arrParam);
+    }
+
+    public static string GetLocalText(string strLanguageKey)
+    {
+        return LanguageManager.instance.GetText(strLanguageKey);
+    }
+    public static string GetLocalText_Format(string strLanguageKey, params object[] arrParam)
+    {
+        return LanguageManager.instance.GetText_Format(strLanguageKey, arrParam);
+    }
+
     #region GetSprite
 
     public static Sprite GetSprite_InAtlas(string strAtlasName, string strSpriteName)

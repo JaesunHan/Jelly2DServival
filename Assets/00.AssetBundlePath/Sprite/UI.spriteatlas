@@ -52,7 +52,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 86f68579e1c470645a783c40f4271052, type: 3}
   - {fileID: 21300000, guid: 0cc98cf945627544e8761d70cbbbb24a, type: 3}
   - {fileID: 21300000, guid: 7d1b8c1a026022641af7b846a3d34c63, type: 3}
-  - {fileID: 21300000, guid: 2bd3abfaadb2b154498beefbb21e6ab0, type: 3}
+  - {fileID: 21300000, guid: 0986e10b6b5500a449f69a410b7029fa, type: 3}
   - {fileID: 21300000, guid: d4bb5b2bf799cbe48896bb8c60334f41, type: 3}
   - {fileID: 21300000, guid: 8e85598c65aa8204f98aac13d6aedf6f, type: 3}
   - {fileID: 21300000, guid: 14cbb79d17bbcb4488f2f84c10898056, type: 3}
@@ -76,7 +76,7 @@ SpriteAtlas:
   - Icon 4 Over
   - Icon 3 Over
   - Icon 7
-  - Icon26
+  - Icon25
   - Icon 2
   - Panel Under
   - Lock

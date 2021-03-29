@@ -63,6 +63,10 @@ public class LanguageData_Container : UnityEngine.ScriptableObject
 public enum ELanguageKey
 {
     
+    Confirm,
+    
+    Select_Scroll,
+    
     Skill_Summon_Fairy,
     
     Skill_Summon_Fairy_Desc,

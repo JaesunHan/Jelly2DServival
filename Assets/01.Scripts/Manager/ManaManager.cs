@@ -198,6 +198,9 @@ public class ManaManager : MonoSingleton<ManaManager>
                 _fCur_MP = 1;
 
             _fMax_MP = _fMax_MP * EGlobalKey_float.최대_MP_값_증가_비율.Getfloat();
+
+            //스킬 선택 패널 띄우기
+            IngameUIManager.instance.DoShowPanel(IngameUIManager.EPanel.Panel_Select_Scroll);
         }
 
         OnChange_MP.DoNotify(new ChangeMPMessage(_fCur_MP, _fMax_MP));

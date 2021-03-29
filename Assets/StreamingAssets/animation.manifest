@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3899010908
+CRC: 561522108
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 05873a08a295e3a853fd1ed3d70be722
+    Hash: ca05fe9f6867ceb7363a8b185d81ecb5
   TypeTreeHash:
     serializedVersion: 2
     Hash: 75c4cf5a811febcff373a7691b935ca2
@@ -19,12 +19,14 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/Animation/MagicFire.controller
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX10_0.controller
+- Assets/00.AssetBundlePath/Animation/FairyAnim/Icon26.controller
 - Assets/00.AssetBundlePath/Animation/Charging.anim
 - Assets/00.AssetBundlePath/Animation/PotionFloat/ManaPotion.controller
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy11_0.anim
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX11_0.controller
 - Assets/00.AssetBundlePath/Animation/Magic_Idle.anim
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy10_0.anim
+- Assets/00.AssetBundlePath/Animation/FairyAnim/ShiningAnim.anim
 - Assets/00.AssetBundlePath/Animation/PotionFloat/Float.anim
 Dependencies:
 - D:/JaesunHan/Github/ProjectC_Root/Jelly2DServival/AssetBundles/Android/sprite

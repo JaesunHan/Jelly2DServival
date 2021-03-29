@@ -1,8 +1,18 @@
 {
   "array": [
     {
+      "strLanguageKey": "Confirm",
+      "strKorean": "확인",
+      "strEnglish": "Confirm"
+    },
+    {
+      "strLanguageKey": "Select_Scroll",
+      "strKorean": "스크롤 선택",
+      "strEnglish": "Select scroll"
+    },
+    {
       "strLanguageKey": "Skill_Summon_Fairy",
-      "strKorean": "요정 소환",
+      "strKorean": "요정이 깃든 목걸이",
       "strEnglish": "Summon fairy"
     },
     {
