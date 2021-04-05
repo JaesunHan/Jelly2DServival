@@ -19,6 +19,36 @@
       "strLanguageKey": "Skill_Summon_Fairy_Desc",
       "strKorean": "요정을 소환합니다. 요정이 일정 주기로 마법을 발사합니다. ",
       "strEnglish": "EN - Skill_Summon_Fairy_Desc"
+    },
+    {
+      "strLanguageKey": "Skill_Meteor",
+      "strKorean": "메테오",
+      "strEnglish": "Meteor"
+    },
+    {
+      "strLanguageKey": "Skill_Meteor_Desc",
+      "strKorean": "운석을 낙하합니다. 운석에 닿은 모든 적에게 데미지를 입힙니다.",
+      "strEnglish": "Skill_Meteor_Desc"
+    },
+    {
+      "strLanguageKey": "Skill_Recovery",
+      "strKorean": "리커버리",
+      "strEnglish": "Recovery"
+    },
+    {
+      "strLanguageKey": "Skill_Recovery_Desc",
+      "strKorean": "주기적으로 일정 체력을 회복합니다. ",
+      "strEnglish": "Skill_Recovery_Desc"
+    },
+    {
+      "strLanguageKey": "Skill_Shield",
+      "strKorean": "실드",
+      "strEnglish": "Shield"
+    },
+    {
+      "strLanguageKey": "Skill_Shield_Desc",
+      "strKorean": "적으로부터 한 번 방어할 수 있습니다. 쿨타임이 지나면 실드가 다시 생깁니다.",
+      "strEnglish": "Skill_Shield_Desc"
     }
   ]
 }

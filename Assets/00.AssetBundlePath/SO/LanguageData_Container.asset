@@ -1,6 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7378137290054299073
+--- !u!114 &-5768909147468903916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Recovery
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Recovery
+  strKorean: "\uB9AC\uCEE4\uBC84\uB9AC"
+  strEnglish: Recovery
+  eLanguageKey: 6
+--- !u!114 &-5422058677639470631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Meteor
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Meteor
+  strKorean: "\uBA54\uD14C\uC624"
+  strEnglish: Meteor
+  eLanguageKey: 4
+--- !u!114 &-2674073466918737467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Shield_Desc
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Shield_Desc
+  strKorean: "\uC801\uC73C\uB85C\uBD80\uD130 \uD55C \uBC88 \uBC29\uC5B4\uD560 \uC218
+    \uC788\uC2B5\uB2C8\uB2E4. \uCFE8\uD0C0\uC784\uC774 \uC9C0\uB098\uBA74 \uC2E4\uB4DC\uAC00
+    \uB2E4\uC2DC \uC0DD\uAE41\uB2C8\uB2E4."
+  strEnglish: Skill_Shield_Desc
+  eLanguageKey: 9
+--- !u!114 &-1109939346354645184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,43 +80,17 @@ MonoBehaviour:
   m_Name: LanguageData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: 5876184913172089243}
-  - {fileID: 4430847314459909562}
-  - {fileID: 6250328107263672173}
-  - {fileID: -7378137290054299073}
---- !u!114 &4430847314459909562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Select_Scroll
-  m_EditorClassIdentifier: 
-  strLanguageKey: Select_Scroll
-  strKorean: "\uC2A4\uD06C\uB864 \uC120\uD0DD"
-  strEnglish: Select scroll
-  eLanguageKey: 1
---- !u!114 &5876184913172089243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Confirm
-  m_EditorClassIdentifier: 
-  strLanguageKey: Confirm
-  strKorean: "\uD655\uC778"
-  strEnglish: Confirm
-  eLanguageKey: 0
---- !u!114 &6250328107263672173
+  - {fileID: 4664478050149603971}
+  - {fileID: 7734247081364721763}
+  - {fileID: 220124192936581670}
+  - {fileID: -1109939346354645184}
+  - {fileID: -5422058677639470631}
+  - {fileID: 6888739328537709288}
+  - {fileID: -5768909147468903916}
+  - {fileID: 3508453482889966419}
+  - {fileID: 328865270384242860}
+  - {fileID: -2674073466918737467}
+--- !u!114 &220124192936581670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,3 +106,84 @@ MonoBehaviour:
   strKorean: "\uC694\uC815\uC774 \uAE43\uB4E0 \uBAA9\uAC78\uC774"
   strEnglish: Summon fairy
   eLanguageKey: 2
+--- !u!114 &328865270384242860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Shield
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Shield
+  strKorean: "\uC2E4\uB4DC"
+  strEnglish: Shield
+  eLanguageKey: 8
+--- !u!114 &3508453482889966419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Recovery_Desc
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Recovery_Desc
+  strKorean: "\uC8FC\uAE30\uC801\uC73C\uB85C \uC77C\uC815 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4. "
+  strEnglish: Skill_Recovery_Desc
+  eLanguageKey: 7
+--- !u!114 &4664478050149603971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Confirm
+  m_EditorClassIdentifier: 
+  strLanguageKey: Confirm
+  strKorean: "\uD655\uC778"
+  strEnglish: Confirm
+  eLanguageKey: 0
+--- !u!114 &6888739328537709288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Meteor_Desc
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Meteor_Desc
+  strKorean: "\uC6B4\uC11D\uC744 \uB099\uD558\uD569\uB2C8\uB2E4. \uC6B4\uC11D\uC5D0
+    \uB2FF\uC740 \uBAA8\uB4E0 \uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4."
+  strEnglish: Skill_Meteor_Desc
+  eLanguageKey: 5
+--- !u!114 &7734247081364721763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Select_Scroll
+  m_EditorClassIdentifier: 
+  strLanguageKey: Select_Scroll
+  strKorean: "\uC2A4\uD06C\uB864 \uC120\uD0DD"
+  strEnglish: Select scroll
+  eLanguageKey: 1

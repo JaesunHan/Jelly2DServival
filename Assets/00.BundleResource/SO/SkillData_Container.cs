@@ -64,6 +64,10 @@ public enum ESkillType
 {
     
     Skill_Deal_Support,
+    
+    Skill_Ranged_Deal,
+    
+    Skill_Support,
 }
 
 public enum ESkill
@@ -71,7 +75,11 @@ public enum ESkill
     
     Skill_Summon_Fairy,
     
-    Skill_Psychokinesis,
+    Skill_Meteor,
+    
+    Skill_Recovery,
+    
+    Skill_Shield,
 }
 
 #region 

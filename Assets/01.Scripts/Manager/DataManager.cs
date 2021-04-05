@@ -200,9 +200,6 @@ public partial class DataManager : MonoSingleton<DataManager>
     }
 
     #region GetLocalText
-
-
-    #endregion
     public static string GetLocalText(ELanguageKey eLanguageKey)
     {
         return LanguageManager.instance.GetText(eLanguageKey.ToString());
@@ -227,6 +224,8 @@ public partial class DataManager : MonoSingleton<DataManager>
         return LanguageManager.instance.GetText_Format(strLanguageKey, arrParam);
     }
 
+    #endregion
+
     #region GetSprite
 
     public static Sprite GetSprite_InAtlas(string strAtlasName, string strSpriteName)
@@ -244,4 +243,31 @@ public partial class DataManager : MonoSingleton<DataManager>
     }
 
     #endregion GetSprite
+
+    #region DoGet Function
+
+    /// <summary>
+    /// 스킬 선택 패널에 출력할 스킬 4개를 선정해서 반환한다.
+    /// </summary>
+    /// <returns></returns>
+    public static List<ESkill> DoGet_Select_Skill_List(int iSlotCount)
+    {
+        List<ESkill> listSkillData = new List<ESkill>();
+        while (true)
+        {
+            ESkill eRandSkill = (ESkill) Random.Range(0, 4);
+
+            if (listSkillData.Contains(eRandSkill))
+                continue;
+
+            listSkillData.Add(eRandSkill);
+
+            if (listSkillData.Count >= iSlotCount)
+                break;
+        }
+
+        return listSkillData;
+    }
+
+    #endregion
 }

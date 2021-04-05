@@ -48,6 +48,8 @@ public class Widget_Scroll : PanelBase, IHas_UIButton<Widget_Scroll.EButton>
         _mapText[EText.Text_Scroll_Desc].text = DataManager.GetLocalText(_pSkillData.eSkillDesc);
         int iLv = 0;
         _mapText[EText.Text_Scroll_Lv].text = $"+{iLv}";
+
+        _pImage_Icon.sprite = DataManager.GetSprite_InAtlas(_pSkillData.strIconAtlasName, _pSkillData.strIconSpriteName);
     }
 
 

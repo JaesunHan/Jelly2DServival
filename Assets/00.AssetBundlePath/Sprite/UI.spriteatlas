@@ -15,7 +15,7 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
@@ -23,11 +23,11 @@ SpriteAtlas:
     platformSettings: []
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9206425fd46913f4d94e20dafc325d61, type: 3}
@@ -47,11 +47,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b1d81fd4029ff3f47bbb0da5379cd31d, type: 3}
   - {fileID: 21300000, guid: 526edf75fa93d364fbb3eeb1a06a6f47, type: 3}
   - {fileID: 21300000, guid: 18f348779f4feae45a6195ae06cbc32e, type: 3}
+  - {fileID: 21300000, guid: bf1e8c88f94fe8b45b9fd0fb17855278, type: 3}
   - {fileID: 21300000, guid: 64678e98cfb9c2a45a4ed1019c6d2941, type: 3}
   - {fileID: 21300000, guid: 11b75f9856d512244900631455ab3c8d, type: 3}
   - {fileID: 21300000, guid: 86f68579e1c470645a783c40f4271052, type: 3}
   - {fileID: 21300000, guid: 0cc98cf945627544e8761d70cbbbb24a, type: 3}
   - {fileID: 21300000, guid: 7d1b8c1a026022641af7b846a3d34c63, type: 3}
+  - {fileID: 21300000, guid: f87d8c7a0a2cdd64993d4a6981aad737, type: 3}
+  - {fileID: 21300000, guid: b3d5e99a0be8e8741807cbb2cb3b94ff, type: 3}
   - {fileID: 21300000, guid: 0986e10b6b5500a449f69a410b7029fa, type: 3}
   - {fileID: 21300000, guid: d4bb5b2bf799cbe48896bb8c60334f41, type: 3}
   - {fileID: 21300000, guid: 8e85598c65aa8204f98aac13d6aedf6f, type: 3}
@@ -71,11 +74,14 @@ SpriteAtlas:
   - Icon 6
   - Icon 2 Over
   - Panel
+  - Icon16
   - Panel Right
   - Panel Left
   - Icon 4 Over
   - Icon 3 Over
   - Icon 7
+  - Icon47
+  - Icon31
   - Icon25
   - Icon 2
   - Panel Under

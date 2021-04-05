@@ -4,18 +4,36 @@
       "strSkillType": "Skill_Deal_Support",
       "strSkill": "Skill_Summon_Fairy",
       "strIconAtlasName": "UI",
-      "strIconSpriteName": "Icon26",
+      "strIconSpriteName": "Icon25",
       "eSkillName": "Skill_Summon_Fairy",
       "eSkillDesc": "Skill_Summon_Fairy_Desc",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     },
     {
-      "strSkillType": "Skill_Deal_Support",
-      "strSkill": "Skill_Psychokinesis",
+      "strSkillType": "Skill_Ranged_Deal",
+      "strSkill": "Skill_Meteor",
       "strIconAtlasName": "UI",
-      "strIconSpriteName": "Icon26",
-      "eSkillName": "Skill_Summon_Fairy",
-      "eSkillDesc": "Skill_Summon_Fairy_Desc",
+      "strIconSpriteName": "Icon16",
+      "eSkillName": "Skill_Meteor",
+      "eSkillDesc": "Skill_Meteor_Desc",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
+    },
+    {
+      "strSkillType": "Skill_Support",
+      "strSkill": "Skill_Recovery",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Icon31",
+      "eSkillName": "Skill_Recovery",
+      "eSkillDesc": "Skill_Recovery_Desc",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
+    },
+    {
+      "strSkillType": "Skill_Support",
+      "strSkill": "Skill_Shield",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Icon47",
+      "eSkillName": "Skill_Shield",
+      "eSkillDesc": "Skill_Shield_Desc",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     }
   ]

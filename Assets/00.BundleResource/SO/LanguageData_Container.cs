@@ -70,6 +70,18 @@ public enum ELanguageKey
     Skill_Summon_Fairy,
     
     Skill_Summon_Fairy_Desc,
+    
+    Skill_Meteor,
+    
+    Skill_Meteor_Desc,
+    
+    Skill_Recovery,
+    
+    Skill_Recovery_Desc,
+    
+    Skill_Shield,
+    
+    Skill_Shield_Desc,
 }
 
 #region 
