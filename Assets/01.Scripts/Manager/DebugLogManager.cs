@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class DebugLogManager : Singleton<DebugLogManager>
 {
-    private static bool _bIsDebugMode = false;
+    private static bool _bIsDebugMode = true;
 
     public static bool bIsDebugMode 
     {
@@ -23,7 +23,7 @@ public class DebugLogManager : Singleton<DebugLogManager>
     /// </summary>
     public DebugLogManager()
     {
-        _bIsDebugMode = false;
+        _bIsDebugMode = true;
     }
 
 

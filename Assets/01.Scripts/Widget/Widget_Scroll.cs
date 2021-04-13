@@ -23,6 +23,9 @@ public class Widget_Scroll : PanelBase, IHas_UIButton<Widget_Scroll.EButton>
     [GetComponentInChildren("Image_Icon")]
     private Image _pImage_Icon = null;
 
+    [GetComponentInChildren("Image_Light")]
+    private Image _pImage_Light = null;
+
     [GetComponentInChildren]
     private Dictionary<EText, Text> _mapText = new Dictionary<EText, Text>();
 
@@ -31,8 +34,20 @@ public class Widget_Scroll : PanelBase, IHas_UIButton<Widget_Scroll.EButton>
     {
         base.OnAwake();
 
-        
+        if (null != _pImage_Light)
+            _pImage_Light.gameObject.SetActive(false);
     }
+
+    protected override IEnumerator OnEnableCoroutine()
+    {
+        while (IngameUIManager.instance == null)
+        {
+            yield return null;
+        }
+
+        IngameUIManager.instance.OnSelect_Scroll.Subscribe += OnSelect_Scroll;
+    }
+
 
     public void DoInit(SkillData pSkillData)
     {
@@ -50,11 +65,31 @@ public class Widget_Scroll : PanelBase, IHas_UIButton<Widget_Scroll.EButton>
         _mapText[EText.Text_Scroll_Lv].text = $"+{iLv}";
 
         _pImage_Icon.sprite = DataManager.GetSprite_InAtlas(_pSkillData.strIconAtlasName, _pSkillData.strIconSpriteName);
+
+        if (null != _pImage_Light)
+            _pImage_Light.gameObject.SetActive(false);
     }
 
 
     public void IHas_UIButton_OnClickButton(UIButtonMessage<EButton> sButtonMsg)
     {
-        throw new System.NotImplementedException();
+        switch (sButtonMsg.eButtonName)
+        {
+            case EButton.Button_Select:
+                IngameUIManager.instance.OnSelect_Scroll.DoNotify(new IngameUIManager.SelectScrollMessage(_pSkillData.eSkill));
+                break;
+        }
+    }
+
+    private void OnSelect_Scroll(IngameUIManager.SelectScrollMessage pMessage)
+    {
+        if (pMessage.eSkill == _pSkillData.eSkill)
+        {
+            _pImage_Light.gameObject.SetActive(true);
+        }
+        else
+        {
+            _pImage_Light.gameObject.SetActive(false);
+        }
     }
 }

@@ -13,7 +13,19 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
         Panel_Count,
     }
 
+    public struct SelectScrollMessage
+    { 
+        public ESkill eSkill;
+
+        public SelectScrollMessage(ESkill eSkill)
+        {
+            this.eSkill = eSkill;
+        }
+
+    }
+
     Dictionary<EPanel, PanelBase> _mapPanel = new Dictionary<EPanel, PanelBase>();
+    public Observer_Pattern<SelectScrollMessage> OnSelect_Scroll { get; private set; } = Observer_Pattern<SelectScrollMessage>.instance;
 
     protected override void OnAwake()
     {

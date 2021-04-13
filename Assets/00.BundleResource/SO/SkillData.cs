@@ -11,6 +11,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -33,7 +35,7 @@ public class SkillData : UnityEngine.ScriptableObject
     public string strPrefabPath;
     
     /// <summary>
-    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=""/>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strSkillType"/>
     /// </summary>
     public ESkillType eSkillType;
     

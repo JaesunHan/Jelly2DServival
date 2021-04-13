@@ -146,6 +146,14 @@ public class EnemyBase : ObjectBase
             float fDamage = pBullet.fDamage;
             _fHP -= fDamage;
             Check_HP();
+
+            return;
+        }
+
+        SkillBase pSkill = collision.GetComponentInChildren<SkillBase>();
+        if (null != pSkill)
+        { 
+            
         }
     }
 

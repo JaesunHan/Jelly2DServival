@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillBase : ObjectBase
 {
-    protected SkillData _pSkillData = null;
+    public SkillData _pSkillData { get; private set; } = null;
     /// <summary>
     /// 스킬이 활성화 되었을 때 true 이다.
     /// </summary>
@@ -15,8 +15,10 @@ public class SkillBase : ObjectBase
         base.OnAwake();
     }
 
-    public void DoInit(SkillData pSkillData)
+    public virtual void DoInit(SkillData pSkillData)
     {
         _pSkillData = pSkillData;
     }
+
+    
 }

@@ -162,6 +162,7 @@ public class ManaManager : MonoSingleton<ManaManager>
                 pNewPotion.transform.SetParent(transform);
 
                 _list_Alive_ManaPotion.Add(pNewPotion);
+                DebugLogManager.Log($"마나 포션 생성 위치 : {vecSpawnPos}");
             }
             
         }

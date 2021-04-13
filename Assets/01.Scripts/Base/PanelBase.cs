@@ -17,9 +17,31 @@ public class PanelBase : MonoBehaviour
         GetComponentAttributeSetter.DoUpdate_GetComponentAttribute(this);
     }
 
+    private void OnEnable()
+    {
+        OnEnableObject();
+    }
+
+    protected virtual void OnEnableObject()
+    {
+#if UNITY_EDITOR
+        if (Application.isPlaying == false)
+            return;
+#endif
+
+        if (gameObject.activeInHierarchy)
+        {
+            StopCoroutine(nameof(OnEnableCoroutine));
+            StartCoroutine(nameof(OnEnableCoroutine));
+        }
+
+    }
+
+    protected virtual IEnumerator OnEnableCoroutine() { yield break; }
+
     //public virtual void DoInit()
     //{
-        
+
     //}
 
     public virtual void DoShow()

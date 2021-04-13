@@ -11,8 +11,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -25,6 +23,10 @@ public class ManaPotionData : UnityEngine.ScriptableObject
     public float fGetMP;
     
     public int iAppearWave;
+    
+    public string strAtlasName;
+    
+    public string strSpriteName;
     
     public string strSpritePath;
     

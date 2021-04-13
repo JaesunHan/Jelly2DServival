@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1015248502
+CRC: 2343081145
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 50de383b1d5cda2d99871cf982767364
+    Hash: 018296bb48e678fb1abf69ef4cf8d2fb
   TypeTreeHash:
     serializedVersion: 2
     Hash: b7506faad1b59f65dda6f99a4bb3e78a
@@ -90,6 +90,7 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/6_Weapons/Ward_1.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/0_Hair/Hair_4.png
+- Assets/00.AssetBundlePath/Sprite/UI/Icons/Icon16.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Right.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Left.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile4.png
@@ -108,9 +109,12 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/7_Back/Back_2.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 3 Over.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 7.png
+- Assets/00.AssetBundlePath/Sprite/InGame.spriteatlas
 - Assets/00.AssetBundlePath/Sprite/InGame/Shadow.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/1_FaceHair/FaceHair_2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/Shoulder/Shoulder_2.png
+- Assets/00.AssetBundlePath/Sprite/UI/Icons/Icon47.png
+- Assets/00.AssetBundlePath/Sprite/UI/Icons/Icon31.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Fairy/Icon28 1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/3_Pant/Foot_4.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/6_Weapons/Soon_Spear.png

@@ -23,8 +23,20 @@ public class ManaPotionBase : ObjectBase
         _pManaPotionData = pData;
 
         bIsAlive = true;
+        DebugLogManager.Log($"pData file : {pData.strSpritePath}");
 
-        _pSpriteRenderer.sprite = _pManaPotionData.pFile;
+        //_pSpriteRenderer.sprite = _pManaPotionData.pFile;
+        Sprite sprTemp = DataManager.GetSprite_InAtlas(pData.strAtlasName, pData.strSpriteName);
+        DebugLogManager.Log($"strAtlasName : {pData.strAtlasName} / strSpriteName : {pData.strSpriteName}");
+        if (null == sprTemp)
+        {
+            DebugLogManager.Log("스프라이트가 널이다");
+        }
+        else
+        {
+            DebugLogManager.Log($"sprTemp : {sprTemp}");
+            _pSpriteRenderer.sprite = sprTemp;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

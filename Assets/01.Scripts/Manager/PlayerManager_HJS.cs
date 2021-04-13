@@ -36,6 +36,20 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         }
     }
 
+    /// <summary>
+    /// 선택한 스크롤 정보를 받아서 해당 스크롤의 스킬을 적용한다.
+    /// 스크롤 선택 패널에서 선택한 스크롤의 ESkill 값을 전달한다.
+    /// </summary>
+    public struct ApplyScrollMessage
+    {
+        public ESkill eSkill;
+
+        public ApplyScrollMessage(ESkill eSkill)
+        {
+            this.eSkill = eSkill;
+        }
+    }
+
 
     [SerializeField]
     private PlayerCharacter _pOriginal_PlayerCharacter = null;
@@ -55,6 +69,13 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     private List<Bullet> _list_Cur_Using_Bullet = new List<Bullet>();
 
     /// <summary>
+    /// 현재 보유중인 스킬을 저장하는 딕셔너리
+    /// </summary>
+    private Dictionary<ESkill, Transform> _map_Cur_Get_Skill = new Dictionary<ESkill, Transform>();
+
+    private Pooling_Component<Transform> _pPool_Skill = Pooling_Component<Transform>.instance;
+
+    /// <summary>
     /// 현재 타겟의 위치를 멤버 변수에 저장한다.
     /// </summary>
     private Vector2 _vec_CurTarget = Vector2.zero;
@@ -62,7 +83,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     public Observer_Pattern<MoveJoystickMessage> OnMove_Stick { get; private set; } = Observer_Pattern<MoveJoystickMessage>.instance;
 
     public Observer_Pattern<ReturnBulletMessage> OnReturn_Bullet { get; private set; } = Observer_Pattern<ReturnBulletMessage>.instance;
-    
+
+    public Observer_Pattern<ApplyScrollMessage> OnApply_Scroll { get; private set; } = Observer_Pattern<ApplyScrollMessage>.instance;
 
     
     
@@ -99,7 +121,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
         OnMove_Stick.Subscribe += OnMove_Stick_Func;
         OnReturn_Bullet.Subscribe += OnReturn_Bullet_Message;
-        
+
+        OnApply_Scroll.Subscribe += OnApply_Scroll_Func;
     }
 
     public PlayerCharacter DoGet_Cur_Player_Character()
@@ -126,7 +149,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     {
         OnMove_Stick.DoRemove_All_Observer();
         OnReturn_Bullet.DoRemove_All_Observer();
-        
+        OnApply_Scroll.DoRemove_All_Observer();
     }
 
     public void DoInit()
@@ -136,6 +159,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         _pCur_Character.DoInit();
 
         _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
+        Transform pOriginal_Skill = ESkill.Skill_Shield.GetSkillData().pFilePrefab;
+        _pPool_Skill.DoInit_Pool(pOriginal_Skill);
 
         _ws_Fire_Bullet_Term = new WaitForSeconds(EGlobalKey_float.불렛_기본_발사_속도.Getfloat());
 
@@ -226,4 +251,32 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         }
     }
 
+
+    private void OnApply_Scroll_Func(ApplyScrollMessage pMessage)
+    {
+        bool bIsExist = _map_Cur_Get_Skill.ContainsKey(pMessage.eSkill);
+        if (!bIsExist)
+        {
+            SkillData pSkillData = pMessage.eSkill.GetSkillData();
+
+            if (null != pSkillData)
+            {
+                Transform pTransform_Skill = pSkillData.pFilePrefab;
+                if (null != pTransform_Skill)
+                {
+                    Transform pNewTransform = _pPool_Skill.DoPop(pTransform_Skill);
+                    pNewTransform.SetParent(transform);
+
+                    Skill_Fairy pSkillFairy = pNewTransform.GetComponentInChildren<Skill_Fairy>();
+                    if (null != pSkillFairy)
+                    {
+                        pSkillFairy.SetActive(true);
+                        pSkillFairy.DoInit(pSkillData);
+                    }
+
+                }
+            }
+
+        }
+    }
 }

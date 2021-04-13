@@ -3,21 +3,21 @@
   "listTypeData": [
     {
       "bEnable": true,
-      "strFileName": "LanguageData",
-      "strHeaderFieldName": "strLanguageKey",
-      "iOrder": 0,
-      "strSheetID": "1130862910",
-      "strSheetName": "LanguageData",
+      "strFileName": "ManaPotionData",
+      "strHeaderFieldName": "strManaPotion",
+      "iOrder": 3,
+      "strSheetID": "1159733924",
+      "strSheetName": "ManaPotionData",
       "eType": 0,
-      "strCommandLine": "-ispartial",
+      "strCommandLine": null,
       "listFieldData": [
         {
-          "strFieldName": "strLanguageKey",
+          "strFieldName": "strManaPotion",
           "strFieldType": "string",
           "strComment": null,
           "strDependencyFieldName": null,
           "strDependencyFieldName_Sub": null,
-          "strEnumName": "ELanguageKey",
+          "strEnumName": "EManaPotion",
           "bIsVirtualField": false,
           "bDeleteThisField_InCode": false,
           "bIsKeyField": false,
@@ -26,7 +26,35 @@
           "bConvertStringToEnum": true
         },
         {
-          "strFieldName": "strKorean",
+          "strFieldName": "fGetMP",
+          "strFieldType": "float",
+          "strComment": null,
+          "strDependencyFieldName": null,
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": null,
+          "bIsVirtualField": false,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "iAppearWave",
+          "strFieldType": "int",
+          "strComment": null,
+          "strDependencyFieldName": null,
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": null,
+          "bIsVirtualField": false,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "strSpritePath",
           "strFieldType": "string",
           "strComment": null,
           "strDependencyFieldName": null,
@@ -40,24 +68,10 @@
           "bConvertStringToEnum": false
         },
         {
-          "strFieldName": "strEnglish",
-          "strFieldType": "string",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "eLanguageKey",
-          "strFieldType": "ELanguageKey",
-          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strLanguageKey\"/>",
-          "strDependencyFieldName": "strLanguageKey",
+          "strFieldName": "eManaPotion",
+          "strFieldType": "EManaPotion",
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strManaPotion\"/>",
+          "strDependencyFieldName": "strManaPotion",
           "strDependencyFieldName_Sub": null,
           "strEnumName": "",
           "bIsVirtualField": true,
@@ -66,10 +80,52 @@
           "bIsOverlapKey": false,
           "bIsTemp": false,
           "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "pFile",
+          "strFieldType": "UnityEngine.Sprite",
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strSpritePath\"/>",
+          "strDependencyFieldName": "strSpritePath",
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": "",
+          "bIsVirtualField": true,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "strAtlasName",
+          "strFieldType": "string",
+          "strComment": null,
+          "strDependencyFieldName": null,
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": null,
+          "bIsVirtualField": false,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "strSpriteName",
+          "strFieldType": "string",
+          "strComment": null,
+          "strDependencyFieldName": null,
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": null,
+          "bIsVirtualField": false,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
         }
       ],
       "listEnumName": [
-        "ELanguageKey"
+        "EManaPotion"
       ]
     },
     {
@@ -127,8 +183,8 @@
         {
           "strFieldName": "eSkillType",
           "strFieldType": "ESkillType",
-          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"\"/>",
-          "strDependencyFieldName": null,
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strSkillType\"/>",
+          "strDependencyFieldName": "strSkillType",
           "strDependencyFieldName_Sub": null,
           "strEnumName": "",
           "bIsVirtualField": true,
@@ -213,7 +269,7 @@
           "strFieldType": "ESkill",
           "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strSkill\"/>",
           "strDependencyFieldName": "strSkill",
-          "strDependencyFieldName_Sub": null,
+          "strDependencyFieldName_Sub": "strSkillNumber",
           "strEnumName": "",
           "bIsVirtualField": true,
           "bDeleteThisField_InCode": false,
