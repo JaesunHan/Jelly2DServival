@@ -176,7 +176,7 @@ public partial class DataManager : MonoSingleton<DataManager>
         EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
         ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
         SkillData_Container.DoInit(LoadData<SkillData_Container>(), bIsUpdateChildAsset);
-
+        MoneyData_Container.DoInit(LoadData<MoneyData_Container>(), bIsUpdateChildAsset);
 
         GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);
 
@@ -184,7 +184,8 @@ public partial class DataManager : MonoSingleton<DataManager>
 
         //Font 
         Font pFont = BundleLoadManager.instance.DoLoad<Font>("Font", "DungGeunMo.ttf");
-        FontDataDefault[] arrFontData = { new FontDataDefault(SystemLanguage.Korean, pFont) };
+        FontDataDefault[] arrFontData = { new FontDataDefault(SystemLanguage.Korean, pFont),
+                                          new FontDataDefault(SystemLanguage.English, pFont) };
         LanguageManager.instance.DoInit_FontData(arrFontData);
         LanguageManager.instance.DoSetLanguage(SystemLanguage.Korean);
 

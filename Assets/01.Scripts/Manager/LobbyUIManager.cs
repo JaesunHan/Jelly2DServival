@@ -9,8 +9,33 @@ public class LobbyUIManager : MonoSingleton<LobbyUIManager>
         Canvas_Lobby_Main, 
     }
 
+    public struct SelectWidgetMoneyBtnMessage
+    {
+        public EMoneyType eMoneyType;
+
+        public SelectWidgetMoneyBtnMessage(EMoneyType eMoneyType)
+        {
+            this.eMoneyType = eMoneyType;
+        }
+    }
+
+
     [GetComponentInChildren]
     Dictionary<EPanel, PanelBase> _mapPanel = new Dictionary<EPanel, PanelBase>();
+
+    Observer_Pattern<SelectWidgetMoneyBtnMessage> OnSelect_Widget_MoneyBtn = Observer_Pattern<SelectWidgetMoneyBtnMessage>.instance;
+
+    protected override void OnAwake()
+    {
+        base.OnAwake();
+
+        OnSelect_Widget_MoneyBtn.Subscribe += OnSelect_Widget_MoneyBtn_Func;
+    }
+
+    private void OnDestroy()
+    {
+        OnSelect_Widget_MoneyBtn.DoRemove_All_Observer();
+    }
 
     protected override IEnumerator OnEnableCoroutine()
     {
@@ -43,6 +68,21 @@ public class LobbyUIManager : MonoSingleton<LobbyUIManager>
         }
 
         _mapPanel[EPanel.Canvas_Lobby_Main].DoShow();
+    }
+
+    private void OnSelect_Widget_MoneyBtn_Func(SelectWidgetMoneyBtnMessage pMessage)
+    {
+        switch (pMessage.eMoneyType)
+        {
+            case EMoneyType.Money_Gold: // 골드 버튼을 누르면, 상점을 띄울 때 골드 구매 탭을 띄우고
+                break;
+            case EMoneyType.Money_Dia:  // 다이아 버튼을 누르면, 상점을 띄울 때 다이아 구매 탭을 띄우기
+                break;
+
+            default:
+                break;
+        }
+    
     }
 
 }
