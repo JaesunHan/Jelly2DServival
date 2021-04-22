@@ -1,0 +1,16 @@
+{
+  "array": [
+    {
+      "strMoney": "Money_Gold",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Money_Gold",
+      "eMoneyLang": "Money_Gold"
+    },
+    {
+      "strMoney": "Money_Dia",
+      "strIconAtlasName": "UI",
+      "strIconSpriteName": "Money_Dia",
+      "eMoneyLang": "Money_Dia"
+    }
+  ]
+}

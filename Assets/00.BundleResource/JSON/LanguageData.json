@@ -6,6 +6,21 @@
       "strEnglish": "Confirm"
     },
     {
+      "strLanguageKey": "Cancel",
+      "strKorean": "취소",
+      "strEnglish": "Cancel"
+    },
+    {
+      "strLanguageKey": "Money_Gold",
+      "strKorean": "골드",
+      "strEnglish": "Gold"
+    },
+    {
+      "strLanguageKey": "Money_Dia",
+      "strKorean": "다이아",
+      "strEnglish": "Dia"
+    },
+    {
       "strLanguageKey": "Select_Scroll",
       "strKorean": "스크롤 선택",
       "strEnglish": "Select scroll"

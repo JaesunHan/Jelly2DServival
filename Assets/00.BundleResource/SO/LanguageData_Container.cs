@@ -65,6 +65,12 @@ public enum ELanguageKey
     
     Confirm,
     
+    Cancel,
+    
+    Money_Gold,
+    
+    Money_Dia,
+    
     Select_Scroll,
     
     Skill_Summon_Fairy,

@@ -37,6 +37,7 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 9396d80065b15fb4e9f5fa16deb1841a, type: 3}
+  - {fileID: 21300000, guid: e98976109e20d3c499a2907dca7d98e9, type: 3}
   - {fileID: 21300000, guid: feabaf7052f4d8e4daf77e40668bc2b6, type: 3}
   - {fileID: 21300000, guid: 7ea52d616d157c947a0765439d1ae441, type: 3}
   - {fileID: 21300000, guid: 1edfcc716ab5b4940a23aa75e0352142, type: 3}
@@ -45,11 +46,15 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4a4e38441adaaf64c9251018be41c8f6, type: 3}
   - {fileID: 21300000, guid: dcfc8a54a5261b4488cae020699f3975, type: 3}
   - {fileID: 21300000, guid: b1d81fd4029ff3f47bbb0da5379cd31d, type: 3}
+  - {fileID: 21300000, guid: b9b0bfe4d66d7c644b4721d50ca0419e, type: 3}
   - {fileID: 21300000, guid: 526edf75fa93d364fbb3eeb1a06a6f47, type: 3}
+  - {fileID: 21300000, guid: 027461d6818206a45baab698d4928667, type: 3}
   - {fileID: 21300000, guid: 18f348779f4feae45a6195ae06cbc32e, type: 3}
+  - {fileID: 21300000, guid: 251042e7a6410ae41a702a8266f5abb3, type: 3}
   - {fileID: 21300000, guid: bf1e8c88f94fe8b45b9fd0fb17855278, type: 3}
   - {fileID: 21300000, guid: 64678e98cfb9c2a45a4ed1019c6d2941, type: 3}
   - {fileID: 21300000, guid: 11b75f9856d512244900631455ab3c8d, type: 3}
+  - {fileID: 21300000, guid: e0338b696fea5804d86d58733c148e84, type: 3}
   - {fileID: 21300000, guid: 86f68579e1c470645a783c40f4271052, type: 3}
   - {fileID: 21300000, guid: 0cc98cf945627544e8761d70cbbbb24a, type: 3}
   - {fileID: 21300000, guid: 7d1b8c1a026022641af7b846a3d34c63, type: 3}
@@ -58,12 +63,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0986e10b6b5500a449f69a410b7029fa, type: 3}
   - {fileID: 21300000, guid: d4bb5b2bf799cbe48896bb8c60334f41, type: 3}
   - {fileID: 21300000, guid: 8e85598c65aa8204f98aac13d6aedf6f, type: 3}
+  - {fileID: 21300000, guid: e6ddb09cc0cc42d40aa5d6f6f6d6db50, type: 3}
   - {fileID: 21300000, guid: 14cbb79d17bbcb4488f2f84c10898056, type: 3}
   - {fileID: 21300000, guid: 22fafc3e4b16258438fb4240603b1949, type: 3}
   - {fileID: 21300000, guid: a2b1efbe52bb7e8469a0f71be94ca717, type: 3}
   - {fileID: 21300000, guid: bf2b31ceb6a9bab4d93edffe34b2eae6, type: 3}
   m_PackedSpriteNamesToIndex:
   - Medal
+  - T_dot01_common_bt_base_br02
   - Icon 0
   - Icon 5
   - Icon 3
@@ -72,11 +79,15 @@ SpriteAtlas:
   - Icon 1
   - Panel Right Over
   - Icon 6
+  - T_dot01_white_ico_option
   - Icon 2 Over
+  - Money_Gold
   - Panel
+  - Money_Dia
   - Icon16
   - Panel Right
   - Panel Left
+  - T_dot01_common_bt_base_br01
   - Icon 4 Over
   - Icon 3 Over
   - Icon 7
@@ -85,6 +96,7 @@ SpriteAtlas:
   - Icon25
   - Icon 2
   - Panel Under
+  - T_dot01_common_bt_gage_bl
   - Lock
   - Icon 5 Over
   - Icon Shadow
