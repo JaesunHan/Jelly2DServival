@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2343081145
+CRC: 2544798581
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 018296bb48e678fb1abf69ef4cf8d2fb
+    Hash: f26c2319ca14d340a1701e370f4dc7a2
   TypeTreeHash:
     serializedVersion: 2
     Hash: b7506faad1b59f65dda6f99a4bb3e78a
@@ -18,6 +18,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/Sprite/UI/Medal.png
+- Assets/00.AssetBundlePath/Sprite/Object/Rock_1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/2_Cloth/Cloth_1.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 0.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile8.png
@@ -34,6 +35,7 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/EffectImage/ElectricityFX1.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/1_FaceHair/FaceHair_4.png
+- Assets/00.AssetBundlePath/Sprite/Object/Rock_2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/0_Hair/Hair_3.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/2_Cloth/Cloth_12.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 6.png
@@ -50,7 +52,6 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/InGame/SlimeBullet.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/Shoulder/Shoulder_5.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/0_Hair/Hair_2.png
-- Assets/00.AssetBundlePath/Sprite/InGame/Cloud A.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/4_Helmet/Helmet_4.png
 - Assets/00.AssetBundlePath/Sprite/EffectImage/EnergyFX11.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 4.png
@@ -58,13 +59,14 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 1.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel Right Over.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile13.png
+- Assets/00.AssetBundlePath/Sprite/BG/Bg_1.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile3.png
 - Assets/00.AssetBundlePath/Sprite/EffectImage/EnergyFX10.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 6.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 10.png
-- Assets/00.AssetBundlePath/Sprite/InGame/Cloud B.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 3.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 2 Over.png
+- Assets/00.AssetBundlePath/Sprite/Object/Tree_2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/3_Pant/Foot_2.png
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/2_Cloth/Cloth_5.png
@@ -73,11 +75,13 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/2_Cloth/Cloth_8.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Jelly/Jelly 8.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/0_Hair/Hair_5.png
+- Assets/00.AssetBundlePath/Sprite/Object/TreeBanch.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/4_Helmet/Helmet_9.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/5_Armor/Armor_3.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/7_Back/BowBack_1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/3_Pant/Foot_3.png
 - Assets/00.AssetBundlePath/Sprite/Weapon/Arrow.png
+- Assets/00.AssetBundlePath/Sprite/Object/Bush_1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/2_Cloth/Cloth_6.png
 - Assets/00.AssetBundlePath/Sprite/UI/Panel.png
 - Assets/00.AssetBundlePath/Sprite/InGame/Fairy/Icon30 1.png
@@ -105,6 +109,7 @@ Assets:
 - Assets/00.AssetBundlePath/Sprite/TileSet/Tile7.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/6_Weapons/Sword_2.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/6_Weapons/Spear_1.png
+- Assets/00.AssetBundlePath/Sprite/Object/Tree_1.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/0_Hair/Hair_7.png
 - Assets/00.AssetBundlePath/Sprite/SPUM_Sprites/Items/7_Back/Back_2.png
 - Assets/00.AssetBundlePath/Sprite/UI/Icon 3 Over.png

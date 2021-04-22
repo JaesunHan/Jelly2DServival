@@ -21,6 +21,9 @@ public class Skill_Fairy : SkillBase
 
     private WaitForSeconds _ws_FireTerm;
 
+    [GetComponentInChildren("Sprite_Fairy")]
+    private SpriteRenderer _pSprite = null;
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -42,7 +45,9 @@ public class Skill_Fairy : SkillBase
             _pPlayer = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform;
         }
 
-        transform.position = _pPlayer.position + (Vector3)(Vector2.up * 2) ;
+        //transform.position = _pPlayer.position + (Vector3)(Vector2.up * 1.2f) ;
+        transform.position = _pPlayer.position;
+        _pSprite.transform.position = transform.position +(Vector3)(Vector2.up * 1.3f);
 
         _bIsAlive = true;
 
@@ -66,7 +71,9 @@ public class Skill_Fairy : SkillBase
     {
         while (_bIsAlive)
         {
-            transform.RotateAround(_pPlayer.position, Vector3.forward, _fRotSpeed * Time.fixedDeltaTime);
+            transform.position = _pPlayer.position;
+
+            _pSprite.transform.RotateAround(_pPlayer.position, Vector3.forward, _fRotSpeed * Time.fixedDeltaTime);
             yield return new WaitForFixedUpdate();
         }
     }

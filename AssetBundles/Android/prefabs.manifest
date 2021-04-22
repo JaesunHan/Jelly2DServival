@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 499056647
+CRC: 1501250133
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fb7eaf02f0b51ab0efe7296759a76307
+    Hash: 3cea891a3df3312723cd41f8ea156275
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a9cc08f93a39daf95c1619bded707373
+    Hash: 7ffd2ef0cf8a3f5207a2907c081498fd
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,6 +22,8 @@ ClassTypes:
 - Class: 50
   Script: {instanceID: 0}
 - Class: 58
+  Script: {instanceID: 0}
+- Class: 61
   Script: {instanceID: 0}
 - Class: 70
   Script: {instanceID: 0}
@@ -53,6 +55,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 82324cf28d835724d884d7024ed12e2a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e2141b931f3b8f54b8de28301fb202b6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
 - Class: 114
@@ -94,6 +98,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/Prefabs/Bullet/Bullet.prefab
+- Assets/00.AssetBundlePath/Prefabs/Objects/Tree_2.prefab
 - Assets/00.AssetBundlePath/Prefabs/HPBar.prefab
 - Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit4.prefab
@@ -103,6 +108,8 @@ Assets:
 - Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
 - Assets/00.AssetBundlePath/Prefabs/UI/Panel_Joystick.prefab
 - Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
+- Assets/00.AssetBundlePath/Prefabs/Objects/Tree_1.prefab
+- Assets/00.AssetBundlePath/Prefabs/Objects/Rock_1.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit1.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit3.prefab
 - Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab

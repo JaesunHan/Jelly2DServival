@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 199334333
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 897c542affa1c624da03b90c105313d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,8 +151,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 199334333
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 764f930ba03e6324d805335eb66b8c98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4248779623673348383}
   - component: {fileID: 3242388545096530816}
   - component: {fileID: 5460186868267369646}
+  - component: {fileID: 147756631162936043}
   m_Layer: 0
   m_Name: Enemy_Jelly
   m_TagString: Untagged
@@ -269,6 +270,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.29}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!210 &147756631162936043
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823025893350551661}
+  m_Enabled: 1
+  m_SortingLayerID: 199334333
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1001 &4316370442099122894
 PrefabInstance:
   m_ObjectHideFlags: 0

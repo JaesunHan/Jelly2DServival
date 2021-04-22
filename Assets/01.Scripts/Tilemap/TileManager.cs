@@ -29,8 +29,15 @@ public class TileManager : MonoSingleton<TileManager>
         _ws_Check_Term = new WaitForSeconds(2);
     }
 
-    private void Start()
+
+
+    protected override IEnumerator OnEnableCoroutine()
     {
+        while (!DataManager.bIsLoaded_AllResource)
+        {
+            yield return null;
+        }
+
         SpriteAtlas pSpriteAtlas = DataManager.GetSpriteAtlas("TileSet");
 
         Sprite[] arrSprites = new Sprite[20];
@@ -42,7 +49,9 @@ public class TileManager : MonoSingleton<TileManager>
             for (int j = -const_iDefault_Count_OneSide; j < const_iDefault_Count_OneSide; ++j)
             {
                 int iRandomIdx = Random.Range(0, iArrayCount);
+                //DebugLogManager.Log($"arrSprites[iRandomIdx] : {arrSprites[iRandomIdx]}");
                 newTile.sprite = arrSprites[iRandomIdx];
+                //DebugLogManager.Log($"newTile.sprite : {newTile.sprite}");
                 Vector3Int pos = new Vector3Int(i, j, 0);
                 _pTilemap.SetTile(pos, newTile);
             }
