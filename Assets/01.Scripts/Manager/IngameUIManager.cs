@@ -31,7 +31,7 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
     {
         base.OnAwake();
 
-        var arrPanel = GetComponentsInChildren<PanelBase>();
+        var arrPanel = GetComponentsInChildren<PanelBase>(true);
 
         for (EPanel ePanel = (EPanel)0; ePanel < EPanel.Panel_Count; ++ePanel)
         {
@@ -40,6 +40,7 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
                 if (ePanel.ToString() == arrPanel[i].name)
                 {
                     _mapPanel.Add(ePanel, arrPanel[i]);
+                    arrPanel[i].DoAwake();
                     break;
                 }
             }
@@ -49,18 +50,20 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
     protected override IEnumerator OnEnableCoroutine()
     {
         yield return base.OnEnableCoroutine();
+        
 
         while (!DataManager.bIsLoaded_AllResource)
         {
             yield return null;  
         }
-
+        //LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
         Init();
     }
 
     public void DoShowPanel(EPanel eShowPanelType)
     {
         _mapPanel[eShowPanelType].DoShow();
+        LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
     }
 
 

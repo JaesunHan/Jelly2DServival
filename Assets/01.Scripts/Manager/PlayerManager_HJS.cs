@@ -56,6 +56,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     [SerializeField]
     private PlayerCharacter _pCur_Character = null;
+    private Pooling_Component<PlayerCharacter> _pPool_Character = Pooling_Component<PlayerCharacter>.instance;
 
     //private EDir _eDir = EDir.Dir_None;
 
@@ -63,6 +64,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     private WaitForSeconds _ws_Fire_Bullet_Term;
 
+    [GetComponentInChildren]
     private Bullet _pOriginal_Bullet = null;
 
     private Pooling_Component<Bullet> _pPool_Bullet = Pooling_Component<Bullet>.instance;
@@ -86,33 +88,27 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     public Observer_Pattern<ApplyScrollMessage> OnApply_Scroll { get; private set; } = Observer_Pattern<ApplyScrollMessage>.instance;
 
-    
-    
-    protected override void OnAwake()
+
+
+    //protected override void OnAwake()
+    protected override IEnumerator OnEnableCoroutine()
     {
-        base.OnAwake();
+        yield return base.OnEnableCoroutine();
 
-        if (null == _pCur_Character)
+        while (!DataManager.bIsLoaded_AllResource)
         {
-            if (null != _pOriginal_PlayerCharacter)
-            {
-                _pCur_Character = Instantiate<PlayerCharacter>(_pOriginal_PlayerCharacter);
-                _pCur_Character.transform.localPosition = Vector2.zero;
-
-                _pCur_Character.transform.SetParent(transform);
-
-                _pOriginal_PlayerCharacter.SetActive(false);
-            }
+            yield return null;
         }
+
 
         if (null == _list_Cur_Using_Bullet)
         {
             _list_Cur_Using_Bullet = new List<Bullet>();
         }
 
-        if (null == _pOriginal_Bullet)
+        if (null != _pOriginal_Bullet)
         {
-            _pOriginal_Bullet = GetComponentInChildren<Bullet>();
+            //_pOriginal_Bullet = GetComponentInChildren<Bullet>();
             _pOriginal_Bullet.SetActive(false);
         }
 
@@ -154,7 +150,23 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     public void DoInit()
     {
-        _fCharacter_Move_Speed = 3f;
+        _fCharacter_Move_Speed = 4f;
+
+        _pPool_Character.DoInit_Pool(_pOriginal_PlayerCharacter);
+        if (null == _pCur_Character)
+        {
+            if (null != _pOriginal_PlayerCharacter)
+            {
+                //_pCur_Character = Instantiate<PlayerCharacter>(_pOriginal_PlayerCharacter);
+                _pCur_Character = _pPool_Character.DoPop(_pOriginal_PlayerCharacter);
+                _pCur_Character.SetActive(true);
+                _pCur_Character.transform.localPosition = Vector2.zero;
+
+                _pCur_Character.transform.SetParent(transform);
+
+                _pOriginal_PlayerCharacter.SetActive(false);
+            }
+        }
 
         _pCur_Character.DoInit();
 

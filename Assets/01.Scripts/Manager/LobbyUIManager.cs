@@ -6,7 +6,7 @@ public class LobbyUIManager : MonoSingleton<LobbyUIManager>
 {
     public enum EPanel
     {
-        Canvas_Lobby_Main, 
+        Canvas_Lobby_Top, 
     }
 
     public struct SelectWidgetMoneyBtnMessage
@@ -67,7 +67,7 @@ public class LobbyUIManager : MonoSingleton<LobbyUIManager>
             _mapPanel[(EPanel)i].DoHide();
         }
 
-        _mapPanel[EPanel.Canvas_Lobby_Main].DoShow();
+        _mapPanel[EPanel.Canvas_Lobby_Top].DoShow();
     }
 
     private void OnSelect_Widget_MoneyBtn_Func(SelectWidgetMoneyBtnMessage pMessage)

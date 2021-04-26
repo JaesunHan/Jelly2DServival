@@ -55,7 +55,7 @@ public class GameManager : ObjectBase
     {
         while (!DataManager.bIsLoaded_AllResource)
         {
-            DebugLogManager.Log("데이터 매니저 초기화가 완료될때까지 기다린다.");
+            //DebugLogManager.Log("데이터 매니저 초기화가 완료될때까지 기다린다.");
 
             yield return null;
         }

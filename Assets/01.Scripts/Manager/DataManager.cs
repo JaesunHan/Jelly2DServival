@@ -115,7 +115,7 @@ public partial class DataManager : MonoSingleton<DataManager>
     {
         base.OnAwake();
 
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
 #if UNITY_EDITOR
         BundleLoadManager.instance.DoInit(eLoadLogic_OnEditor);
@@ -187,8 +187,8 @@ public partial class DataManager : MonoSingleton<DataManager>
         FontDataDefault[] arrFontData = { new FontDataDefault(SystemLanguage.Korean, pFont),
                                           new FontDataDefault(SystemLanguage.English, pFont) };
         LanguageManager.instance.DoInit_FontData(arrFontData);
-        LanguageManager.instance.DoSetLanguage(SystemLanguage.Korean);
 
+        LanguageManager.instance.DoSetLanguage(SystemLanguage.Korean);
 
         yield break;
     }

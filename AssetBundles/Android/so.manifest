@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2289499438
+CRC: 1830640593
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 702860e3fbb580c7e861854243d4bf1a
+    Hash: 755c94a2c82f8b153f118e2a8880dc01
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4647a0be6e8ea9b6687c5b815385e4c9
+    Hash: ba63757755d275eec8fe811a24e91e7d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -16,6 +16,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: ed6a4cc0f4774e94f81a1d5e64050607, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: ebabefe396ff8a048bd3d0675bcb4e54, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1a3862554daf139469825bc93c3a428c, type: 3}
@@ -23,6 +25,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: a62634f5ab4cc0544acd4095b924b0d8, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bf6e96e69caee894dbc967769643c7fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cbc44f79fe436b642bdfed094c680c4d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
 - Class: 114
@@ -39,6 +43,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/00.AssetBundlePath/SO/MoneyData_Container.asset
 - Assets/00.AssetBundlePath/SO/LanguageData_Container.asset
 - Assets/00.AssetBundlePath/SO/ManaPotionData_Container.asset
 - Assets/00.AssetBundlePath/SO/SkillData_Container.asset

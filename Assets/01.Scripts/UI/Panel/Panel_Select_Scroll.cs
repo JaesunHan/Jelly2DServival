@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.Ebutton>
+public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.EButton>
 {
     const int const_iSlot_Count = 4;
-    public enum Ebutton
+    public enum EButton
     {
         Button_Confirm,
     }
 
     [GetComponentInChildren]
     private List<Widget_Scroll> _list_Widget = new List<Widget_Scroll>();
+
+    [GetComponentInChildren]
+    private Dictionary<EButton, Button> _mapButton = new Dictionary<EButton, Button>();
 
     private int _iSelect_Skill;
     private ESkill _eSelect_Skill;
@@ -24,13 +28,14 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
 
     protected override IEnumerator OnEnableCoroutine()
     {
-        while (IngameUIManager.instance == null)
+        while (!DataManager.bIsLoaded_AllResource)
         {
-            DebugLogManager.Log("IngameUIManager 의 인스턴스가 아직 없다");
+            //DebugLogManager.Log("IngameUIManager 의 인스턴스가 아직 없다");
             yield return null;
         }
 
-        DebugLogManager.Log("IngameUIManager 의 인스턴스가 있다");
+        Text pText_Confirm = _mapButton[EButton.Button_Confirm].GetComponentInChildren<Text>();
+        pText_Confirm.text = DataManager.GetLocalText(ELanguageKey.Confirm);
 
         IngameUIManager.instance.OnSelect_Scroll.Subscribe += OnSelect_Scroll;
     }
@@ -67,16 +72,19 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
         //_eSelect_Skill = ESkill.Skill_Summon_Fairy;
     }
 
-    public void IHas_UIButton_OnClickButton(UIButtonMessage<Ebutton> sButtonMsg)
+    public void IHas_UIButton_OnClickButton(UIButtonMessage<EButton> sButtonMsg)
     {
         switch (sButtonMsg.eButtonName)
         {
-            case Ebutton.Button_Confirm:
+            case EButton.Button_Confirm:
                 if (-1 == _iSelect_Skill)
                 {
                     //Show System Message
                     break;
                 }
+
+                if (_eSelect_Skill != ESkill.Skill_Summon_Fairy)
+                    break;
 
                 PlayerManager_HJS.instance.OnApply_Scroll.DoNotify(new PlayerManager_HJS.ApplyScrollMessage(_eSelect_Skill));
 

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1501250133
+CRC: 2276988943
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3cea891a3df3312723cd41f8ea156275
+    Hash: 9f2812b9ce39d0902342c04b1ffc7137
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7ffd2ef0cf8a3f5207a2907c081498fd
+    Hash: 7cb85239d603aae84cb5bcd72deb168d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,6 +34,8 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 114
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -54,9 +56,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 77ef3dc2c5a20a841bec24534583df1f, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 236d6ee2e4a216946841fd1c2d27c33a, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 82324cf28d835724d884d7024ed12e2a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e2141b931f3b8f54b8de28301fb202b6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 36516f242b6ebd247a0b24ef724a5fdc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
 - Class: 114
@@ -79,6 +85,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: e2e7102de0548e1408aac02d532d9313, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0ff31e057ec75b3439dd6021c0ca7ba3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 66ff11ed79c16864a93ec6c733e97a76, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -95,8 +105,15 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
+- Class: 156049354
+  Script: {instanceID: 0}
+- Class: 483693784
+  Script: {instanceID: 0}
+- Class: 1839735485
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/00.AssetBundlePath/Prefabs/UI/Canvas_Loading.prefab
 - Assets/00.AssetBundlePath/Prefabs/Bullet/Bullet.prefab
 - Assets/00.AssetBundlePath/Prefabs/Objects/Tree_2.prefab
 - Assets/00.AssetBundlePath/Prefabs/HPBar.prefab
@@ -106,11 +123,14 @@ Assets:
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit2.prefab
 - Assets/00.AssetBundlePath/Prefabs/UI/Panel_Main.prefab
 - Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
+- Assets/00.AssetBundlePath/Prefabs/New Palette.prefab
 - Assets/00.AssetBundlePath/Prefabs/UI/Panel_Joystick.prefab
 - Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
 - Assets/00.AssetBundlePath/Prefabs/Objects/Tree_1.prefab
 - Assets/00.AssetBundlePath/Prefabs/Objects/Rock_1.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit1.prefab
+- Assets/00.AssetBundlePath/Prefabs/Widget/Widget_Money_Button.prefab
+- Assets/00.AssetBundlePath/Prefabs/UI/Canvas_Lobby_Top.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit3.prefab
 - Assets/00.AssetBundlePath/Prefabs/PlayerCharacter.prefab
 - Assets/00.AssetBundlePath/Prefabs/UI/Panel_Select_Scroll.prefab

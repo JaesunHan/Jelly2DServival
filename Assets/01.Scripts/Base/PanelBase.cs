@@ -44,6 +44,11 @@ public class PanelBase : MonoBehaviour
 
     //}
 
+    public void DoAwake()
+    {
+        Awake();
+    }
+
     public virtual void DoShow()
     {
         bIsShow = true;
