@@ -150,10 +150,15 @@ public class EnemyBase : ObjectBase
             return;
         }
 
-        SkillBase pSkill = collision.GetComponentInChildren<SkillBase>();
+        SkillBase pSkill = collision.GetComponentInParent<SkillBase>();
         if (null != pSkill)
-        { 
-            
+        {
+            if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
+            {
+                _fHP -= 3f;
+                Check_HP();
+                return;
+            }
         }
     }
 

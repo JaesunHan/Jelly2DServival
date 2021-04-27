@@ -12,6 +12,8 @@ public class SceneLoadManager
     const string const_strLobbySceneName = "LobbyScene";
     const string const_strTitleSceneName = "TitleScene";
 
+    const string const_strSystemMessageSceneName = "SystemMessageScene";
+
     public enum EScene_Where
     {
         None,
@@ -26,6 +28,8 @@ public class SceneLoadManager
         TitleScene,
 
         LobbyScene,
+
+        SystemMessageScene,
     }
 
     public static EScene_Where eSceneWhere { get; private set; } = EScene_Where.None;
@@ -46,6 +50,8 @@ public class SceneLoadManager
                 eSceneWhere = eSecen_Where;
                 strSceneName = const_strIngameSceneName;
                 SceneManager.LoadScene(const_strIngameSceneName);
+
+                SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.LobbyScene:
@@ -53,6 +59,7 @@ public class SceneLoadManager
                 strSceneName = const_strLobbySceneName;
                 SceneManager.LoadScene(const_strLobbySceneName);
 
+                SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.TitleScene:

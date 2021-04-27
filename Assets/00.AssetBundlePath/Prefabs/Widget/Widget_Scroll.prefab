@@ -199,7 +199,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Key: Skill_Summon_Fairy'
+  m_Text: 'Key: '
 --- !u!114 &3645269893098664447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82324cf28d835724d884d7024ed12e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Summon_Fairy
+  strLanguageKey: 
   pText: {fileID: 3645269893098664446}
 --- !u!1 &3645269893658124189
 GameObject:
@@ -558,7 +558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Key: Skill_Summon_Fairy_Desc'
+  m_Text: 'Key: '
 --- !u!114 &3645269894098766386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82324cf28d835724d884d7024ed12e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Summon_Fairy_Desc
+  strLanguageKey: 
   pText: {fileID: 3645269894098766381}
 --- !u!1 &3645269894264214748
 GameObject:

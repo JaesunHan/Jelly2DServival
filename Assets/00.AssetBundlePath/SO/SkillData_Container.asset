@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5527058542617909601
+--- !u!114 &-6620801289077755955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,50 +22,6 @@ MonoBehaviour:
   eSkillType: 2
   pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
   eSkill: 3
---- !u!114 &-4424507005174598712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
-  m_Name: Skill_Meteor
-  m_EditorClassIdentifier: 
-  strSkillType: Skill_Ranged_Deal
-  strSkill: Skill_Meteor
-  strIconAtlasName: UI
-  strIconSpriteName: Icon16
-  eSkillName: Skill_Meteor
-  eSkillDesc: Skill_Meteor_Desc
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
-  eSkillType: 1
-  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
-  eSkill: 1
---- !u!114 &-57334482992663013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
-  m_Name: Skill_Recovery
-  m_EditorClassIdentifier: 
-  strSkillType: Skill_Support
-  strSkill: Skill_Recovery
-  strIconAtlasName: UI
-  strIconSpriteName: Icon31
-  eSkillName: Skill_Recovery
-  eSkillDesc: Skill_Recovery_Desc
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
-  eSkillType: 2
-  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
-  eSkill: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +35,11 @@ MonoBehaviour:
   m_Name: SkillData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: -4424507005174598712}
-  - {fileID: -57334482992663013}
-  - {fileID: -5527058542617909601}
-  - {fileID: 7233751602116862498}
---- !u!114 &7233751602116862498
+  - {fileID: 2121091212305010553}
+  - {fileID: 4199703475640155547}
+  - {fileID: -6620801289077755955}
+  - {fileID: 1372249105401538097}
+--- !u!114 &1372249105401538097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,3 +61,47 @@ MonoBehaviour:
   eSkillType: 0
   pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
   eSkill: 0
+--- !u!114 &2121091212305010553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
+  m_Name: Skill_Meteor
+  m_EditorClassIdentifier: 
+  strSkillType: Skill_Ranged_Deal
+  strSkill: Skill_Meteor
+  strIconAtlasName: UI
+  strIconSpriteName: Icon16
+  eSkillName: Skill_Meteor
+  eSkillDesc: Skill_Meteor_Desc
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
+  eSkillType: 1
+  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
+  eSkill: 1
+--- !u!114 &4199703475640155547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
+  m_Name: Skill_Recovery
+  m_EditorClassIdentifier: 
+  strSkillType: Skill_Support
+  strSkill: Skill_Recovery
+  strIconAtlasName: UI
+  strIconSpriteName: Icon31
+  eSkillName: Skill_Recovery
+  eSkillDesc: Skill_Recovery_Desc
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
+  eSkillType: 2
+  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
+  eSkill: 2

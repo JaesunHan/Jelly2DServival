@@ -79,12 +79,16 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
             case EButton.Button_Confirm:
                 if (-1 == _iSelect_Skill)
                 {
-                    //Show System Message
                     break;
                 }
 
                 if (_eSelect_Skill != ESkill.Skill_Summon_Fairy)
+                {
+                    //Show System Message
+                    SystemMsgUIManager.instance.OnOccur_System_Message.DoNotify(new SystemMsgUIManager.SystemMessage(ELanguageKey.System_Prepare));
                     break;
+                }
+                
 
                 PlayerManager_HJS.instance.OnApply_Scroll.DoNotify(new PlayerManager_HJS.ApplyScrollMessage(_eSelect_Skill));
 

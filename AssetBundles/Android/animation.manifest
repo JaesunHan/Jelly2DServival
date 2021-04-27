@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4274416169
+CRC: 2104836849
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4d5d1230ebc826445d8007c2b5b75c61
+    Hash: c5a57f0cdbc031478637d3f1db958bbe
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 834bb62117003403c32d38d7ee9bed80
+    Hash: 137418db0eae44e589a297ef38c0251a
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -15,18 +15,24 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 91
   Script: {instanceID: 0}
+- Class: 115
+  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/00.AssetBundlePath/Animation/TouchTheScreenAnim.anim
 - Assets/00.AssetBundlePath/Animation/MagicFire.controller
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX10_0.controller
+- Assets/00.AssetBundlePath/Animation/SystemMessage/ShowMessage.anim
 - Assets/00.AssetBundlePath/Animation/FairyAnim/Icon26.controller
 - Assets/00.AssetBundlePath/Animation/Charging.anim
 - Assets/00.AssetBundlePath/Animation/PotionFloat/ManaPotion.controller
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy11_0.anim
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/EnergyFX11_0.controller
 - Assets/00.AssetBundlePath/Animation/Magic_Idle.anim
+- Assets/00.AssetBundlePath/Animation/SystemMessage/Canvas_System_Message.controller
+- Assets/00.AssetBundlePath/Animation/Text_TouchTheScreen.controller
 - Assets/00.AssetBundlePath/Animation/MagicChargeEffect/Energy10_0.anim
 - Assets/00.AssetBundlePath/Animation/FairyAnim/ShiningAnim.anim
 - Assets/00.AssetBundlePath/Animation/PotionFloat/Float.anim

@@ -88,6 +88,8 @@ public enum ELanguageKey
     Skill_Shield,
     
     Skill_Shield_Desc,
+    
+    System_Prepare,
 }
 
 #region 
