@@ -50,20 +50,24 @@ public class IngameUIManager : MonoSingleton<IngameUIManager>
     protected override IEnumerator OnEnableCoroutine()
     {
         yield return base.OnEnableCoroutine();
-        
+
+        if (!DataManager.bIsLoaded_AllResource)
+        {
+            yield return null;
+        }
+
+        Init();
 
         while (!DataManager.bIsLoaded_AllResource)
         {
             yield return null;  
         }
-        //LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
-        Init();
     }
 
     public void DoShowPanel(EPanel eShowPanelType)
     {
         _mapPanel[eShowPanelType].DoShow();
-        LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
+        //LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
     }
 
 
