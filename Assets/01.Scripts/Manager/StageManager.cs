@@ -12,7 +12,7 @@ public class StageManager : MonoSingleton<StageManager>
     /// 플탐 120초 : 1 wave -> 2 wave
     /// 플탐 180초 : 2 wave -> 3 wave
     /// </summary>
-    const float const_fUpdate_Wave_Term = 60f;
+    const float const_fUpdate_Wave_Term = 10f;
     public int iCurWave { get; private set; } = 0;
 
     private float _fWave_Update_Term = 0f;
@@ -27,6 +27,7 @@ public class StageManager : MonoSingleton<StageManager>
         iCurWave = 0;
 
         _fWave_Update_Term = EGlobalKey_float.웨이브_갱신_주기.Getfloat();
+        //_fWave_Update_Term = const_fUpdate_Wave_Term;
 
         _iMax_Wave_Num = EGlobalKey_int.스테이지당_최대_웨이브_수.Getint();
 

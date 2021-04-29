@@ -65,6 +65,7 @@ public class EnemyBase : ObjectBase
         this.pEnemyData = pEnemyData;
 
         _fHP = this.pEnemyData.fHP;
+        _pHPBar.DoAwake();
         _pHPBar.DoInit(_fHP);
         _pSprite_Jelly.sprite = pEnemyData.pFile;
 

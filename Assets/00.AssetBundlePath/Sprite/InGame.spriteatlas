@@ -36,10 +36,14 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 73597890e897441449c00ccf671091a1, type: 3}
   - {fileID: 21300000, guid: 9b78e0019bacf3e4e8eac1109dcd6e93, type: 3}
   - {fileID: 21300000, guid: 62b09031e266eb54693b441cbbd14efc, type: 3}
+  - {fileID: 21300000, guid: 97df8da18fe49bf488e36f8c0f7008a2, type: 3}
+  - {fileID: 21300000, guid: ebbbadd19443c2644b9c46ad174b9a1f, type: 3}
   - {fileID: 21300000, guid: 590b73e132435194da7d40dc8a3816f0, type: 3}
   - {fileID: 21300000, guid: 2d5d6782fc427ad498ff00ded71060f4, type: 3}
+  - {fileID: 21300000, guid: 982517b3afb78044892c7277f5afd648, type: 3}
   - {fileID: 21300000, guid: d586ecb37eb32ee499e842d029d547cb, type: 3}
   - {fileID: 21300000, guid: 230db3240b492574094d76e3dbd404a1, type: 3}
   - {fileID: 21300000, guid: 7fd151f4d9de8de47a1d5abe6e506e83, type: 3}
@@ -55,24 +59,31 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6165eb3bda9b8174d970537d227c4b90, type: 3}
   - {fileID: 21300000, guid: 51be044b225033547aa13cccaadceee6, type: 3}
   - {fileID: 21300000, guid: 6de610ccbbc0a094b804153e2dea43a6, type: 3}
+  - {fileID: 21300000, guid: 1da5ae2d7d4802545a00ecf89c4df14c, type: 3}
   - {fileID: 21300000, guid: b8fd21ad16123364aaee0da8f1b3746b, type: 3}
+  - {fileID: 21300000, guid: 42ae47cdf4013bb4e9e5f6aabb875007, type: 3}
+  - {fileID: 21300000, guid: 1106ddddb1c80b7469872ebc0419f9d2, type: 3}
   - {fileID: 21300000, guid: f4ba7a5e8b25ae241a6c94d4d6df858d, type: 3}
   - {fileID: 21300000, guid: 932ce8ce7b8fd8e4d9fb9bce6a7e0b7d, type: 3}
   - {fileID: 21300000, guid: efd4d67f60d3a2942a7e90aab09e58da, type: 3}
   - {fileID: 21300000, guid: d78e009f5bb799b42bbf3c801af824ac, type: 3}
   m_PackedSpriteNamesToIndex:
+  - 3_Potion
   - 0_Potion
-  - 1_Potion
+  - 1_Potion_Legacy
+  - 5_Potion
+  - 6_Potion
   - Jelly 2
   - Jelly 6
+  - 1_Potion
   - SlimeBullet
   - Jelly 4
   - Jelly 10
   - Jelly 3
   - Jelly 8
   - Icon30 1
-  - 3_Potion
-  - 2_Potion
+  - 3_Potion_Legacy
+  - 2_Potion_Legacy
   - Icon25 1
   - Shadow
   - Icon28 1
@@ -80,7 +91,10 @@ SpriteAtlas:
   - Icon26 1
   - Icon29 1
   - Jelly 7
+  - 2_Potion
   - Jelly 5
+  - 4_Potion
+  - 7_Potion
   - Jelly 0
   - Jelly 1
   - Icon27 1
