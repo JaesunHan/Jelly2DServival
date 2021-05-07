@@ -18,10 +18,14 @@ public class LoadingText_Anim : MonoBehaviour
         _wsTerm = new WaitForSeconds(0.5f);
 
         StopAllCoroutines();
-        StartCoroutine(nameof(OnCoroutine_Text_Anim));
+        //StartCoroutine(nameof(OnCoroutine_Text_Anim));
     }
 
-    
+    public void DoStopAllCoroutine()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator OnCoroutine_Text_Anim()
     {
         while (isActiveAndEnabled)

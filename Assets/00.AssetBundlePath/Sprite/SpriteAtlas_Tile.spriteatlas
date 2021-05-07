@@ -36,40 +36,16 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 6e5a488059810f0489b635581e0ede72, type: 3}
   - {fileID: 21300000, guid: 51efa8e0576f8c944ad08d1b5e6712ef, type: 3}
   - {fileID: 21300000, guid: f43827513c97437478142d9073f48f4d, type: 3}
-  - {fileID: 21300000, guid: d84497831e893ab42b2657ceffcddf04, type: 3}
   - {fileID: 21300000, guid: 8434e7938b0d85949a779d4d6d19be1d, type: 3}
-  - {fileID: 21300000, guid: e5f39a740f11b114fa141765fcee5696, type: 3}
-  - {fileID: 21300000, guid: f2ca7884ce9ed3b40aadf09e8a6e150b, type: 3}
-  - {fileID: 21300000, guid: ddb631e59d6369546a546645a6bda53e, type: 3}
   - {fileID: 21300000, guid: 2e72364895b553343a149c85eaabb9af, type: 3}
-  - {fileID: 21300000, guid: fe79f5c8278593d44a92c540b37b192a, type: 3}
-  - {fileID: 21300000, guid: 9dec3069d2cba724d959062087eeab5f, type: 3}
-  - {fileID: 21300000, guid: c05abea956ad64945ae0d6c9d664aef1, type: 3}
-  - {fileID: 21300000, guid: c691250b1b869f44f860c24bac0cf104, type: 3}
-  - {fileID: 21300000, guid: 0ec98edc96348ea4882684c9f2cccf0a, type: 3}
-  - {fileID: 21300000, guid: 0866ed3d54b210c43867819298289269, type: 3}
   - {fileID: 21300000, guid: 139c8d8e8976bf841958edc5b7f6136d, type: 3}
-  - {fileID: 21300000, guid: e226736f1edd48a4eab067547aa79c95, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Tile8
   - Tile5
   - Tile12
-  - Tile16
   - Tile15
-  - Tile13
-  - Tile3
-  - Tile2
   - Tile1
-  - Tile4
-  - Tile14
-  - Tile7
-  - Tile6
-  - Tile10
-  - Tile9
   - Tile0
-  - Tile11
   m_Tag: SpriteAtlas_Tile
   m_IsVariant: 0

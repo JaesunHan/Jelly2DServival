@@ -43,7 +43,9 @@ public class StageManager : MonoSingleton<StageManager>
         while (true)
         {
             //const_fUpdate_Wave_Term
-            yield return new WaitForSeconds(_fWave_Update_Term * (iCurWave +1));
+            float fTerm = _fWave_Update_Term* (1f + ((float)iCurWave * 1.2f)) ;
+            DebugLogManager.Log($"Stage Term : {fTerm}");
+            yield return new WaitForSeconds(fTerm);
 
             ++iCurWave;
         }

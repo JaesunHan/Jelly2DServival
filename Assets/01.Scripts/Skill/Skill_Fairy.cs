@@ -45,8 +45,8 @@ public class Skill_Fairy : SkillBase
             _pPlayer = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform;
         }
 
-        //transform.position = _pPlayer.position + (Vector3)(Vector2.up * 1.2f) ;
-        transform.position = _pPlayer.position;
+        //transform.position = _pPlayer.position + (Vector3)(Vector2.up * 1.2f);
+        transform.position = _pPlayer.position + (Vector3)(Vector2.up * 0.4f);
         _pSprite.transform.position = transform.position +(Vector3)(Vector2.up * 1.3f);
 
         _bIsAlive = true;
@@ -71,9 +71,9 @@ public class Skill_Fairy : SkillBase
     {
         while (_bIsAlive)
         {
-            transform.position = _pPlayer.position;
+            transform.position = _pPlayer.position + (Vector3)(Vector2.up * 0.4f);
 
-            _pSprite.transform.RotateAround(_pPlayer.position, Vector3.forward, _fRotSpeed * Time.fixedDeltaTime);
+            _pSprite.transform.RotateAround(_pPlayer.position + (Vector3)(Vector2.up * 0.4f), Vector3.forward, _fRotSpeed * Time.fixedDeltaTime);
             yield return new WaitForFixedUpdate();
         }
     }

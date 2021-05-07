@@ -135,7 +135,7 @@ public class ManaManager : MonoSingleton<ManaManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
             iCurWave = StageManager.instance.iCurWave;
 
@@ -154,15 +154,15 @@ public class ManaManager : MonoSingleton<ManaManager>
                 pNewPotion.SetActive(true);
                 
                 Vector3 vecSpawnPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
-                vecSpawnPos.x += Random.Range(14f * (int)eDir, 8f * (int)eDir);
-                vecSpawnPos.y += Random.Range(12f * (int)eDir, 6f * (int)eDir);
+                vecSpawnPos.x += Random.Range(95f * (int)eDir, 5f * (int)eDir);
+                vecSpawnPos.y += Random.Range(95f * (int)eDir, 6f * (int)eDir);
 
                 pNewPotion.transform.position = vecSpawnPos;
 
                 pNewPotion.transform.SetParent(transform);
 
                 _list_Alive_ManaPotion.Add(pNewPotion);
-                DebugLogManager.Log($"마나 포션 생성 위치 : {vecSpawnPos}");
+                //DebugLogManager.Log($"마나 포션 생성 위치 : {vecSpawnPos}");
             }
             
         }

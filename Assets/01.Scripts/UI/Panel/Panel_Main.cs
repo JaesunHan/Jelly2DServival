@@ -13,6 +13,9 @@ public class Panel_Main : PanelBase
 
     //private Image _pImage_Slider_Front = null;
     private Slider _pSlider_MP = null;
+
+    [GetComponentInChildren("Text_Mana")]
+    private Text _pText_Mana = null;
     
     protected override void OnAwake()
     {
@@ -57,6 +60,8 @@ public class Panel_Main : PanelBase
         _pSlider_MP.maxValue = fMax_Value;
         _pSlider_MP.minValue = 1;
         _pSlider_MP.value = ((float)fCur_MP / (float)fMax_Value ) * (float)100;
+
+        _pText_Mana.text = $"{fCur_MP} / {fMax_Value}";
     }
 
     ///// <summary>
@@ -78,5 +83,6 @@ public class Panel_Main : PanelBase
         fMax_Value = pMessage.fMaxMP;
 
         _pSlider_MP.value = (fCur_MP / fMax_Value) * (float)100;
+        _pText_Mana.text = $"{fCur_MP} / {fMax_Value}";
     }
 }

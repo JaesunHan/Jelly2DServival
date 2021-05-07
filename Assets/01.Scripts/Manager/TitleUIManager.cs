@@ -7,7 +7,7 @@ public class TitleUIManager : MonoSingleton<TitleUIManager>
     public enum EPanel
     {
         Canvas_Title_Main,
-        Canvas_Loading,
+        //Canvas_Loading,
     }
 
     [GetComponentInChildren]
@@ -35,13 +35,13 @@ public class TitleUIManager : MonoSingleton<TitleUIManager>
         }
         _mapPanel[EPanel.Canvas_Title_Main].DoShow();
 
-        _mapPanel[EPanel.Canvas_Loading].DoShow();
+        //_mapPanel[EPanel.Canvas_Loading].DoShow();
         while (!DataManager.bIsLoaded_AllResource)
         {
             yield return null;
         }
 
-        _mapPanel[EPanel.Canvas_Loading].DoHide();
+        //_mapPanel[EPanel.Canvas_Loading].DoHide();
     }
 
 

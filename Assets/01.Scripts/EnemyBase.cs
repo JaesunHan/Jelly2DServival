@@ -76,11 +76,46 @@ public class EnemyBase : ObjectBase
 
         //_pRigidbody.velocity = Vector2.zero;
         Tracing_Player();
+        _pSprite_Jelly.color = Color.white;
         bIsAlive = true;
+    }
+
+    /// <summary>
+    /// 사라지는 연출
+    /// </summary>
+    public void DoDisappear()
+    {
+        //StopAllCoroutines();
+        StopCoroutine(nameof(OnCoroutine_Tracing_Player));
+
+        StartCoroutine(nameof(OnCoroutine_Disappear));
+    }
+    private IEnumerator OnCoroutine_Disappear()
+    {
+        float fProgress = 0f;
+        Color colorDest = new Color(1, 1, 1, 0);
+        while (fProgress <= 0.7f)
+        {
+            fProgress += Time.deltaTime;
+
+            Color colorCur = _pSprite_Jelly.color;
+            _pSprite_Jelly.color = Color.Lerp(colorCur, colorDest, Time.deltaTime * 1.5f);
+
+            yield return null;
+        }
+
+        _pSprite_Jelly.color = colorDest;
+        yield return null;
+        yield return null;
+
+        gameObject.SetActive(false);
     }
 
     public void DoKnockback(Vector2 vecBulletDir)
     {
+        if (!bIsAlive)
+            return;
+
         StopAllCoroutines();
         if(gameObject.activeSelf)
             StartCoroutine(OnCoroutine_Knockback(vecBulletDir));
@@ -140,6 +175,9 @@ public class EnemyBase : ObjectBase
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!bIsAlive)
+            return;
+
         Bullet pBullet = collision.GetComponent<Bullet>();
 
         if (null != pBullet)
@@ -168,6 +206,9 @@ public class EnemyBase : ObjectBase
         if (0 >= _fHP)
         {
             bIsAlive = false;
+
+            DoDisappear();
+
             EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
             ManaManager.instance.OnGet_MP.DoNotify(new ManaManager.GetMPMessage(pEnemyData.fGetMP));
         }

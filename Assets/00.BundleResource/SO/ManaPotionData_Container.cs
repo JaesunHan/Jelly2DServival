@@ -70,6 +70,14 @@ public enum EManaPotion
     Potion_2,
     
     Potion_3,
+    
+    Potion_4,
+    
+    Potion_5,
+    
+    Potion_6,
+    
+    Potion_7,
 }
 
 #region 

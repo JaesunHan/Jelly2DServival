@@ -17,6 +17,9 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
     [GetComponentInChildren]
     private Dictionary<EButton, Button> _mapButton = new Dictionary<EButton, Button>();
 
+    [GetComponentInChildren("Text_Title")]
+    private Text _pText_Title = null;
+
     private int _iSelect_Skill;
     private ESkill _eSelect_Skill;
 
@@ -36,6 +39,8 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
 
         Text pText_Confirm = _mapButton[EButton.Button_Confirm].GetComponentInChildren<Text>();
         pText_Confirm.text = DataManager.GetLocalText(ELanguageKey.Confirm);
+
+        _pText_Title.text = DataManager.GetLocalText(ELanguageKey.Select_Scroll);
 
         IngameUIManager.instance.OnSelect_Scroll.Subscribe += OnSelect_Scroll;
     }
@@ -68,8 +73,6 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
         }
 
         _iSelect_Skill = -1;
-        //_pOriginal_Widget_Scroll.DoInit(ESkill.Skill_Summon_Fairy.GetSkillData());
-        //_eSelect_Skill = ESkill.Skill_Summon_Fairy;
     }
 
     public void IHas_UIButton_OnClickButton(UIButtonMessage<EButton> sButtonMsg)

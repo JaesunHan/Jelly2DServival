@@ -2,7 +2,7 @@
   "array": [
     {
       "strManaPotion": "Potion_0",
-      "fGetMP": "20",
+      "fGetMP": "25",
       "iAppearWave": "0",
       "strAtlasName": "InGame",
       "strSpriteName": "0_Potion",
@@ -10,7 +10,7 @@
     },
     {
       "strManaPotion": "Potion_1",
-      "fGetMP": "40",
+      "fGetMP": "50",
       "iAppearWave": "1",
       "strAtlasName": "InGame",
       "strSpriteName": "1_Potion",
@@ -18,7 +18,7 @@
     },
     {
       "strManaPotion": "Potion_2",
-      "fGetMP": "70",
+      "fGetMP": "75",
       "iAppearWave": "2",
       "strAtlasName": "InGame",
       "strSpriteName": "2_Potion",
@@ -26,11 +26,43 @@
     },
     {
       "strManaPotion": "Potion_3",
-      "fGetMP": "100",
+      "fGetMP": "125",
       "iAppearWave": "3",
       "strAtlasName": "InGame",
       "strSpriteName": "3_Potion",
       "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/3_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_4",
+      "fGetMP": "200",
+      "iAppearWave": "4",
+      "strAtlasName": "InGame",
+      "strSpriteName": "4_Potion",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/4_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_5",
+      "fGetMP": "325",
+      "iAppearWave": "5",
+      "strAtlasName": "InGame",
+      "strSpriteName": "5_Potion",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/5_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_6",
+      "fGetMP": "525",
+      "iAppearWave": "6",
+      "strAtlasName": "InGame",
+      "strSpriteName": "6_Potion",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/6_Potion.png"
+    },
+    {
+      "strManaPotion": "Potion_7",
+      "fGetMP": "850",
+      "iAppearWave": "7",
+      "strAtlasName": "InGame",
+      "strSpriteName": "7_Potion",
+      "strSpritePath": "Assets/00.AssetBundlePath/Sprite/InGame/Potion/7_Potion.png"
     }
   ]
 }

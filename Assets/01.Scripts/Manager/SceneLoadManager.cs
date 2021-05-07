@@ -14,6 +14,8 @@ public class SceneLoadManager
 
     const string const_strSystemMessageSceneName = "SystemMessageScene";
 
+    const string const_strLoadingSceneName = "LoadingScene";
+
     public enum EScene_Where
     {
         None,
@@ -30,6 +32,8 @@ public class SceneLoadManager
         LobbyScene,
 
         SystemMessageScene,
+
+        LoadingScene,
     }
 
     public static EScene_Where eSceneWhere { get; private set; } = EScene_Where.None;
@@ -49,17 +53,22 @@ public class SceneLoadManager
             case EScene_Where.InGameScene:
                 eSceneWhere = eSecen_Where;
                 strSceneName = const_strIngameSceneName;
-                SceneManager.LoadScene(const_strIngameSceneName);
 
+                SceneManager.LoadScene(const_strLoadingSceneName);
+                //SceneManager.LoadScene(const_strIngameSceneName);
+
+                //임시 코드
                 SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.LobbyScene:
                 eSceneWhere = eSceneWhere;
                 strSceneName = const_strLobbySceneName;
-                SceneManager.LoadScene(const_strLobbySceneName);
+                SceneManager.LoadScene(const_strLoadingSceneName);
 
-                SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
+                //SceneManager.LoadScene(const_strLobbySceneName);
+
+                //SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.TitleScene:

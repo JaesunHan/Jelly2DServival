@@ -40,47 +40,38 @@ public class TileManager : MonoSingleton<TileManager>
 
         SpriteAtlas pSpriteAtlas = DataManager.GetSpriteAtlas("TileSet");
 
-        Sprite[] arrSprites = new Sprite[20];
+        Sprite[] arrSprites = new Sprite[5];
         int iArrayCount = pSpriteAtlas.GetSprites(arrSprites);
 
         Tile newTile = new Tile();
-        for (int i = -const_iDefault_Count_OneSide; i < const_iDefault_Count_OneSide; ++i)
+
+        for (int i = 0; i < 600; ++i)
         {
-            for (int j = -const_iDefault_Count_OneSide; j < const_iDefault_Count_OneSide; ++j)
-            {
-                int iRandomIdx = Random.Range(0, iArrayCount);
-                //DebugLogManager.Log($"arrSprites[iRandomIdx] : {arrSprites[iRandomIdx]}");
-                newTile.sprite = arrSprites[iRandomIdx];
-                //DebugLogManager.Log($"newTile.sprite : {newTile.sprite}");
-                Vector3Int pos = new Vector3Int(i, j, 0);
-                _pTilemap.SetTile(pos, newTile);
-            }
+            int iSpriteRandomIdx = Random.Range(0, iArrayCount-1);
+
+            int iRandomIdx1 = Random.Range(-260, 260);
+            int iRandomIdx2 = Random.Range(-260, 260);
+
+            newTile.sprite = arrSprites[iSpriteRandomIdx];
+
+            Vector3Int pos = new Vector3Int(iRandomIdx1, iRandomIdx2, 0);
+            _pTilemap.SetTile(pos, newTile);
         }
+
+        //for (int i = -const_iDefault_Count_OneSide; i < const_iDefault_Count_OneSide; ++i)
+        //{
+        //    for (int j = -const_iDefault_Count_OneSide; j < const_iDefault_Count_OneSide; ++j)
+        //    {
+        //        int iRandomIdx = Random.Range(0, iArrayCount);
+        //        //DebugLogManager.Log($"arrSprites[iRandomIdx] : {arrSprites[iRandomIdx]}");
+        //        newTile.sprite = arrSprites[iRandomIdx];
+        //        //DebugLogManager.Log($"newTile.sprite : {newTile.sprite}");
+        //        Vector3Int pos = new Vector3Int(i, j, 0);
+        //        _pTilemap.SetTile(pos, newTile);
+        //    }
+        //}
 
         iMaxMovePos = const_iDefault_Count_OneSide - 12;
     }
-
-    ///// <summary>
-    ///// 플레이어가 움직였다는 신호를 받았을 때  플레이어의 위치를 체크해서 맵을 넓힌다.
-    ///// </summary>
-    ///// <returns></returns>
-    //private void OnMove_Joystick_Func(PlayerManager_HJS.MoveJoystickMessage pMessage)
-    //{
-    //    Vector2 vecMoveDir = pMessage.vecMoveDir;
-
-    //    Vector2 vecCurPlayerPos = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
-
-    //    if(vecCurPlayerPos.x < -iMaxMovePos || vecCurPlayerPos.x > iMaxMovePos ||
-    //        vecCurPlayerPos.y < - iMaxMovePos || vecCurPlayerPos.y > iMaxMovePos)
-    //    {
-    //        for (int i = iMaxMovePos; i < const_iDefault_Count_OneSide; ++i)
-    //        {
-    //            iMaxMovePos += const_iDefault_Count_OneSide;
-    //            Vector3Int posLeft = new Vector3Int(i, j, 0);
-    //            //_pTilemap.
-    //        }
-
-    //    }
-    //}
 
 }

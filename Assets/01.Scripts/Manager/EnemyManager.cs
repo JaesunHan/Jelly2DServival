@@ -225,7 +225,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             {
                 if (_list_Enemy[i].transform == pReturnEnemy.transform)
                 {
-                    _list_Enemy[i].SetActive(false);
+                    //_list_Enemy[i].SetActive(false);
+                    //_list_Enemy[i].DoDisappear();
                     
                     _pPool_EnemyBase.DoPush(_list_Enemy[i]);
                     _list_Enemy.Remove(_list_Enemy[i]);

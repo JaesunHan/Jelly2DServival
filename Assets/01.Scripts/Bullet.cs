@@ -33,7 +33,7 @@ public class Bullet : ObjectBase
 
         _fMoveSpeed = 7;
 
-        fDamage = 2f;
+        fDamage = 5f;
 
         _pSpriteRender.enabled = false;
     }
