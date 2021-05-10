@@ -61,7 +61,7 @@ public class Panel_Main : PanelBase
         _pSlider_MP.minValue = 1;
         _pSlider_MP.value = ((float)fCur_MP / (float)fMax_Value ) * (float)100;
 
-        _pText_Mana.text = $"{fCur_MP} / {fMax_Value}";
+        _pText_Mana.text = $"{string.Format("{0:0.##}", fCur_MP)} / {string.Format("{0:0.##}", fMax_Value)}";
     }
 
     ///// <summary>
@@ -83,6 +83,6 @@ public class Panel_Main : PanelBase
         fMax_Value = pMessage.fMaxMP;
 
         _pSlider_MP.value = (fCur_MP / fMax_Value) * (float)100;
-        _pText_Mana.text = $"{fCur_MP} / {fMax_Value}";
+        _pText_Mana.text = $"{string.Format("{0:0.#}", fCur_MP)} / {string.Format("{0:0.#}", fMax_Value)}";
     }
 }

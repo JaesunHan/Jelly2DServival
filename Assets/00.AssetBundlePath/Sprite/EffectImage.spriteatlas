@@ -59,6 +59,21 @@ SpriteAtlas:
   - {fileID: 21300004, guid: 522e37140c6c7214b8ddf15d3a43ba7d, type: 3}
   - {fileID: 21300006, guid: 522e37140c6c7214b8ddf15d3a43ba7d, type: 3}
   - {fileID: 21300008, guid: 522e37140c6c7214b8ddf15d3a43ba7d, type: 3}
+  - {fileID: 21300028, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300026, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300024, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300022, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300020, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300008, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300010, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300012, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300014, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300000, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300002, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300004, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300006, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300016, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
+  - {fileID: 21300018, guid: dc75ff442a2bdab4698a72713bbcd28b, type: 3}
   - {fileID: 21300002, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
   - {fileID: 21300000, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
   - {fileID: 21300006, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
@@ -67,6 +82,18 @@ SpriteAtlas:
   - {fileID: 21300008, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
   - {fileID: 21300014, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
   - {fileID: 21300012, guid: bfaa64c4866e9ce499c3eec86ee4b2a0, type: 3}
+  - {fileID: 21300020, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300022, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300018, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300016, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300010, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300008, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300014, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300012, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300002, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300000, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300006, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
+  - {fileID: 21300004, guid: 4f7d247526a5ba946875fa4686b2fc2c, type: 3}
   m_PackedSpriteNamesToIndex:
   - Electricity1_6
   - Electricity1_7
@@ -91,6 +118,21 @@ SpriteAtlas:
   - Energy11_2
   - Energy11_3
   - Energy11_4
+  - Fire8_14
+  - Fire8_13
+  - Fire8_12
+  - Fire8_11
+  - Fire8_10
+  - Fire8_4
+  - Fire8_5
+  - Fire8_6
+  - Fire8_7
+  - Fire8_0
+  - Fire8_1
+  - Fire8_2
+  - Fire8_3
+  - Fire8_8
+  - Fire8_9
   - Energy10_1
   - Energy10_0
   - Energy10_3
@@ -99,5 +141,17 @@ SpriteAtlas:
   - Energy10_4
   - Energy10_7
   - Energy10_6
+  - Energy5_10
+  - Energy5_11
+  - Energy5_9
+  - Energy5_8
+  - Energy5_5
+  - Energy5_4
+  - Energy5_7
+  - Energy5_6
+  - Energy5_1
+  - Energy5_0
+  - Energy5_3
+  - Energy5_2
   m_Tag: EffectImage
   m_IsVariant: 0

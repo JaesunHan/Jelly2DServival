@@ -71,5 +71,8 @@ public class GameManager : ObjectBase
 
         ManaManager.instance.DoAwake();
         ManaManager.instance.DoInit();
+
+        EffectManager.instance.DoAwake();
+        EffectManager.instance.DoInit();
     }
 }

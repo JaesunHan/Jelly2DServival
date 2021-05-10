@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 563474836
+CRC: 368070533
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2b7caf59ba801a5a2af129ad1e63bcee
+    Hash: cd6c60b16b05e9ce8928fba1032d8ae5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a885466b88c0ae9e10d528f768e5482c
+    Hash: 591da655b91aca56994e833212b58020
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -36,8 +36,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -45,6 +43,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 69a38700f1b10034486cfc01ad8211a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
 - Class: 114
@@ -63,8 +63,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: e2141b931f3b8f54b8de28301fb202b6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 36516f242b6ebd247a0b24ef724a5fdc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 0ff31e057ec75b3439dd6021c0ca7ba3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ed4dc325735a5ae408cf54550e170228, type: 3}
 - Class: 114
@@ -86,9 +84,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: e2e7102de0548e1408aac02d532d9313, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 66ff11ed79c16864a93ec6c733e97a76, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7c2c161e6f95c454da5dfaf1ac1fbb51, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -113,14 +111,15 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/00.AssetBundlePath/Prefabs/UI/Canvas_Loading.prefab
 - Assets/00.AssetBundlePath/Prefabs/Bullet/Bullet.prefab
 - Assets/00.AssetBundlePath/Prefabs/Objects/Tree_2.prefab
+- Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab
 - Assets/00.AssetBundlePath/Prefabs/HPBar.prefab
 - Assets/00.AssetBundlePath/Prefabs/Enemy/Enemy_Jelly.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit4.prefab
 - Assets/00.AssetBundlePath/Prefabs/Widget/Widget_Scroll.prefab
 - Assets/00.AssetBundlePath/Prefabs/SPUM_Units/Unit2.prefab
+- Assets/00.AssetBundlePath/Prefabs/Effect/FireFX8_0.prefab
 - Assets/00.AssetBundlePath/Prefabs/UI/Panel_Main.prefab
 - Assets/00.AssetBundlePath/Prefabs/ManaPotion.prefab
 - Assets/00.AssetBundlePath/Prefabs/New Palette.prefab

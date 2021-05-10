@@ -41,13 +41,16 @@ SpriteAtlas:
   - {fileID: 21300000, guid: feabaf7052f4d8e4daf77e40668bc2b6, type: 3}
   - {fileID: 21300000, guid: 7ea52d616d157c947a0765439d1ae441, type: 3}
   - {fileID: 21300000, guid: 1edfcc716ab5b4940a23aa75e0352142, type: 3}
+  - {fileID: 21300000, guid: 50814783fc5dbfc4a91dd8ace93c262a, type: 3}
   - {fileID: 21300000, guid: 0c0bada3cbd3c2041b3742457d590faf, type: 3}
   - {fileID: 21300000, guid: f752d344d11683842a810ca1ce47728d, type: 3}
   - {fileID: 21300000, guid: 4a4e38441adaaf64c9251018be41c8f6, type: 3}
   - {fileID: 21300000, guid: dcfc8a54a5261b4488cae020699f3975, type: 3}
   - {fileID: 21300000, guid: b1d81fd4029ff3f47bbb0da5379cd31d, type: 3}
   - {fileID: 21300000, guid: b9b0bfe4d66d7c644b4721d50ca0419e, type: 3}
+  - {fileID: 21300000, guid: b2898725888d14a42b4cbd243007b164, type: 3}
   - {fileID: 21300000, guid: 526edf75fa93d364fbb3eeb1a06a6f47, type: 3}
+  - {fileID: 21300000, guid: f246fd867268a0643af35ab9f260212a, type: 3}
   - {fileID: 21300000, guid: 027461d6818206a45baab698d4928667, type: 3}
   - {fileID: 21300000, guid: 18f348779f4feae45a6195ae06cbc32e, type: 3}
   - {fileID: 21300000, guid: 251042e7a6410ae41a702a8266f5abb3, type: 3}
@@ -64,8 +67,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d4bb5b2bf799cbe48896bb8c60334f41, type: 3}
   - {fileID: 21300000, guid: 8e85598c65aa8204f98aac13d6aedf6f, type: 3}
   - {fileID: 21300000, guid: e6ddb09cc0cc42d40aa5d6f6f6d6db50, type: 3}
+  - {fileID: 21300000, guid: 58d6e5cc4abf73a4794a7fba6851994a, type: 3}
   - {fileID: 21300000, guid: 14cbb79d17bbcb4488f2f84c10898056, type: 3}
   - {fileID: 21300000, guid: 22fafc3e4b16258438fb4240603b1949, type: 3}
+  - {fileID: 21300000, guid: 535eb88e754476241b679acf173ab551, type: 3}
   - {fileID: 21300000, guid: a2b1efbe52bb7e8469a0f71be94ca717, type: 3}
   - {fileID: 21300000, guid: bf2b31ceb6a9bab4d93edffe34b2eae6, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -74,13 +79,16 @@ SpriteAtlas:
   - Icon 0
   - Icon 5
   - Icon 3
+  - RoundedPip4
   - Panel Left Over
   - Icon 4
   - Icon 1
   - Panel Right Over
   - Icon 6
   - T_dot01_white_ico_option
+  - ArrowDown1
   - Icon 2 Over
+  - RoundedPip3
   - Money_Gold
   - Panel
   - Money_Dia
@@ -97,8 +105,10 @@ SpriteAtlas:
   - Icon 2
   - Panel Under
   - T_dot01_common_bt_gage_bl
+  - ArrowDown2
   - Lock
   - Icon 5 Over
+  - RoundedPip2
   - Icon Shadow
   - Panel Border
   m_Tag: UI

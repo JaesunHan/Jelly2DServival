@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1364159627
+CRC: 4196803238
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6f8694bd50b58d5f38bb03f426912587
+    Hash: 3c7504c43a2266e1f2d14cdf2a7f0387
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ba63757755d275eec8fe811a24e91e7d
+    Hash: 4b2367eb1313d3176c7e30d45c6a7e7c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -37,6 +37,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 2c05bb2ebfbfe4446a33e3c9d3c15b3e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 82ab858f4c3ba28498ca36e9afb5c418, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d2b78251c38b6644aac43859e45675f3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -44,6 +48,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/00.AssetBundlePath/SO/MoneyData_Container.asset
+- Assets/00.AssetBundlePath/SO/EffectData_Container.asset
 - Assets/00.AssetBundlePath/SO/LanguageData_Container.asset
 - Assets/00.AssetBundlePath/SO/ManaPotionData_Container.asset
 - Assets/00.AssetBundlePath/SO/SkillData_Container.asset

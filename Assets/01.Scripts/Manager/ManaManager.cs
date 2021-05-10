@@ -148,7 +148,7 @@ public class ManaManager : MonoSingleton<ManaManager>
 
 
                 ManaPotionData pNewMPData = DataManager.DoGet_Random_ManaPotionData_ByStageWave(iCurWave);
-                var pNewPotion = _pPool_ManaPotion.DoPop(_pOriginal_ManaPotionBase);
+                var pNewPotion = _pPool_ManaPotion.DoPop();
                 pNewPotion.DoAwake();
                 pNewPotion.DoInit(pNewMPData);
                 pNewPotion.SetActive(true);

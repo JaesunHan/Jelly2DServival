@@ -45,12 +45,12 @@ public class TileManager : MonoSingleton<TileManager>
 
         Tile newTile = new Tile();
 
-        for (int i = 0; i < 600; ++i)
+        for (int i = 0; i < 1000; ++i)
         {
             int iSpriteRandomIdx = Random.Range(0, iArrayCount-1);
 
-            int iRandomIdx1 = Random.Range(-260, 260);
-            int iRandomIdx2 = Random.Range(-260, 260);
+            int iRandomIdx1 = Random.Range(-280, 280);
+            int iRandomIdx2 = Random.Range(-280, 280);
 
             newTile.sprite = arrSprites[iSpriteRandomIdx];
 

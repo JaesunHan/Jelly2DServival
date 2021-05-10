@@ -206,7 +206,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     /// <returns></returns>
     private EnemyBase GetEnemyBase_In_Pool()
     {
-        var pEnemyBaseClone = _pPool_EnemyBase.DoPop(_pEnemyBase_Original);
+        var pEnemyBaseClone = _pPool_EnemyBase.DoPop();
         pEnemyBaseClone.SetActive(false);
         pEnemyBaseClone.transform.SetParent(transform); //_pTransform_MovingGroup
 

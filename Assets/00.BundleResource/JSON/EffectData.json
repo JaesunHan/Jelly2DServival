@@ -1,0 +1,12 @@
+{
+  "array": [
+    {
+      "strEffectName": "Default_Damage",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab"
+    },
+    {
+      "strEffectName": "Summon_Fairy_Damage",
+      "strPrefabPath": "FireFX8_0"
+    }
+  ]
+}

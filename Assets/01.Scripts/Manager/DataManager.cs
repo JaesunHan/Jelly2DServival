@@ -177,8 +177,9 @@ public partial class DataManager : MonoSingleton<DataManager>
         ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
         SkillData_Container.DoInit(LoadData<SkillData_Container>(), bIsUpdateChildAsset);
         MoneyData_Container.DoInit(LoadData<MoneyData_Container>(), bIsUpdateChildAsset);
+        EffectData_Container.DoInit(LoadData<EffectData_Container>(), bIsUpdateChildAsset);
 
-        GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);
+        GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);        
 
         LanguageManager.instance.DoInit_LanguageData(LanguageData_Container.instance.listData.ToArray());
 

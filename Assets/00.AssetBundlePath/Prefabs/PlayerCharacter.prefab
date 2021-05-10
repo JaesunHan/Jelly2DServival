@@ -108,19 +108,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5331728002186395968}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &8295939396074077849
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95110188822346564, guid: 4615d3a363cfe9c4e8cab09d1d4a05e6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 43d5c68a2d6227f45bd0801cc7cb1677, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4615d3a363cfe9c4e8cab09d1d4a05e6, type: 3}
 --- !u!4 &5328294457528264968 stripped
@@ -269,6 +273,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95005960225330678, guid: 1d1603918d66ff149994e48d3c363ddd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2e1db8a360243204891e6d1636355f4a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1603918d66ff149994e48d3c363ddd, type: 3}
 --- !u!4 &5328077669958079195 stripped
@@ -286,6 +294,14 @@ PrefabInstance:
     - target: {fileID: 1531680242145493523, guid: a08a806dce3faee48b851c15ad20522e, type: 3}
       propertyPath: m_Name
       value: Unit3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692679731015445630, guid: a08a806dce3faee48b851c15ad20522e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692679731015445630, guid: a08a806dce3faee48b851c15ad20522e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 199334333
       objectReference: {fileID: 0}
     - target: {fileID: 5898036904022358581, guid: a08a806dce3faee48b851c15ad20522e, type: 3}
       propertyPath: m_Pivot.x
@@ -444,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554667144179385321, guid: 2f74f265806f1fa4c8242bdb2804f92d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.202
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7554667144179385321, guid: 2f74f265806f1fa4c8242bdb2804f92d, type: 3}
       propertyPath: m_LocalRotation.w

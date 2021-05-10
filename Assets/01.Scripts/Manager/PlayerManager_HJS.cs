@@ -158,7 +158,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
             if (null != _pOriginal_PlayerCharacter)
             {
                 //_pCur_Character = Instantiate<PlayerCharacter>(_pOriginal_PlayerCharacter);
-                _pCur_Character = _pPool_Character.DoPop(_pOriginal_PlayerCharacter);
+                _pCur_Character = _pPool_Character.DoPop();
                 _pCur_Character.SetActive(true);
                 _pCur_Character.transform.localPosition = Vector2.zero;
 
@@ -276,7 +276,7 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
                 Transform pTransform_Skill = pSkillData.pFilePrefab;
                 if (null != pTransform_Skill)
                 {
-                    Transform pNewTransform = _pPool_Skill.DoPop(pTransform_Skill);
+                    Transform pNewTransform = _pPool_Skill.DoPop();
                     pNewTransform.SetParent(transform);
 
                     Skill_Fairy pSkillFairy = pNewTransform.GetComponentInChildren<Skill_Fairy>();
