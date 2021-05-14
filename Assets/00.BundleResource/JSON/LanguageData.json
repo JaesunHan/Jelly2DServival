@@ -69,6 +69,11 @@
       "strLanguageKey": "System_Prepare",
       "strKorean": "준비 중입니다.",
       "strEnglish": "Comming soon...."
+    },
+    {
+      "strLanguageKey": "Start_Game",
+      "strKorean": "탐험하기",
+      "strEnglish": "Let's Go"
     }
   ]
 }

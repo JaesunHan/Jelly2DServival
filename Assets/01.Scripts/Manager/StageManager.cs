@@ -7,6 +7,15 @@ using UnityEngine;
 /// </summary>
 public class StageManager : MonoSingleton<StageManager>
 {
+    public struct UpgradeWaveMessage
+    {
+        public int iCurWave;
+        public UpgradeWaveMessage(int iCurWave)
+        {
+            this.iCurWave = iCurWave;
+        }
+    }
+
     /// <summary>
     /// 플탐 60초 : 0 wave -> 1 wave
     /// 플탐 120초 : 1 wave -> 2 wave
@@ -21,6 +30,13 @@ public class StageManager : MonoSingleton<StageManager>
     /// 한 스테이지당 최대 wave 수
     /// </summary>
     private int _iMax_Wave_Num = 0;
+
+    public Observer_Pattern<UpgradeWaveMessage> OnUpgrade_Wave = Observer_Pattern<UpgradeWaveMessage>.instance;
+
+    private void OnDestroy()
+    {
+        OnUpgrade_Wave.DoRemove_All_Observer();
+    }
 
     public void DoInit()
     {
@@ -40,14 +56,19 @@ public class StageManager : MonoSingleton<StageManager>
     /// <returns></returns>
     private IEnumerator OnCoroutine_Update_Wave()
     {
-        while (true)
+        bool bIsMaxWave = false;
+        while (!bIsMaxWave)
         {
             //const_fUpdate_Wave_Term
-            float fTerm = _fWave_Update_Term* (1f + ((float)iCurWave * 1.2f)) ;
-            DebugLogManager.Log($"Stage Term : {fTerm}");
+            float fTerm = _fWave_Update_Term* (1f + ((float)iCurWave * 1.35f)) ;
+            DebugLogManager.Log($"iCurStage : {iCurWave} Stage Term : {fTerm}");
             yield return new WaitForSeconds(fTerm);
 
             ++iCurWave;
+            OnUpgrade_Wave.DoNotify(new UpgradeWaveMessage(iCurWave));
+
+            if (iCurWave >= EGlobalKey_int.스테이지당_최대_웨이브_수.Getint())
+                bIsMaxWave = false;
         }
     }
 }

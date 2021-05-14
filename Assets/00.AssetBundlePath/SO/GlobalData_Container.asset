@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6289590459771202018
+--- !u!114 &-3262640612311602864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,13 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
-  m_Name: GlobalData_3
+  m_Name: GlobalData_0
   m_EditorClassIdentifier: 
-  strValue: 2
+  strValue: 100
   strType: float
-  eGlobalKey_float: 3
+  eGlobalKey_float: 0
   eGlobalKey_int: 0
---- !u!114 &-4942829680503295145
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78020b4c1e38ce34a9d3f36a38810c7d, type: 3}
+  m_Name: GlobalData_Container
+  m_EditorClassIdentifier: 
+  listData:
+  - {fileID: -3262640612311602864}
+  - {fileID: 6403931745948086292}
+  - {fileID: 6138245904144805172}
+  - {fileID: 6904142434247988370}
+  - {fileID: 1121821809059656788}
+  - {fileID: 8595782974952475683}
+--- !u!114 &1121821809059656788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
   m_Name: GlobalData_4
   m_EditorClassIdentifier: 
-  strValue: 1.5
+  strValue: 2
   strType: float
   eGlobalKey_float: 4
   eGlobalKey_int: 0
---- !u!114 &-966634881492607884
+--- !u!114 &6138245904144805172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +67,7 @@ MonoBehaviour:
   strType: float
   eGlobalKey_float: 2
   eGlobalKey_int: 0
---- !u!114 &-504579552406345938
+--- !u!114 &6403931745948086292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +83,7 @@ MonoBehaviour:
   strType: float
   eGlobalKey_float: 1
   eGlobalKey_int: 0
---- !u!114 &11400000
+--- !u!114 &6904142434247988370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,17 +92,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78020b4c1e38ce34a9d3f36a38810c7d, type: 3}
-  m_Name: GlobalData_Container
+  m_Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
+  m_Name: GlobalData_3
   m_EditorClassIdentifier: 
-  listData:
-  - {fileID: 8091610559173751586}
-  - {fileID: -504579552406345938}
-  - {fileID: -966634881492607884}
-  - {fileID: -6289590459771202018}
-  - {fileID: -4942829680503295145}
-  - {fileID: 3124537626938431540}
---- !u!114 &3124537626938431540
+  strValue: 2
+  strType: float
+  eGlobalKey_float: 3
+  eGlobalKey_int: 0
+--- !u!114 &8595782974952475683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,21 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strValue: 6
   strType: int
-  eGlobalKey_float: 0
-  eGlobalKey_int: 0
---- !u!114 &8091610559173751586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd16f1ba952da6a49839873b4e2846a8, type: 3}
-  m_Name: GlobalData_0
-  m_EditorClassIdentifier: 
-  strValue: 100
-  strType: float
   eGlobalKey_float: 0
   eGlobalKey_int: 0

@@ -90,6 +90,8 @@ public enum ELanguageKey
     Skill_Shield_Desc,
     
     System_Prepare,
+    
+    Start_Game,
 }
 
 #region 

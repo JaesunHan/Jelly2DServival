@@ -58,17 +58,16 @@ public class SceneLoadManager
                 //SceneManager.LoadScene(const_strIngameSceneName);
 
                 //임시 코드
-                SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
+                //SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.LobbyScene:
-                eSceneWhere = eSceneWhere;
+                eSceneWhere = eSecen_Where;
                 strSceneName = const_strLobbySceneName;
+                //SceneManager.LoadScene(const_strLoadingSceneName);
                 SceneManager.LoadScene(const_strLoadingSceneName);
 
-                //SceneManager.LoadScene(const_strLobbySceneName);
-
-                //SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
+                SceneManager.LoadScene(const_strSystemMessageSceneName, LoadSceneMode.Additive);
                 break;
 
             case EScene_Where.TitleScene:

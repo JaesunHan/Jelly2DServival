@@ -13,25 +13,9 @@ MonoBehaviour:
   m_Name: EffectData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: 6305664906087541600}
-  - {fileID: 6338347383319572312}
---- !u!114 &6305664906087541600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
-  m_Name: Default_Damage
-  m_EditorClassIdentifier: 
-  strEffectName: Default_Damage
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab
-  eEffectName: 0
-  pFilePrefab: {fileID: 4490192028559814, guid: 005b0364c6a21c442aeee0c178e53601, type: 3}
---- !u!114 &6338347383319572312
+  - {fileID: 8570048042047063147}
+  - {fileID: 316653266580411830}
+--- !u!114 &316653266580411830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,3 +31,19 @@ MonoBehaviour:
   strPrefabPath: FireFX8_0
   eEffectName: 1
   pFilePrefab: {fileID: 0}
+--- !u!114 &8570048042047063147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
+  m_Name: Default_Damage
+  m_EditorClassIdentifier: 
+  strEffectName: Default_Damage
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab
+  eEffectName: 0
+  pFilePrefab: {fileID: 4490192028559814, guid: 005b0364c6a21c442aeee0c178e53601, type: 3}

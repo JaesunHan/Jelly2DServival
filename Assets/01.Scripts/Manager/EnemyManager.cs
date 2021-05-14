@@ -55,6 +55,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     private Vector2 _vecJoystic_Move_Dir = Vector2.zero;
 
     //private float _fPlayer_Move_Speed = 0f;
+    
 
     protected override void OnAwake()
     {
@@ -119,6 +120,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
         StartGame();
         AddSubScribe();
+
+        StageManager.instance.OnUpgrade_Wave.Subscribe += OnUpgrade_Wave_Func;
     }
 
     /// <summary>
@@ -192,7 +195,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             pEnemyBase_Spawn.SetActive(true);
 
             //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
-            var pEnemyData = DataManager.DoGet_Random_EnemyDatas_ByStageWave(StageManager.instance.iCurWave);
+            var pEnemyData = DataManager.DoGet_Random_EnemyDatas_ByStageWave(iCurWave);
             pEnemyBase_Spawn.DoInit(pEnemyData);
 
             yield return _ws_Respawn_Term;
@@ -240,4 +243,17 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         _vecJoystic_Move_Dir = pMessage.vecMoveDir;
     }
+
+    private void OnUpgrade_Wave_Func(StageManager.UpgradeWaveMessage pMessage)
+    {
+        iCurWave = pMessage.iCurWave;
+
+        float fTerm = EGlobalKey_float.적_리스폰_주기.Getfloat() - iCurWave * 0.2f;
+
+        if (fTerm <= 0.8f)
+            fTerm = 0.8f;
+
+        _ws_Respawn_Term = new WaitForSeconds(fTerm);
+    }
+    
 }

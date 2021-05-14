@@ -26,7 +26,7 @@ public class Canvas_Title_Main : PanelBase, IHas_UIButton<Canvas_Title_Main.EBut
         switch (sButtonMsg.eButtonName)
         {
             case EButton.Button_Touch_Screen:
-                SceneLoadManager.DoChangeScene(SceneLoadManager.EScene_Where.InGameScene);
+                SceneLoadManager.DoChangeScene(SceneLoadManager.EScene_Where.LobbyScene);
                 break;
             default:
                 break;
