@@ -42,12 +42,12 @@ public class Bullet : ObjectBase
     /// 발사 시점에 타게팅한 적의 위치를 매개변수로 받는다.
     /// </summary>
     /// <param name="vecDestPos"></param>
-    public void DoFire(Vector2 vecDestPos)
+    public void DoFire()
     {
         StopAllCoroutines();
 
         _pSpriteRender.enabled = false;
-        _vecTargetPos = vecDestPos;
+        //_vecTargetPos = vecDestPos;
 
         Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
         transform.position = vecFireStartPos;
@@ -61,6 +61,8 @@ public class Bullet : ObjectBase
         _pSpriteRender.enabled = true;
         
         Vector2 vecFireStartPos = PlayerManager_HJS.instance.DoGet_Pos_Magic_Fire();
+        _vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
+        PlayerManager_HJS.instance.DoLook_Fire_Dir();
 
         _vecMoveDir = (_vecTargetPos - vecFireStartPos).normalized;
         Vector2 vecForce = _vecMoveDir * _fMoveSpeed;

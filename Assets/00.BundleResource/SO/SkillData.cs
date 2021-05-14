@@ -11,8 +11,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -31,6 +29,8 @@ public class SkillData : UnityEngine.ScriptableObject
     public string eSkillName;
     
     public string eSkillDesc;
+    
+    public float fStatAmount;
     
     public string strPrefabPath;
     

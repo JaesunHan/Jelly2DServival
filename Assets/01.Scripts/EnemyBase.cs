@@ -21,7 +21,7 @@ public class EnemyBase : ObjectBase
     private Rigidbody2D _pRigidbody = null;
 
     private float _fHP = 0f;
-    private bool bIsAlive = false;
+    private bool _bIsAlive = false;
 
     [GetComponentInChildren]
     private HPBar _pHPBar = null;
@@ -57,7 +57,7 @@ public class EnemyBase : ObjectBase
         {
             _pRigidbody = GetComponent<Rigidbody2D>();
         }
-        bIsAlive = false;
+        _bIsAlive = false;
     }
 
     public void DoInit(EnemyData pEnemyData)
@@ -77,7 +77,7 @@ public class EnemyBase : ObjectBase
         //_pRigidbody.velocity = Vector2.zero;
         Tracing_Player();
         _pSprite_Jelly.color = Color.white;
-        bIsAlive = true;
+        _bIsAlive = true;
     }
 
     /// <summary>
@@ -87,7 +87,8 @@ public class EnemyBase : ObjectBase
     {
         //StopAllCoroutines();
         StopCoroutine(nameof(OnCoroutine_Tracing_Player));
-
+        if (!gameObject.activeSelf)
+            return;
         StartCoroutine(nameof(OnCoroutine_Disappear));
     }
     private IEnumerator OnCoroutine_Disappear()
@@ -113,7 +114,7 @@ public class EnemyBase : ObjectBase
 
     public void DoKnockback(Vector2 vecBulletDir)
     {
-        if (!bIsAlive)
+        if (!_bIsAlive)
             return;
 
         StopAllCoroutines();
@@ -173,18 +174,22 @@ public class EnemyBase : ObjectBase
             yield return null;
         }
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!bIsAlive)
+        if (!_bIsAlive)
             return;
 
         Bullet pBullet = collision.GetComponent<Bullet>();
 
         if (null != pBullet)
         {
-            float fDamage = pBullet.fDamage;
-            _fHP -= fDamage;
-            Check_HP();
+            StartCoroutine(OnCoroutine_Damage_Bullet(pBullet));
+
+            //float fDamage = pBullet.fDamage;
+            //_fHP -= fDamage;
+            //Check_HP();
 
             return;
         }
@@ -192,27 +197,53 @@ public class EnemyBase : ObjectBase
         SkillBase pSkill = collision.GetComponentInParent<SkillBase>();
         if (null != pSkill)
         {
-            if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
-            {
-                _fHP -= 3f;
-                Check_HP();
-                return;
-            }
+            StartCoroutine(OnCoroutine_Damage_Skill(pSkill));
+            //if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
+            //{
+            //    float fDamage = ESkill.Skill_Summon_Fairy.GetSkillData().fStatAmount;
+            //    _fHP -= fDamage;
+            //    Check_HP();
+            //    return;
+            //}
+            return;
         }
     }
 
-    private void Check_HP()
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Bullet pBullet = collision.GetComponent<Bullet>();
+
+        if (null != pBullet)
+        {
+            StopCoroutine(OnCoroutine_Damage_Bullet(pBullet));
+
+            return;
+        }
+
+        SkillBase pSkill = collision.GetComponentInChildren<SkillBase>();
+        if (null != pSkill)
+        {
+            StopCoroutine(OnCoroutine_Damage_Skill(pSkill));
+            return;
+        }
+
+        Check_HP();
+    }
+
+    private bool Check_HP()
     {
         if (0 >= _fHP)
         {
-            bIsAlive = false;
+            _bIsAlive = false;
 
             DoDisappear();
 
-            EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, bIsAlive));
+            EnemyManager.instance.OnReturn_Enemy.DoNotify(new EnemyManager.ReturnEnemyMessage(this, _bIsAlive));
             ManaManager.instance.OnGet_MP.DoNotify(new ManaManager.GetMPMessage(pEnemyData.fGetMP));
         }
         _pHPBar.DoSetHP(_fHP);
+
+        return _bIsAlive;
     }
 
     #region Legacy_Code
@@ -230,7 +261,39 @@ public class EnemyBase : ObjectBase
         }
     }
 
-    
+    /// <summary>
+    /// 데미지 입히는 코루틴. 적이랑 닿아 있는 동안 호출함
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator OnCoroutine_Damage_Bullet(Bullet pBullet)
+    {
+        while (_bIsAlive)
+        {
+            float fDamage = pBullet.fDamage;
+            _fHP -= fDamage;
+            Check_HP();
+
+            yield return new WaitForSeconds(0.7f);
+        }
+    }
+
+    private IEnumerator OnCoroutine_Damage_Skill(SkillBase pSkill)
+    {
+        while (_bIsAlive)
+        {
+            if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
+            {
+                float fDamage = ESkill.Skill_Summon_Fairy.GetSkillData().fStatAmount;
+                _fHP -= fDamage;
+                Check_HP();
+                break;
+                //return;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
 
     #endregion
 }

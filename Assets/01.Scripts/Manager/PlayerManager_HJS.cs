@@ -211,6 +211,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     {
         while (true)
         {
+            yield return _ws_Fire_Bullet_Term;
+
             var pNewBullet = _pPool_Bullet.DoPop(_pOriginal_Bullet);
             pNewBullet.SetActive(true);
             pNewBullet.transform.SetParent(transform);
@@ -218,28 +220,36 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
             _list_Cur_Using_Bullet.Add(pNewBullet);
 
-            Vector2 vecTargetPos = Vector2.one;
-            if (null == EnemyManager.instance.DoGet_Enemy_Near_By_Player())
-            {
-                vecTargetPos = new Vector2(Random.Range(-2f, 2f), Random.Range(-2f, 2f)).normalized * 12f;
-            }
-            else
-            {
-                vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
-            }
+            //Vector2 vecTargetPos = Vector2.one;
+            //if (null == EnemyManager.instance.DoGet_Enemy_Near_By_Player())
+            //{
+            //    vecTargetPos = new Vector2(Random.Range(-2f, 2f), Random.Range(-2f, 2f)).normalized * 12f;
+            //}
+            //else
+            //{
+            //    vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
+            //}
             //DebugLogManager.Log($"Target Pos : {vecTargetPos}");
             
             _pCur_Character.DoPlay_AttackMagicAnim();
 
-            pNewBullet.DoFire(vecTargetPos);
+            pNewBullet.DoFire();
 
-            if (vecTargetPos.x > _pCur_Character.transform.position.x)
-                _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Right);
-            else
-                _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Left);
-
-            yield return _ws_Fire_Bullet_Term;
+            //if (vecTargetPos.x > _pCur_Character.transform.position.x)
+            //    _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Right);
+            //else
+            //    _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Left);
         }
+    }
+
+    public void DoLook_Fire_Dir()
+    {
+        Vector2 vecTargetPos = EnemyManager.instance.DoGet_Enemy_Near_By_Player().transform.position;
+
+        if (vecTargetPos.x > _pCur_Character.transform.position.x)
+            _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Right);
+        else
+            _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Left);
     }
 
 

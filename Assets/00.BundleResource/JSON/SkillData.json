@@ -7,6 +7,7 @@
       "strIconSpriteName": "Icon25",
       "eSkillName": "Skill_Summon_Fairy",
       "eSkillDesc": "Skill_Summon_Fairy_Desc",
+      "fStatAmount": "5",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     },
     {
@@ -16,6 +17,7 @@
       "strIconSpriteName": "Icon16",
       "eSkillName": "Skill_Meteor",
       "eSkillDesc": "Skill_Meteor_Desc",
+      "fStatAmount": "3",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     },
     {
@@ -25,6 +27,7 @@
       "strIconSpriteName": "Icon31",
       "eSkillName": "Skill_Recovery",
       "eSkillDesc": "Skill_Recovery_Desc",
+      "fStatAmount": "30",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     },
     {
@@ -34,6 +37,7 @@
       "strIconSpriteName": "Icon47",
       "eSkillName": "Skill_Shield",
       "eSkillDesc": "Skill_Shield_Desc",
+      "fStatAmount": "10",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     }
   ]

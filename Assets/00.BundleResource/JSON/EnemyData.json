@@ -35,7 +35,7 @@
     },
     {
       "strEnemyName": "EJelly_3",
-      "fHP": "8",
+      "fHP": "50",
       "fMoveSpeed": "0.8",
       "fColliderPosY": "0.25",
       "fCrashDamage": "8",

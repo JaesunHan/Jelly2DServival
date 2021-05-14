@@ -183,9 +183,15 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             if (_vecJoystic_Move_Dir == Vector2.zero)
                 _vecJoystic_Move_Dir = Vector2.one;
 
-            int iRandomRangeX = Random.Range(10, 17);
-            int iRandomRangeY = Random.Range(9, 11);
-            Vector3 vecRespawnPosition = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *iRandomRangeX, _vecJoystic_Move_Dir.y * iRandomRangeY);
+            int iRandomRangeX = Random.Range(5, 13); // 10, 17
+            int iRandomRangeY = Random.Range(8, 10); // 9, 11
+
+            int iRandomDir = Random.Range(-10, 10);
+            if (0 >= iRandomDir)
+                iRandomDir = -1;
+            else
+                iRandomDir = 1;
+            Vector3 vecRespawnPosition = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *iRandomRangeX* iRandomDir, _vecJoystic_Move_Dir.y* iRandomDir * iRandomRangeY);
 
             
             EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();

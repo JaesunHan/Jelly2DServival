@@ -15,7 +15,7 @@ public class Skill_Fairy : SkillBase
 
     private Transform _pPlayer = null;
 
-    private float _fRotSpeed = 120f;
+    private float _fRotSpeed = 50f; //120f
 
     private bool _bIsAlive = false;
 

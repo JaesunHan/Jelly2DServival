@@ -97,10 +97,11 @@ public class Canvas_Loading : PanelBase
 
             if (_pSlider.value >= 1f)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    pAsyncOperation.allowSceneActivation = true;
-                }
+                pAsyncOperation.allowSceneActivation = true;
+                //if (Input.GetMouseButtonDown(0))
+                //{
+                //    pAsyncOperation.allowSceneActivation = true;
+                //}
             }
         }
     }
