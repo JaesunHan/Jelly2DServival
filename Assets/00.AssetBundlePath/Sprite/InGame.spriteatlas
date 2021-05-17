@@ -38,7 +38,6 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 73597890e897441449c00ccf671091a1, type: 3}
   - {fileID: 21300000, guid: 9b78e0019bacf3e4e8eac1109dcd6e93, type: 3}
-  - {fileID: 21300000, guid: 62b09031e266eb54693b441cbbd14efc, type: 3}
   - {fileID: 21300000, guid: 97df8da18fe49bf488e36f8c0f7008a2, type: 3}
   - {fileID: 21300000, guid: ebbbadd19443c2644b9c46ad174b9a1f, type: 3}
   - {fileID: 21300000, guid: 590b73e132435194da7d40dc8a3816f0, type: 3}
@@ -50,8 +49,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ce60f325abe16e1408f2d226e825c21a, type: 3}
   - {fileID: 21300000, guid: 96481b76a6fa9c6428e4e4b1522e9378, type: 3}
   - {fileID: 21300000, guid: 07ead18759df09b4b887c79b6b8fd0a3, type: 3}
-  - {fileID: 21300000, guid: 6d4822e8fcff5864396243adb251b488, type: 3}
-  - {fileID: 21300000, guid: 0d140b19128bd154c826e1d8ed8b0c52, type: 3}
   - {fileID: 21300000, guid: cc19d6597956e164981931acc05df89e, type: 3}
   - {fileID: 21300000, guid: 897c542affa1c624da03b90c105313d5, type: 3}
   - {fileID: 21300000, guid: 85aa64ba81b6ce64f8123478842cccf4, type: 3}
@@ -70,7 +67,6 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - 3_Potion
   - 0_Potion
-  - 1_Potion_Legacy
   - 5_Potion
   - 6_Potion
   - Jelly 2
@@ -82,8 +78,6 @@ SpriteAtlas:
   - Jelly 3
   - Jelly 8
   - Icon30 1
-  - 3_Potion_Legacy
-  - 2_Potion_Legacy
   - Icon25 1
   - Shadow
   - Icon28 1

@@ -17,7 +17,7 @@ public class Skill_Fairy : SkillBase
 
     private float _fRotSpeed = 50f; //120f
 
-    private bool _bIsAlive = false;
+    
 
     private WaitForSeconds _ws_FireTerm;
 

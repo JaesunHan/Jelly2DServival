@@ -183,8 +183,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             if (_vecJoystic_Move_Dir == Vector2.zero)
                 _vecJoystic_Move_Dir = Vector2.one;
 
-            int iRandomRangeX = Random.Range(5, 13); // 10, 17
-            int iRandomRangeY = Random.Range(8, 10); // 9, 11
+            int iRandomRangeX = Random.Range(9, 15); // 10, 17
+            int iRandomRangeY = Random.Range(9, 11); // 9, 11
 
             int iRandomDir = Random.Range(-10, 10);
             if (0 >= iRandomDir)

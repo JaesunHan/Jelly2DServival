@@ -8,7 +8,9 @@ public class SkillBase : ObjectBase
     /// <summary>
     /// 스킬이 활성화 되었을 때 true 이다.
     /// </summary>
-    protected bool bIsSkillOn = false;
+    protected bool _bIsSkillOn = false;
+
+    protected bool _bIsAlive = false;
 
     protected override void OnAwake()
     {

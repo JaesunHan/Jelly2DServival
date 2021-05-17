@@ -269,6 +269,11 @@ public class EnemyBase : ObjectBase
     {
         while (_bIsAlive)
         {
+            float x = (pBullet.transform.position.x + transform.position.x) * 0.51f;
+            float y = (pBullet.transform.position.y + transform.position.y) * 0.51f;
+            Vector2 vecShowPos = new Vector2(x, y);
+            EffectManager.instance.OnShowEffect.DoNotify(new EffectManager.ShowEffectMessag(EEffectName.Default_Damage, (Vector2)transform.position));
+
             float fDamage = pBullet.fDamage;
             _fHP -= fDamage;
             Check_HP();
@@ -283,6 +288,11 @@ public class EnemyBase : ObjectBase
         {
             if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
             {
+                float x = (pSkill.transform.position.x + transform.position.x) * 0.5f;
+                float y = (pSkill.transform.position.y + transform.position.y) * 0.5f;
+                Vector2 vecShowPos = new Vector2(x, y);
+                EffectManager.instance.OnShowEffect.DoNotify(new EffectManager.ShowEffectMessag(EEffectName.Summon_Fairy_Damage, vecShowPos));
+
                 float fDamage = ESkill.Skill_Summon_Fairy.GetSkillData().fStatAmount;
                 _fHP -= fDamage;
                 Check_HP();

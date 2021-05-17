@@ -20,12 +20,19 @@ public class EffectData : UnityEngine.ScriptableObject
     
     public string strEffectName;
     
+    public string strAnimatorPath;
+    
     public string strPrefabPath;
     
     /// <summary>
     /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strEffectName"/>
     /// </summary>
     public EEffectName eEffectName;
+    
+    /// <summary>
+    /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strAnimatorPath"/>
+    /// </summary>
+    public UnityEngine.RuntimeAnimatorController pAnim;
     
     /// <summary>
     /// 자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref="strPrefabPath"/>

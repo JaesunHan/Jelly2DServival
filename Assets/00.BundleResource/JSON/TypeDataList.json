@@ -3,21 +3,21 @@
   "listTypeData": [
     {
       "bEnable": true,
-      "strFileName": "EnemyData",
-      "strHeaderFieldName": "strEnemyName",
-      "iOrder": 2,
-      "strSheetID": "1217337678",
-      "strSheetName": "EnemyData",
+      "strFileName": "EffectData",
+      "strHeaderFieldName": "strEffectName",
+      "iOrder": 5,
+      "strSheetID": "1504024618",
+      "strSheetName": "EffectData",
       "eType": 0,
       "strCommandLine": null,
       "listFieldData": [
         {
-          "strFieldName": "strEnemyName",
+          "strFieldName": "strEffectName",
           "strFieldType": "string",
           "strComment": null,
           "strDependencyFieldName": null,
           "strDependencyFieldName_Sub": null,
-          "strEnumName": "EEnemyType",
+          "strEnumName": "EEffectName",
           "bIsVirtualField": false,
           "bDeleteThisField_InCode": false,
           "bIsKeyField": false,
@@ -26,10 +26,10 @@
           "bConvertStringToEnum": true
         },
         {
-          "strFieldName": "eEnemyType",
-          "strFieldType": "EEnemyType",
-          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strEnemyName\"/>",
-          "strDependencyFieldName": "strEnemyName",
+          "strFieldName": "eEffectName",
+          "strFieldType": "EEffectName",
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strEffectName\"/>",
+          "strDependencyFieldName": "strEffectName",
           "strDependencyFieldName_Sub": null,
           "strEnumName": "",
           "bIsVirtualField": true,
@@ -40,35 +40,7 @@
           "bConvertStringToEnum": false
         },
         {
-          "strFieldName": "pFile",
-          "strFieldType": "UnityEngine.Sprite",
-          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strSpritePath\"/>",
-          "strDependencyFieldName": "strSpritePath",
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": "",
-          "bIsVirtualField": true,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "iAppearWave",
-          "strFieldType": "int",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "strSpritePath",
+          "strFieldName": "strAnimatorPath",
           "strFieldType": "string",
           "strComment": null,
           "strDependencyFieldName": null,
@@ -82,8 +54,22 @@
           "bConvertStringToEnum": false
         },
         {
-          "strFieldName": "fHP",
-          "strFieldType": "float",
+          "strFieldName": "pAnim",
+          "strFieldType": "UnityEngine.RuntimeAnimatorController",
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strAnimatorPath\"/>",
+          "strDependencyFieldName": "strAnimatorPath",
+          "strDependencyFieldName_Sub": null,
+          "strEnumName": "",
+          "bIsVirtualField": true,
+          "bDeleteThisField_InCode": false,
+          "bIsKeyField": false,
+          "bIsOverlapKey": false,
+          "bIsTemp": false,
+          "bConvertStringToEnum": false
+        },
+        {
+          "strFieldName": "strPrefabPath",
+          "strFieldType": "string",
           "strComment": null,
           "strDependencyFieldName": null,
           "strDependencyFieldName_Sub": null,
@@ -96,69 +82,13 @@
           "bConvertStringToEnum": false
         },
         {
-          "strFieldName": "fMoveSpeed",
-          "strFieldType": "float",
-          "strComment": null,
-          "strDependencyFieldName": null,
+          "strFieldName": "pFilePrefab",
+          "strFieldType": "UnityEngine.Transform",
+          "strComment": "자동으로 할당되는 필드입니다. 의존되는 필드 : <see cref=\"strPrefabPath\"/>",
+          "strDependencyFieldName": "strPrefabPath",
           "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "fColliderPosY",
-          "strFieldType": "float",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "fColliderRadius",
-          "strFieldType": "float",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "fGetMP",
-          "strFieldType": "float",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
-          "bDeleteThisField_InCode": false,
-          "bIsKeyField": false,
-          "bIsOverlapKey": false,
-          "bIsTemp": false,
-          "bConvertStringToEnum": false
-        },
-        {
-          "strFieldName": "fCrashDamage",
-          "strFieldType": "float",
-          "strComment": null,
-          "strDependencyFieldName": null,
-          "strDependencyFieldName_Sub": null,
-          "strEnumName": null,
-          "bIsVirtualField": false,
+          "strEnumName": "",
+          "bIsVirtualField": true,
           "bDeleteThisField_InCode": false,
           "bIsKeyField": false,
           "bIsOverlapKey": false,
@@ -167,7 +97,7 @@
         }
       ],
       "listEnumName": [
-        "EEnemyType"
+        "EEffectName"
       ]
     }
   ]

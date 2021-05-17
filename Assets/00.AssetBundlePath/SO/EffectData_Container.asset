@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3970063820642789142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
+  m_Name: Summon_Fairy_Damage
+  m_EditorClassIdentifier: 
+  strEffectName: Summon_Fairy_Damage
+  strAnimatorPath: Assets/00.AssetBundlePath/Animation/Effect/FireFX8_0.controller
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Effect/FireFX8_0.prefab
+  eEffectName: 1
+  pAnim: {fileID: 9100000, guid: ed1093d96784e0e448cfd0d2056c9dde, type: 2}
+  pFilePrefab: {fileID: 4293213359510892, guid: 750712e6d40224e45965e967ed55a134, type: 3}
+--- !u!114 &-894104993616710997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
+  m_Name: Default_Damage
+  m_EditorClassIdentifier: 
+  strEffectName: Default_Damage
+  strAnimatorPath: Assets/00.AssetBundlePath/Animation/Effect/Energy5_0.controller
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab
+  eEffectName: 0
+  pAnim: {fileID: 9100000, guid: 7f59c3408294d434cbf490fa6d2ec953, type: 2}
+  pFilePrefab: {fileID: 4490192028559814, guid: 005b0364c6a21c442aeee0c178e53601, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,37 +49,5 @@ MonoBehaviour:
   m_Name: EffectData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: 8570048042047063147}
-  - {fileID: 316653266580411830}
---- !u!114 &316653266580411830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
-  m_Name: Summon_Fairy_Damage
-  m_EditorClassIdentifier: 
-  strEffectName: Summon_Fairy_Damage
-  strPrefabPath: FireFX8_0
-  eEffectName: 1
-  pFilePrefab: {fileID: 0}
---- !u!114 &8570048042047063147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dadb45ec0f0f8349a33019a7c711036, type: 3}
-  m_Name: Default_Damage
-  m_EditorClassIdentifier: 
-  strEffectName: Default_Damage
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab
-  eEffectName: 0
-  pFilePrefab: {fileID: 4490192028559814, guid: 005b0364c6a21c442aeee0c178e53601, type: 3}
+  - {fileID: -894104993616710997}
+  - {fileID: -3970063820642789142}

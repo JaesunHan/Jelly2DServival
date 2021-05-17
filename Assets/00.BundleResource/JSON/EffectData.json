@@ -2,11 +2,13 @@
   "array": [
     {
       "strEffectName": "Default_Damage",
+      "strAnimatorPath": "Assets/00.AssetBundlePath/Animation/Effect/Energy5_0.controller",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Effect/Energy5_0.prefab"
     },
     {
       "strEffectName": "Summon_Fairy_Damage",
-      "strPrefabPath": "FireFX8_0"
+      "strAnimatorPath": "Assets/00.AssetBundlePath/Animation/Effect/FireFX8_0.controller",
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Effect/FireFX8_0.prefab"
     }
   ]
 }

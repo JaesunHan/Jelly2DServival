@@ -19,6 +19,7 @@ public class EffectManager : MonoSingleton<EffectManager>
 
     public Observer_Pattern<ShowEffectMessag> OnShowEffect { get; private set; } = Observer_Pattern<ShowEffectMessag>.instance;
 
+    [GetComponentInChildren]
     private EffectBase _pOriginal_EffectBase = null;
 
     private List<EffectBase> _list_Effects = new List<EffectBase>();
@@ -39,10 +40,10 @@ public class EffectManager : MonoSingleton<EffectManager>
 
     public void DoInit()
     {
-        var pEffectData = EEffectName.Default_Damage.GetEffectData();
-        _pOriginal_EffectBase = pEffectData.pFilePrefab.GetComponent<EffectBase>();
-
-        if(null != _pOriginal_EffectBase)
+        //var pEffectData = EEffectName.Default_Damage.GetEffectData();
+        //_pOriginal_EffectBase = pEffectData.pFilePrefab.GetComponent<EffectBase>();
+        _pOriginal_EffectBase.DoAwake();
+        if (null != _pOriginal_EffectBase)
             _pPool_Effect.DoInit_Pool(_pOriginal_EffectBase);
 
         for (int i = 0; i < _list_Effects.Count; ++i)
@@ -65,6 +66,14 @@ public class EffectManager : MonoSingleton<EffectManager>
         if (null != pEffectData)
         {
             var pEffectPref = _pPool_Effect.DoPop();
+            pEffectPref.DoAwake();
+            pEffectPref.transform.SetParent(transform);
+            pEffectPref.transform.position = pMessage.vecShowPos;
+
+            pEffectPref.DoInit(pEffectData);
+
+
+            pEffectPref.SetActive(true);
         }
 
     }

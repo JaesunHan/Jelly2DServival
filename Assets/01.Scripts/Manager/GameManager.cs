@@ -28,7 +28,10 @@ public class GameManager : ObjectBase
             DebugLogManager.Log("ManaManager 가 null 이다");
         }
 
-
+        if (null == EffectManager.instance)
+        {
+            DebugLogManager.Log("EffectManager 가 null 이다");
+        }
     }
 
     private void Start()
