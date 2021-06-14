@@ -19,7 +19,8 @@ public class MonoSingleton<T> : ObjectBase where T : MonoBehaviour
             if (null == _instance)
             {
                 //새 게임오브젝트를 생성하고, 컴포넌트로 이 싱글톤을 추가한다.
-                _instance = new GameObject($"@{typeof(T).ToString()}", typeof(T)).AddComponent<T>();
+                //_instance = new GameObject($"@{typeof(T).ToString()}", typeof(T)).AddComponent<T>();
+                _instance = new GameObject($"@{typeof(T).ToString()}").AddComponent<T>() as T;
 
                 DontDestroyOnLoad(_instance);
             }

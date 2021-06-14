@@ -98,6 +98,11 @@ public class Canvas_Loading : PanelBase
             if (_pSlider.value >= 1f)
             {
                 pAsyncOperation.allowSceneActivation = true;
+                if (SceneLoadManager.eSceneWhere == SceneLoadManager.EScene_Where.LobbyScene ||
+                    SceneLoadManager.eSceneWhere == SceneLoadManager.EScene_Where.InGameScene)
+                {
+                    SceneLoadManager.DoLoadSceneAddtive(SceneLoadManager.EScene_Where.SystemMessageScene);
+                }
                 //if (Input.GetMouseButtonDown(0))
                 //{
                 //    pAsyncOperation.allowSceneActivation = true;

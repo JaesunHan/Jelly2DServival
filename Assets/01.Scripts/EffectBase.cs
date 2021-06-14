@@ -27,7 +27,7 @@ public class EffectBase : ObjectBase
         
 
         _pAnim.runtimeAnimatorController = _pEffectData.pAnim;
-        DebugLogManager.Log($"Effect Sprite : {_pSprite.sprite}");
+        //DebugLogManager.Log($"Effect Sprite : {_pSprite.sprite}");
     }
 
     public void DoPlayEffect()

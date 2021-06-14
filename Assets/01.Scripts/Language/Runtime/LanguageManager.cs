@@ -171,6 +171,14 @@ public class LanguageManager : MonoSingleton<LanguageManager>
         DontDestroyOnLoad(gameObject);
     }
 
+    protected override void OnDisableObject(bool bIsQuit_Application)
+    {
+        base.OnDisableObject(bIsQuit_Application);
+
+        OnSetLanguage.DoRemove_All_Observer();
+
+
+    }
     /* protected - [abstract & virtual]         */
 
 

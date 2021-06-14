@@ -12,9 +12,9 @@ public class Skill_Meteor : SkillBase
     [GetComponentInChildren]
     private List<Skill_Meteor_Each_One> _list_rigidbody_Each_FireBalls = new List<Skill_Meteor_Each_One>();
 
-    
+    private float _fCrash_Term = 10.0f;
 
-    private float _fCrash_Term = 3.0f;
+    private WaitForSeconds _ws_Crash_Term;
 
 
     protected override void OnAwake()
@@ -22,29 +22,44 @@ public class Skill_Meteor : SkillBase
         base.OnAwake();
 
         _bIsAlive = false;
-        
-        for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
-        {
-            //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
-            _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
-        }
 
-        Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
+        //for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
+        //{
+        //    //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
+        //    _list_rigidbody_Each_FireBalls[i].DoAwake();
+        //    _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
+        //}
 
+        //Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
+        _ws_Crash_Term = new WaitForSeconds(_fCrash_Term);
     }
 
     public override void DoInit(SkillData pSkillData)
     {
         base.DoInit(pSkillData);
 
+        StopAllCoroutines();
+        _iUpgradeLv = 0;
+
+        var pPlayer = PlayerManager_HJS.instance.DoGet_Cur_Player_Character().transform;
+
+        transform.position = pPlayer.position;
+
         _bIsAlive = true;
 
         //for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
         //{
-        //    _list_rigidbody_Each_FireBalls[i].AddForce(_vec_Force_Dir);
+        //    //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
+        //    _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
         //}
 
-        
+        //Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
+        StartCoroutine(nameof(OnCoroutine_Fall_Meteor));
+    }
+
+    public void DoUpgrade(int iUpgradeLv)
+    {
+        _iUpgradeLv = iUpgradeLv;
     }
 
     public void DoChange_Anim_To_Crash_With_Ground()
@@ -61,19 +76,23 @@ public class Skill_Meteor : SkillBase
 
     
 
-    ///// <summary>
-    ///// 
-    ///// </summary>
-    ///// <returns></returns>
-    //private IEnumerator OnCoroutine_Falling_Anim()
-    //{
-    //    while (_bIsAlive)
-    //    {
-    //        for (int i = 0; i < _list_Anim_Each_FireBalls.Count; ++i)
-    //        {
-                
-    //        }
-    //        yield return new WaitForFixedUpdate();
-    //    }
-    //}
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator OnCoroutine_Fall_Meteor()
+    {
+        while (_bIsAlive)
+        {
+            for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
+            {
+                //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
+                _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
+            }
+
+            Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
+
+            yield return _ws_Crash_Term;
+        }
+    }
 }

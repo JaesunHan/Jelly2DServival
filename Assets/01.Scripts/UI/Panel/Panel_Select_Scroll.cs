@@ -41,6 +41,7 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
         pText_Confirm.text = DataManager.GetLocalText(ELanguageKey.Confirm);
 
         _pText_Title.text = DataManager.GetLocalText(ELanguageKey.Select_Scroll);
+        //LanguageManager.instance.OnSetLanguage.DoNotify(SystemLanguage.Korean);
 
         IngameUIManager.instance.OnSelect_Scroll.Subscribe += OnSelect_Scroll;
     }
@@ -85,7 +86,7 @@ public class Panel_Select_Scroll : PanelBase, IHas_UIButton<Panel_Select_Scroll.
                     break;
                 }
 
-                if (_eSelect_Skill != ESkill.Skill_Summon_Fairy)
+                if (_eSelect_Skill != ESkill.Skill_Summon_Fairy && _eSelect_Skill != ESkill.Skill_Meteor)
                 {
                     //Show System Message
                     SystemMsgUIManager.instance.OnOccur_System_Message.DoNotify(new SystemMsgUIManager.SystemMessage(ELanguageKey.System_Prepare));

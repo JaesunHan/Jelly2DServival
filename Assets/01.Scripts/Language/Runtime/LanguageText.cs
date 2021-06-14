@@ -96,6 +96,15 @@ public class LanguageText : ObjectBase
 
         if (pText == null)
             pText = GetComponentInChildren<Text>();
+
+        if (null == LanguageManager.instance)
+        {
+            Debug.Log("! LanguageManager is null !");
+        }
+        else
+        {
+            Debug.Log("LanguageManager is Exist");
+        }
     }
 
     protected override void OnEnableObject()
@@ -122,7 +131,7 @@ public class LanguageText : ObjectBase
             return;
 #endif
 
-        LanguageManager.instance.OnSetLanguage.DoRemove_Observer(OnSetLanguage_Subscribe_And_Listen_CurrentData);
+        //LanguageManager.instance.OnSetLanguage.DoRemove_Observer(OnSetLanguage_Subscribe_And_Listen_CurrentData);
     }
 
     private void OnSetLanguage_Subscribe_And_Listen_CurrentData(SystemLanguage pMessage)

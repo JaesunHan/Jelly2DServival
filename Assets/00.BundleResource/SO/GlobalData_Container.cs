@@ -88,6 +88,8 @@ public enum EGlobalKey_int
 {
     
     스테이지당_최대_웨이브_수,
+    
+    스킬_최대_레벨,
 }
 
 #region 

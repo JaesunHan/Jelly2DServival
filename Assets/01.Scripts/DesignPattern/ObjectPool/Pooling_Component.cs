@@ -46,6 +46,29 @@ public class Pooling_Component<CLASS_POOL_TARGER> : Singleton<Pooling_Component<
         return pDequeueObj.GetComponent<CLASS_POOL_TARGER>();
     }
 
+    public CLASS_POOL_TARGER DoPop(CLASS_POOL_TARGER pObject, bool bDefaultActive = false) //Component
+    {
+        GameObject pDequeueObj = null;
+        if (_qPool.Count <= 0)
+        {
+            var pObj = GameObject.Instantiate(pObject.gameObject);
+            pObj.hideFlags = HideFlags.HideInHierarchy;
+            if (null == _objRoot)
+                pObj.transform.SetParent(null);
+            else
+                pObj.transform.SetParent(_objRoot.transform);
+
+            _qPool.Enqueue(pObj);
+        }
+
+        pDequeueObj = _qPool.Dequeue();
+        pDequeueObj.hideFlags = HideFlags.None;
+
+        pDequeueObj.gameObject.SetActive(bDefaultActive);
+
+        return pDequeueObj.GetComponent<CLASS_POOL_TARGER>();
+    }
+
     public void DoPush(CLASS_POOL_TARGER pObject)
     {
         _qPool.Enqueue(pObject.gameObject);

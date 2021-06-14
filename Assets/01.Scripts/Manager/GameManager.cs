@@ -45,7 +45,8 @@ public class GameManager : ObjectBase
     /// </summary>
     private void Init()
     {
-        DataManager.instance.DoAwake();
+        if(null == DataManager.instance)
+            DataManager.instance.DoAwake();
 
         StartCoroutine(nameof(OnCoroutine_Wait_DataManager_Init));
     }

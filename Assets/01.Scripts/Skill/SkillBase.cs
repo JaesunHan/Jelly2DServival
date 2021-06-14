@@ -12,6 +12,11 @@ public class SkillBase : ObjectBase
 
     protected bool _bIsAlive = false;
 
+    /// <summary>
+    /// 이 스킬의 업그레이드 레벨
+    /// </summary>
+    protected int _iUpgradeLv = 0;
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -22,5 +27,5 @@ public class SkillBase : ObjectBase
         _pSkillData = pSkillData;
     }
 
-    
+
 }

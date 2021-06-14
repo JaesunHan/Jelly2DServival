@@ -179,7 +179,11 @@ public partial class DataManager : MonoSingleton<DataManager>
         MoneyData_Container.DoInit(LoadData<MoneyData_Container>(), bIsUpdateChildAsset);
         EffectData_Container.DoInit(LoadData<EffectData_Container>(), bIsUpdateChildAsset);
 
-        GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);        
+        GlobalData_Container.DoInit(LoadData<GlobalData_Container>(), bIsUpdateChildAsset);
+        if (null == LanguageManager.instance)
+        {
+            DebugLogManager.Log("DataManager - LanguageManager is Null");
+        }
 
         LanguageManager.instance.DoInit_LanguageData(LanguageData_Container.instance.listData.ToArray());
 

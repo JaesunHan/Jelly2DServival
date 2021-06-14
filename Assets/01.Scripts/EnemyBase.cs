@@ -293,7 +293,8 @@ public class EnemyBase : ObjectBase
                 Vector2 vecShowPos = new Vector2(x, y);
                 EffectManager.instance.OnShowEffect.DoNotify(new EffectManager.ShowEffectMessag(EEffectName.Summon_Fairy_Damage, vecShowPos));
 
-                float fDamage = ESkill.Skill_Summon_Fairy.GetSkillData().fStatAmount;
+                int iSkillLv = PlayerManager_HJS.instance.DoGet_Skill_Lv(pSkill._pSkillData.eSkill);
+                float fDamage = ESkill.Skill_Summon_Fairy.GetSkillData().fStatAmount * iSkillLv;
                 _fHP -= fDamage;
                 Check_HP();
                 break;

@@ -18,7 +18,7 @@
       "eSkillName": "Skill_Meteor",
       "eSkillDesc": "Skill_Meteor_Desc",
       "fStatAmount": "3",
-      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
+      "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Meteor.prefab"
     },
     {
       "strSkillType": "Skill_Support",

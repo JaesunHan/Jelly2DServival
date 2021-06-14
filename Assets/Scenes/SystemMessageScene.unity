@@ -216,7 +216,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 1538733943
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 100
 --- !u!4 &1155269935
 Transform:
   m_ObjectHideFlags: 0

@@ -65,17 +65,24 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
     private WaitForSeconds _ws_Fire_Bullet_Term;
 
     [GetComponentInChildren]
-    private Bullet _pOriginal_Bullet = null;
+    private Bullet _pOriginal_Bullet;
 
     private Pooling_Component<Bullet> _pPool_Bullet = Pooling_Component<Bullet>.instance;
     private List<Bullet> _list_Cur_Using_Bullet = new List<Bullet>();
 
     /// <summary>
-    /// 현재 보유중인 스킬을 저장하는 딕셔너리
+    /// 현재 보유중인 스킬과 스킬레벨을 저장하는 딕셔너리
     /// </summary>
-    private Dictionary<ESkill, Transform> _map_Cur_Get_Skill = new Dictionary<ESkill, Transform>();
+    private Dictionary<ESkill, int> _map_Cur_Get_Skill = new Dictionary<ESkill, int>();
 
-    private Pooling_Component<Transform> _pPool_Skill = Pooling_Component<Transform>.instance;
+    //private Pooling_Component<Transform> _pPool_Skill = Pooling_Component<Transform>.instance;
+    //private Pooling_Component<SkillBase> _pPool_Skill = Pooling_Component<SkillBase>.instance;
+
+    [GetComponentInChildren]
+    private Skill_Fairy _pSkill_Fairy = null;
+
+    [GetComponentInChildren]
+    private Skill_Meteor _pSkill_Meteor = null;
 
     /// <summary>
     /// 현재 타겟의 위치를 멤버 변수에 저장한다.
@@ -91,6 +98,23 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
 
     //protected override void OnAwake()
+    //{
+    //    if (null == _list_Skill_Fairy)
+    //    {
+    //        DebugLogManager.Log("PlayerManager_HJS - _list_Skill_Fairy 가 널이다");
+    //        _list_Skill_Fairy = new List<Skill_Fairy>();
+    //    }
+
+    //    if (0 >= _list_Skill_Fairy.Count)
+    //    {
+    //        DebugLogManager.Log("PlayerManager_HJS - _list_Skill_Fairy 의 카운트가 0보다 작거나 같다");
+
+    //        return;
+    //    }
+        
+    //}
+
+
     protected override IEnumerator OnEnableCoroutine()
     {
         yield return base.OnEnableCoroutine();
@@ -171,8 +195,29 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
         _pCur_Character.DoInit();
 
         _pPool_Bullet.DoInit_Pool(_pOriginal_Bullet);
-        Transform pOriginal_Skill = ESkill.Skill_Shield.GetSkillData().pFilePrefab;
-        _pPool_Skill.DoInit_Pool(pOriginal_Skill);
+        //SkillBase pOriginal_Skill = ESkill.Skill_Summon_Fairy.GetSkillData().pFilePrefab.GetComponentInChildren<SkillBase>();
+        //_pPool_Skill.DoInit_Pool(pOriginal_Skill);
+
+        if (_map_Cur_Get_Skill.Count <= 0)
+        {
+            for (ESkill eSkill = ESkill.Skill_Summon_Fairy; eSkill <= ESkill.Skill_Shield; ++eSkill)
+            {
+                _map_Cur_Get_Skill.Add(eSkill, 0);
+            }
+        }
+        else
+        {
+            for (ESkill eSkill = ESkill.Skill_Summon_Fairy; eSkill <= ESkill.Skill_Shield; ++eSkill)
+            {
+                _map_Cur_Get_Skill[eSkill] = 0;
+            }
+        }
+
+        _pSkill_Fairy.DoAwake();
+        _pSkill_Fairy.SetActive(false);
+
+        _pSkill_Meteor.DoAwake();
+        _pSkill_Meteor.SetActive(false);
 
         _ws_Fire_Bullet_Term = new WaitForSeconds(EGlobalKey_float.불렛_기본_발사_속도.Getfloat());
 
@@ -252,6 +297,11 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
             _pCur_Character.DoLook_Fire_Dir(EDir.Dir_Left);
     }
 
+    public int DoGet_Skill_Lv(ESkill eSkill)
+    {
+        return _map_Cur_Get_Skill[eSkill];
+    }
+
 
     private void OnReturn_Bullet_Message(ReturnBulletMessage pMessage)
     {
@@ -276,29 +326,82 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     private void OnApply_Scroll_Func(ApplyScrollMessage pMessage)
     {
+        ESkill eSkill = pMessage.eSkill;
+        SkillData pSkillData = eSkill.GetSkillData();
+
+        //스킬 레벨 업
+        _map_Cur_Get_Skill[eSkill]++;
+        if (_map_Cur_Get_Skill[eSkill] >= EGlobalKey_int.스킬_최대_레벨.Getint())
+        {
+            _map_Cur_Get_Skill[eSkill] = EGlobalKey_int.스킬_최대_레벨.Getint();
+        }
+
+        if (null != pSkillData)
+        { 
+            switch (eSkill)
+            {
+                case ESkill.Skill_Summon_Fairy:
+                    if (1 == _map_Cur_Get_Skill[eSkill])
+                    {
+                        _pSkill_Fairy.SetActive(true);
+                        _pSkill_Fairy.DoInit(pSkillData);
+                    }
+                    else
+                    {
+                        _pSkill_Fairy.DoUpgrade(_map_Cur_Get_Skill[eSkill]);
+                    }
+                    break;
+
+                case ESkill.Skill_Meteor:
+                    if (1 == _map_Cur_Get_Skill[eSkill])
+                    {
+                        _pSkill_Meteor.SetActive(true);
+                        _pSkill_Meteor.DoInit(pSkillData);
+                    }
+                    else
+                    {
+                        _pSkill_Meteor.DoUpgrade(_map_Cur_Get_Skill[eSkill]);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        /*
         bool bIsExist = _map_Cur_Get_Skill.ContainsKey(pMessage.eSkill);
         if (!bIsExist)
         {
             SkillData pSkillData = pMessage.eSkill.GetSkillData();
-
             if (null != pSkillData)
             {
+                
                 Transform pTransform_Skill = pSkillData.pFilePrefab;
                 if (null != pTransform_Skill)
                 {
-                    Transform pNewTransform = _pPool_Skill.DoPop();
-                    pNewTransform.SetParent(transform);
+                    var pNewSkill = _pPool_Skill.DoPop();
+                    //pNewTransform = pSkillData.pFilePrefab;
+                    pNewSkill.transform.SetParent(transform);
 
-                    Skill_Fairy pSkillFairy = pNewTransform.GetComponentInChildren<Skill_Fairy>();
-                    if (null != pSkillFairy)
+                    //Skill_Fairy pSkillFairy = pNewTransform.GetComponentInChildren<Skill_Fairy>();
+                    //if (null != pSkillFairy)
+                    //{
+                    //    pSkillFairy.SetActive(true);
+                    //    pSkillFairy.DoInit(pSkillData);
+                    //}
+
+                    SkillBase pSkillBase = pNewSkill.GetComponentInChildren<SkillBase>();
+                    if (null != pSkillBase)
                     {
-                        pSkillFairy.SetActive(true);
-                        pSkillFairy.DoInit(pSkillData);
+                        pSkillBase.SetActive(true);
+                        pSkillBase.DoAwake();
+                        pSkillBase.DoInit(pSkillData);
                     }
-
                 }
+                
             }
 
         }
+        */
     }
 }

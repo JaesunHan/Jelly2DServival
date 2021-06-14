@@ -29,6 +29,11 @@
       "strGlobalKey": "스테이지당_최대_웨이브_수",
       "strValue": "6",
       "strType": "int"
+    },
+    {
+      "strGlobalKey": "스킬_최대_레벨",
+      "strValue": "8",
+      "strType": "int"
     }
   ]
 }
