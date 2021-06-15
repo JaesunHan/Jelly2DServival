@@ -1,6 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5694634577697753313
+--- !u!114 &-8759638798128439903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
+  m_Name: Skill_Summon_Fairy
+  m_EditorClassIdentifier: 
+  strSkillType: Skill_Deal_Support
+  strSkill: Skill_Summon_Fairy
+  strIconAtlasName: UI
+  strIconSpriteName: Icon25
+  eSkillName: Skill_Summon_Fairy
+  eSkillDesc: Skill_Summon_Fairy_Desc
+  fStatAmount: 7
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
+  eSkillType: 0
+  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
+  eSkill: 0
+--- !u!114 &-7481157343176723962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23,7 +46,7 @@ MonoBehaviour:
   eSkillType: 2
   pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
   eSkill: 3
---- !u!114 &-5398663425681563513
+--- !u!114 &-5349191192322632896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,19 +56,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
-  m_Name: Skill_Summon_Fairy
+  m_Name: Skill_Meteor
   m_EditorClassIdentifier: 
-  strSkillType: Skill_Deal_Support
-  strSkill: Skill_Summon_Fairy
+  strSkillType: Skill_Ranged_Deal
+  strSkill: Skill_Meteor
   strIconAtlasName: UI
-  strIconSpriteName: Icon25
-  eSkillName: Skill_Summon_Fairy
-  eSkillDesc: Skill_Summon_Fairy_Desc
+  strIconSpriteName: Icon16
+  eSkillName: Skill_Meteor
+  eSkillDesc: Skill_Meteor_Desc
   fStatAmount: 5
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab
-  eSkillType: 0
-  pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
-  eSkill: 0
+  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Meteor.prefab
+  eSkillType: 1
+  pFilePrefab: {fileID: 3110779590845955314, guid: ec797ee6e53ea344ea7db8fdba26f086, type: 3}
+  eSkill: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,11 +82,11 @@ MonoBehaviour:
   m_Name: SkillData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: -5398663425681563513}
-  - {fileID: 5920184212484376914}
-  - {fileID: 2644553684716660587}
-  - {fileID: -5694634577697753313}
---- !u!114 &2644553684716660587
+  - {fileID: -5349191192322632896}
+  - {fileID: 5950087132976355169}
+  - {fileID: -7481157343176723962}
+  - {fileID: -8759638798128439903}
+--- !u!114 &5950087132976355169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,26 +109,3 @@ MonoBehaviour:
   eSkillType: 2
   pFilePrefab: {fileID: 3667065193498816975, guid: 9a3b5ce9bb9438045bd742deba1ae789, type: 3}
   eSkill: 2
---- !u!114 &5920184212484376914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee468b000e401c24e8ddb26c86bb381b, type: 3}
-  m_Name: Skill_Meteor
-  m_EditorClassIdentifier: 
-  strSkillType: Skill_Ranged_Deal
-  strSkill: Skill_Meteor
-  strIconAtlasName: UI
-  strIconSpriteName: Icon16
-  eSkillName: Skill_Meteor
-  eSkillDesc: Skill_Meteor_Desc
-  fStatAmount: 3
-  strPrefabPath: Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Meteor.prefab
-  eSkillType: 1
-  pFilePrefab: {fileID: 3110779590845955314, guid: ec797ee6e53ea344ea7db8fdba26f086, type: 3}
-  eSkill: 1

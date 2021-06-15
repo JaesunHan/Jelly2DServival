@@ -3,7 +3,7 @@
     {
       "strEnemyName": "EJelly_0",
       "fHP": "5",
-      "fMoveSpeed": "0.8",
+      "fMoveSpeed": "1.8",
       "fColliderPosY": "0.25",
       "fCrashDamage": "2",
       "fColliderRadius": "0.25",
@@ -14,7 +14,7 @@
     {
       "strEnemyName": "EJelly_1",
       "fHP": "3",
-      "fMoveSpeed": "1.2",
+      "fMoveSpeed": "2",
       "fColliderPosY": "0.25",
       "fCrashDamage": "3",
       "fColliderRadius": "0.25",
@@ -25,7 +25,7 @@
     {
       "strEnemyName": "EJelly_2",
       "fHP": "10",
-      "fMoveSpeed": "1.2",
+      "fMoveSpeed": "1.9",
       "fColliderPosY": "0.25",
       "fCrashDamage": "5",
       "fColliderRadius": "0.3",
@@ -36,7 +36,7 @@
     {
       "strEnemyName": "EJelly_3",
       "fHP": "50",
-      "fMoveSpeed": "0.8",
+      "fMoveSpeed": "1.4",
       "fColliderPosY": "0.25",
       "fCrashDamage": "8",
       "fColliderRadius": "0.25",
@@ -47,7 +47,7 @@
     {
       "strEnemyName": "EJelly_4",
       "fHP": "10",
-      "fMoveSpeed": "1.8",
+      "fMoveSpeed": "2",
       "fColliderPosY": "0.295",
       "fCrashDamage": "12",
       "fColliderRadius": "0.3",
@@ -58,7 +58,7 @@
     {
       "strEnemyName": "EJelly_5",
       "fHP": "12",
-      "fMoveSpeed": "1.5",
+      "fMoveSpeed": "1.9",
       "fColliderPosY": "0.295",
       "fCrashDamage": "17",
       "fColliderRadius": "0.3",
@@ -69,9 +69,9 @@
     {
       "strEnemyName": "EJelly_6",
       "fHP": "1",
-      "fMoveSpeed": "3.2",
+      "fMoveSpeed": "3.5",
       "fColliderPosY": "0.295",
-      "fCrashDamage": "23",
+      "fCrashDamage": "35",
       "fColliderRadius": "0.3",
       "iAppearWave": "4",
       "fGetMP": "146",
@@ -80,7 +80,7 @@
     {
       "strEnemyName": "EJelly_7",
       "fHP": "10",
-      "fMoveSpeed": "1.3",
+      "fMoveSpeed": "1.9",
       "fColliderPosY": "0.295",
       "fCrashDamage": "30",
       "fColliderRadius": "0.3",
@@ -90,10 +90,10 @@
     },
     {
       "strEnemyName": "EJelly_8",
-      "fHP": "30",
-      "fMoveSpeed": "0.5",
+      "fHP": "100",
+      "fMoveSpeed": "0.9",
       "fColliderPosY": "0.295",
-      "fCrashDamage": "38",
+      "fCrashDamage": "40",
       "fColliderRadius": "0.3",
       "iAppearWave": "6",
       "fGetMP": "382",

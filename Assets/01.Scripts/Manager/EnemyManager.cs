@@ -7,7 +7,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     const int const_iDefault_EnemyCount = 10;
 
     /// <summary>
-    /// 기본적으로 2초에 하나씩 적이 생성된다.
+    /// 기본적으로 1.5초에 하나씩 적이 생성된다.
     /// </summary>
     const float const_fDefault_Respawn_Term_Time = 1.5f;
 

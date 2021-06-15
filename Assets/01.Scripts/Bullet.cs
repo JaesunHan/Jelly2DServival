@@ -79,7 +79,7 @@ public class Bullet : ObjectBase
 
         //일정 시간동안 총알이 정해진 방향으로 날아간다.
         transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        while (fMovingTime <= 1.5f)
+        while (fMovingTime <= 1.0f)
         {
             fMovingTime += Time.fixedDeltaTime;
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * 0.5f, Time.fixedDeltaTime * 2f);

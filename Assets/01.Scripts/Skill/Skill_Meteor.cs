@@ -10,11 +10,13 @@ public class Skill_Meteor : SkillBase
     /// 각 운석을 참조하여 리스트에 추가.
     /// </summary>
     [GetComponentInChildren]
-    private List<Skill_Meteor_Each_One> _list_rigidbody_Each_FireBalls = new List<Skill_Meteor_Each_One>();
+    private List<Skill_Meteor_Each_One> _list_Skill_Meteor_Each_One = new List<Skill_Meteor_Each_One>();
 
-    private float _fCrash_Term = 10.0f;
+    private float _fCrash_Term = 20.0f;
 
     private WaitForSeconds _ws_Crash_Term;
+
+    private Vector2 _vec_Start_Pos;
 
 
     protected override void OnAwake()
@@ -32,6 +34,8 @@ public class Skill_Meteor : SkillBase
 
         //Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
         _ws_Crash_Term = new WaitForSeconds(_fCrash_Term);
+
+        _vec_Start_Pos = transform.position;
     }
 
     public override void DoInit(SkillData pSkillData)
@@ -52,6 +56,10 @@ public class Skill_Meteor : SkillBase
         //    //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
         //    _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
         //}
+        for (int i = 0; i < _list_Skill_Meteor_Each_One.Count; ++i)
+        {
+            _list_Skill_Meteor_Each_One[i].DoInit(pSkillData);
+        }
 
         //Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);
         StartCoroutine(nameof(OnCoroutine_Fall_Meteor));
@@ -64,9 +72,9 @@ public class Skill_Meteor : SkillBase
 
     public void DoChange_Anim_To_Crash_With_Ground()
     {
-        for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
+        for (int i = 0; i < _list_Skill_Meteor_Each_One.Count; ++i)
         {
-            var pSkill_Meteor_Each_One = _list_rigidbody_Each_FireBalls[i].GetComponent<Skill_Meteor_Each_One>();
+            var pSkill_Meteor_Each_One = _list_Skill_Meteor_Each_One[i].GetComponent<Skill_Meteor_Each_One>();
             if (null != pSkill_Meteor_Each_One)
             {
                 pSkill_Meteor_Each_One.DoChange_Anim_To_Crash_With_Ground();
@@ -84,10 +92,12 @@ public class Skill_Meteor : SkillBase
     {
         while (_bIsAlive)
         {
-            for (int i = 0; i < _list_rigidbody_Each_FireBalls.Count; ++i)
+            transform.position = (Vector3)_vec_Start_Pos + (Vector3)PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos();
+
+            for (int i = 0; i < _list_Skill_Meteor_Each_One.Count; ++i)
             {
                 //_list_rigidbody_Each_FireBalls[i].velocity = _vec_Force_Dir;
-                _list_rigidbody_Each_FireBalls[i].DoStart_Falling();
+                _list_Skill_Meteor_Each_One[i].DoStart_Falling();
             }
 
             Invoke(nameof(DoChange_Anim_To_Crash_With_Ground), 1.5f);

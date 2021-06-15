@@ -299,7 +299,8 @@ public class PlayerManager_HJS : MonoSingleton<PlayerManager_HJS>
 
     public int DoGet_Skill_Lv(ESkill eSkill)
     {
-        return _map_Cur_Get_Skill[eSkill];
+        int iLv = _map_Cur_Get_Skill[eSkill];
+        return iLv;
     }
 
 
