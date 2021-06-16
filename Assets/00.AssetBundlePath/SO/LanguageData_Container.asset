@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5918963089899397738
+--- !u!114 &-5122925658528766535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,29 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Confirm
+  m_Name: Cancel
   m_EditorClassIdentifier: 
-  strLanguageKey: Confirm
-  strKorean: "\uD655\uC778"
-  strEnglish: Confirm
-  eLanguageKey: 0
---- !u!114 &-5535765164482143222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: System_Prepare
-  m_EditorClassIdentifier: 
-  strLanguageKey: System_Prepare
-  strKorean: "\uC900\uBE44 \uC911\uC785\uB2C8\uB2E4."
-  strEnglish: Comming soon....
-  eLanguageKey: 13
---- !u!114 &-3816561136675073647
+  strLanguageKey: Cancel
+  strKorean: "\uCDE8\uC18C"
+  strEnglish: Cancel
+  eLanguageKey: 1
+--- !u!114 &-2388166229010164332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +32,7 @@ MonoBehaviour:
   strKorean: "\uC2E4\uB4DC"
   strEnglish: Shield
   eLanguageKey: 11
---- !u!114 &-2963432624454649705
+--- !u!114 &-2226231864172961864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,13 +42,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Recovery_Desc
+  m_Name: Start_Game
   m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Recovery_Desc
-  strKorean: "\uC8FC\uAE30\uC801\uC73C\uB85C \uC77C\uC815 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4. "
-  strEnglish: Skill_Recovery_Desc
-  eLanguageKey: 10
---- !u!114 &-665737845069548457
+  strLanguageKey: Start_Game
+  strKorean: "\uD0D0\uD5D8\uD558\uAE30"
+  strEnglish: Let's Go
+  eLanguageKey: 14
+--- !u!114 &-1701220679506032879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Select_Scroll
+  m_EditorClassIdentifier: 
+  strLanguageKey: Select_Scroll
+  strKorean: "\uC2A4\uD06C\uB864 \uC120\uD0DD"
+  strEnglish: Select scroll
+  eLanguageKey: 4
+--- !u!114 &-1025111383967569339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,22 +93,22 @@ MonoBehaviour:
   m_Name: LanguageData_Container
   m_EditorClassIdentifier: 
   listData:
-  - {fileID: -5918963089899397738}
-  - {fileID: 8486751669795696798}
-  - {fileID: -665737845069548457}
-  - {fileID: 1330472722508218526}
-  - {fileID: 807854373803120999}
-  - {fileID: 1446305748301889890}
-  - {fileID: 1428668148510042488}
-  - {fileID: 3478846561075158696}
-  - {fileID: 8873271955693537455}
-  - {fileID: 3124277827480569635}
-  - {fileID: -2963432624454649705}
-  - {fileID: -3816561136675073647}
-  - {fileID: 4256497410734181448}
-  - {fileID: -5535765164482143222}
-  - {fileID: 8388823259493841864}
---- !u!114 &807854373803120999
+  - {fileID: -5122925658528766535}
+  - {fileID: 3505493540809369233}
+  - {fileID: 8947685200622026420}
+  - {fileID: -1025111383967569339}
+  - {fileID: -1701220679506032879}
+  - {fileID: 5330709688582880853}
+  - {fileID: 314625033096562200}
+  - {fileID: 7426570248728942128}
+  - {fileID: 4037252680900276353}
+  - {fileID: -2388166229010164332}
+  - {fileID: 992597878448633435}
+  - {fileID: 5048574653134312487}
+  - {fileID: 3798168861086450313}
+  - {fileID: -2226231864172961864}
+  - {fileID: 6512782254013143845}
+--- !u!114 &314625033096562200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,94 +118,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Select_Scroll
+  m_Name: Skill_Meteor_Desc
   m_EditorClassIdentifier: 
-  strLanguageKey: Select_Scroll
-  strKorean: "\uC2A4\uD06C\uB864 \uC120\uD0DD"
-  strEnglish: Select scroll
-  eLanguageKey: 4
---- !u!114 &1330472722508218526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Money_Dia
-  m_EditorClassIdentifier: 
-  strLanguageKey: Money_Dia
-  strKorean: "\uB2E4\uC774\uC544"
-  strEnglish: Dia
-  eLanguageKey: 3
---- !u!114 &1428668148510042488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Summon_Fairy_Desc
-  m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Summon_Fairy_Desc
-  strKorean: "\uC694\uC815\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4. \uB9C8\uBC95\uC0AC
-    \uC8FC\uBCC0\uC744 \uC120\uD68C\uD558\uC5EC \uC801\uB4E4\uC744 \uB9C9\uC2B5\uB2C8\uB2E4."
-  strEnglish: EN - Skill_Summon_Fairy_Desc
-  eLanguageKey: 6
---- !u!114 &1446305748301889890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Summon_Fairy
-  m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Summon_Fairy
-  strKorean: "\uC694\uC815\uC774 \uAE43\uB4E0 \uBAA9\uAC78\uC774"
-  strEnglish: Summon fairy
-  eLanguageKey: 5
---- !u!114 &3124277827480569635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Recovery
-  m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Recovery
-  strKorean: "\uB9AC\uCEE4\uBC84\uB9AC"
-  strEnglish: Recovery
-  eLanguageKey: 9
---- !u!114 &3478846561075158696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Meteor
-  m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Meteor
-  strKorean: "\uBA54\uD14C\uC624"
-  strEnglish: Meteor
-  eLanguageKey: 7
---- !u!114 &4256497410734181448
+  strLanguageKey: Skill_Meteor_Desc
+  strKorean: "\uC6B4\uC11D\uC744 \uB099\uD558\uD569\uB2C8\uB2E4. \uB099\uD558 \uC9C0\uC810\uC5D0
+    \uC788\uB294 \uBAA8\uB4E0 \uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4."
+  strEnglish: Skill_Meteor_Desc
+  eLanguageKey: 8
+--- !u!114 &992597878448633435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +143,7 @@ MonoBehaviour:
     \uB2E4\uC2DC \uC0DD\uAE41\uB2C8\uB2E4."
   strEnglish: Skill_Shield_Desc
   eLanguageKey: 12
---- !u!114 &8388823259493841864
+--- !u!114 &3505493540809369233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,13 +153,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Start_Game
+  m_Name: Confirm
   m_EditorClassIdentifier: 
-  strLanguageKey: Start_Game
-  strKorean: "\uD0D0\uD5D8\uD558\uAE30"
-  strEnglish: Let's Go
-  eLanguageKey: 14
---- !u!114 &8486751669795696798
+  strLanguageKey: Confirm
+  strKorean: "\uD655\uC778"
+  strEnglish: Confirm
+  eLanguageKey: 0
+--- !u!114 &3798168861086450313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,13 +169,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Cancel
+  m_Name: Skill_Summon_Fairy_Desc
   m_EditorClassIdentifier: 
-  strLanguageKey: Cancel
-  strKorean: "\uCDE8\uC18C"
-  strEnglish: Cancel
-  eLanguageKey: 1
---- !u!114 &8873271955693537455
+  strLanguageKey: Skill_Summon_Fairy_Desc
+  strKorean: "\uC694\uC815\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4. \uB9C8\uBC95\uC0AC
+    \uC8FC\uBCC0\uC744 \uC120\uD68C\uD558\uC5EC \uC801\uB4E4\uC744 \uB9C9\uC2B5\uB2C8\uB2E4."
+  strEnglish: EN - Skill_Summon_Fairy_Desc
+  eLanguageKey: 6
+--- !u!114 &4037252680900276353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,10 +186,89 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
-  m_Name: Skill_Meteor_Desc
+  m_Name: Skill_Recovery_Desc
   m_EditorClassIdentifier: 
-  strLanguageKey: Skill_Meteor_Desc
-  strKorean: "\uC6B4\uC11D\uC744 \uB099\uD558\uD569\uB2C8\uB2E4. \uC6B4\uC11D\uC5D0
-    \uB2FF\uC740 \uBAA8\uB4E0 \uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4."
-  strEnglish: Skill_Meteor_Desc
-  eLanguageKey: 8
+  strLanguageKey: Skill_Recovery_Desc
+  strKorean: "\uC8FC\uAE30\uC801\uC73C\uB85C \uC77C\uC815 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4. "
+  strEnglish: Skill_Recovery_Desc
+  eLanguageKey: 10
+--- !u!114 &5048574653134312487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Summon_Fairy
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Summon_Fairy
+  strKorean: "\uC694\uC815\uC774 \uAE43\uB4E0 \uBAA9\uAC78\uC774"
+  strEnglish: Summon fairy
+  eLanguageKey: 5
+--- !u!114 &5330709688582880853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Meteor
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Meteor
+  strKorean: "\uBA54\uD14C\uC624"
+  strEnglish: Meteor
+  eLanguageKey: 7
+--- !u!114 &6512782254013143845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: System_Prepare
+  m_EditorClassIdentifier: 
+  strLanguageKey: System_Prepare
+  strKorean: "\uC900\uBE44 \uC911\uC785\uB2C8\uB2E4."
+  strEnglish: Comming soon....
+  eLanguageKey: 13
+--- !u!114 &7426570248728942128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Skill_Recovery
+  m_EditorClassIdentifier: 
+  strLanguageKey: Skill_Recovery
+  strKorean: "\uB9AC\uCEE4\uBC84\uB9AC"
+  strEnglish: Recovery
+  eLanguageKey: 9
+--- !u!114 &8947685200622026420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401099a711d69746863e3c63113e30f, type: 3}
+  m_Name: Money_Dia
+  m_EditorClassIdentifier: 
+  strLanguageKey: Money_Dia
+  strKorean: "\uB2E4\uC774\uC544"
+  strEnglish: Dia
+  eLanguageKey: 3

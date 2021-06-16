@@ -82,9 +82,12 @@ public class MainCameraManager : MonoSingleton<MainCameraManager>
         float fProgress = 0f;
         while (fProgress <= fShakingTime)
         {
-            fProgress += Time.deltaTime;
+            if (Time.timeScale > 0)
+            {
+                fProgress += Time.deltaTime;
 
-            transform.position = transform.position + (Vector3)(Random.insideUnitCircle * 0.1f);
+                transform.position = transform.position + (Vector3)(Random.insideUnitCircle * 0.07f);
+            }
 
             yield return null;
         }

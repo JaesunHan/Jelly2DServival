@@ -2,7 +2,7 @@
   "array": [
     {
       "strManaPotion": "Potion_0",
-      "fGetMP": "25",
+      "fGetMP": "30",
       "iAppearWave": "0",
       "strAtlasName": "InGame",
       "strSpriteName": "0_Potion",
@@ -10,7 +10,7 @@
     },
     {
       "strManaPotion": "Potion_1",
-      "fGetMP": "50",
+      "fGetMP": "60",
       "iAppearWave": "1",
       "strAtlasName": "InGame",
       "strSpriteName": "1_Potion",
@@ -18,7 +18,7 @@
     },
     {
       "strManaPotion": "Potion_2",
-      "fGetMP": "75",
+      "fGetMP": "120",
       "iAppearWave": "2",
       "strAtlasName": "InGame",
       "strSpriteName": "2_Potion",
@@ -26,7 +26,7 @@
     },
     {
       "strManaPotion": "Potion_3",
-      "fGetMP": "125",
+      "fGetMP": "240",
       "iAppearWave": "3",
       "strAtlasName": "InGame",
       "strSpriteName": "3_Potion",
@@ -34,7 +34,7 @@
     },
     {
       "strManaPotion": "Potion_4",
-      "fGetMP": "200",
+      "fGetMP": "480",
       "iAppearWave": "4",
       "strAtlasName": "InGame",
       "strSpriteName": "4_Potion",
@@ -42,7 +42,7 @@
     },
     {
       "strManaPotion": "Potion_5",
-      "fGetMP": "325",
+      "fGetMP": "960",
       "iAppearWave": "5",
       "strAtlasName": "InGame",
       "strSpriteName": "5_Potion",
@@ -50,7 +50,7 @@
     },
     {
       "strManaPotion": "Potion_6",
-      "fGetMP": "525",
+      "fGetMP": "1920",
       "iAppearWave": "6",
       "strAtlasName": "InGame",
       "strSpriteName": "6_Potion",
@@ -58,7 +58,7 @@
     },
     {
       "strManaPotion": "Potion_7",
-      "fGetMP": "850",
+      "fGetMP": "3840",
       "iAppearWave": "7",
       "strAtlasName": "InGame",
       "strSpriteName": "7_Potion",

@@ -2,12 +2,12 @@
   "array": [
     {
       "strGlobalKey": "최대_MP_기본값",
-      "strValue": "100",
+      "strValue": "150",
       "strType": "float"
     },
     {
       "strGlobalKey": "최대_MP_값_증가_비율",
-      "strValue": "1.7",
+      "strValue": "2.5",
       "strType": "float"
     },
     {

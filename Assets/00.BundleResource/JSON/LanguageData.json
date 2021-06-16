@@ -42,7 +42,7 @@
     },
     {
       "strLanguageKey": "Skill_Meteor_Desc",
-      "strKorean": "운석을 낙하합니다. 운석에 닿은 모든 적에게 데미지를 입힙니다.",
+      "strKorean": "운석을 낙하합니다. 낙하 지점에 있는 모든 적에게 데미지를 입힙니다.",
       "strEnglish": "Skill_Meteor_Desc"
     },
     {

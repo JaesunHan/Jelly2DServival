@@ -176,33 +176,34 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         while (bIsPlaying)
         {
-            //int iRandomIdx = Random.Range(0, _list_Respawn_Point.Count);
-            //Transform pTransform_Random_Point = _list_Respawn_Point[iRandomIdx];
-
-            //Vector3 vecRespawnPosition = PlayerManager.instance.DoGet_Cur_Player_WorldPos() +  _vecJoystic_Move_Dir.normalized * 50f;
             if (_vecJoystic_Move_Dir == Vector2.zero)
                 _vecJoystic_Move_Dir = Vector2.one;
 
-            int iRandomRangeX = Random.Range(9, 15); // 10, 17
-            int iRandomRangeY = Random.Range(9, 11); // 9, 11
+            //적을 생성할 때 몇마리 생성할지 랜덤으로 지정
+            int iRespawnCount = Random.Range(1, 3);
+            for (int i = 0; i < iRespawnCount; ++i)
+            {
+                int iRandomRangeX = Random.Range(9, 15); // 10, 17
+                int iRandomRangeY = Random.Range(9, 11); // 9, 11
 
-            int iRandomDir = Random.Range(-10, 10);
-            if (0 >= iRandomDir)
-                iRandomDir = -1;
-            else
-                iRandomDir = 1;
-            Vector3 vecRespawnPosition = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x *iRandomRangeX* iRandomDir, _vecJoystic_Move_Dir.y* iRandomDir * iRandomRangeY);
+                int iRandomDir = Random.Range(-10, 10);
+                if (0 >= iRandomDir)
+                    iRandomDir = -1;
+                else
+                    iRandomDir = 1;
+                Vector3 vecRespawnPosition = PlayerManager_HJS.instance.DoGet_Cur_Player_WorldPos() + new Vector2(_vecJoystic_Move_Dir.x * iRandomRangeX * iRandomDir, _vecJoystic_Move_Dir.y * iRandomDir * iRandomRangeY);
 
-            
-            EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();
-            pEnemyBase_Spawn.DoAwake();
-            //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
-            pEnemyBase_Spawn.transform.position = vecRespawnPosition;
-            pEnemyBase_Spawn.SetActive(true);
 
-            //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
-            var pEnemyData = DataManager.DoGet_Random_EnemyDatas_ByStageWave(iCurWave);
-            pEnemyBase_Spawn.DoInit(pEnemyData);
+                EnemyBase pEnemyBase_Spawn = GetEnemyBase_In_Pool();
+                pEnemyBase_Spawn.DoAwake();
+                //현재 사용하고 있지 않은 에너미 베이스를 랜덤 리스폰 포인트에 배치한다.
+                pEnemyBase_Spawn.transform.position = vecRespawnPosition;
+                pEnemyBase_Spawn.SetActive(true);
+
+                //배치되는 에너미의 정보값을 세팅한다. (현재 웨이브에서 등장할 수 있는 에너미들 중에서 랜덤으로 선택한다.)
+                var pEnemyData = DataManager.DoGet_Random_EnemyDatas_ByStageWave(iCurWave);
+                pEnemyBase_Spawn.DoInit(pEnemyData);
+            }
 
             yield return _ws_Respawn_Term;
         }
