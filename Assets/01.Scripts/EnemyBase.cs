@@ -287,7 +287,8 @@ public class EnemyBase : ObjectBase
     {
         while (_bIsAlive)
         {
-            if (pSkill._pSkillData.eSkill == ESkill.Skill_Summon_Fairy)
+            ESkill eSkill = pSkill._pSkillData.eSkill;
+            if (eSkill == ESkill.Skill_Summon_Fairy)
             {
                 //float x = (pSkill.transform.position.x + transform.position.x) * 0.5f;
                 //float y = (pSkill.transform.position.y + transform.position.y) * 0.5f;
@@ -297,18 +298,24 @@ public class EnemyBase : ObjectBase
                 EffectManager.instance.OnShowEffect.DoNotify(new EffectManager.ShowEffectMessag(EEffectName.Summon_Fairy_Damage, vecShowPos));
 
                 int iSkillLv = PlayerManager_HJS.instance.DoGet_Skill_Lv(pSkill._pSkillData.eSkill);
-                float fDamage = pSkill._pSkillData.fStatAmount * iSkillLv;
+                //float fDamage = pSkill._pSkillData.fStatAmount * iSkillLv;
+                float fDamage = DataManager.DoGet_Skill_StatAmount_By_ESkill_N_Lv(eSkill, iSkillLv);
                 _fHP -= fDamage;
+
                 Check_HP();
                 break;
             }
-            else if (pSkill._pSkillData.eSkill == ESkill.Skill_Meteor)
+            else if (eSkill == ESkill.Skill_Meteor)
             {
                 int iSkillLv_Meteor = PlayerManager_HJS.instance.DoGet_Skill_Lv(pSkill._pSkillData.eSkill);
-                if (0 == iSkillLv_Meteor)
-                    iSkillLv_Meteor = 1;
-                float fDamage = pSkill._pSkillData.fStatAmount * iSkillLv_Meteor;
+                //if (0 == iSkillLv_Meteor)
+                //    iSkillLv_Meteor = 1;
+                //float fDamage = pSkill._pSkillData.fStatAmount * iSkillLv_Meteor;
+                //_fHP -= fDamage;
+
+                float fDamage = DataManager.DoGet_Skill_StatAmount_By_ESkill_N_Lv(eSkill, iSkillLv_Meteor);
                 _fHP -= fDamage;
+
                 Check_HP();
                 break;
             }

@@ -68,6 +68,11 @@ public class Widget_Scroll : PanelBase, IHas_UIButton<Widget_Scroll.EButton>
 
         if (null != _pImage_Light)
             _pImage_Light.gameObject.SetActive(false);
+
+        int iSkillLv = PlayerManager_HJS.instance.DoGet_Skill_Lv(pSkillData.eSkill);
+        _mapText[EText.Text_Scroll_Lv].text = $"+{iSkillLv}";
+
+
     }
 
 

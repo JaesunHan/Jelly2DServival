@@ -1,0 +1,559 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9140815559977716497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_27
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 4
+  fStatAmount: 10
+  fCoolTime: 16
+--- !u!114 &-7504849562487588468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_28
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 5
+  fStatAmount: 11
+  fCoolTime: 14
+--- !u!114 &-6792919189110503005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_8
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 1
+  fStatAmount: 5
+  fCoolTime: 20
+--- !u!114 &-6493719589419146666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_5
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 6
+  fStatAmount: 15
+  fCoolTime: 0
+--- !u!114 &-5950887721659486732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_13
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 6
+  fStatAmount: 10
+  fCoolTime: 14
+--- !u!114 &-5939372203338040952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_1
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 2
+  fStatAmount: 9
+  fCoolTime: 0
+--- !u!114 &-4689315463720960637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_12
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 5
+  fStatAmount: 9
+  fCoolTime: 15
+--- !u!114 &-3556489244430170318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_24
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 1
+  fStatAmount: 5
+  fCoolTime: 20
+--- !u!114 &-2885983709082688026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_20
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 5
+  fStatAmount: 8
+  fCoolTime: 14
+--- !u!114 &-2643583726474977447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_2
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 3
+  fStatAmount: 10
+  fCoolTime: 0
+--- !u!114 &-2463065269722277993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_15
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 8
+  fStatAmount: 12
+  fCoolTime: 11.5
+--- !u!114 &-2445778457854125950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_4
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 5
+  fStatAmount: 13
+  fCoolTime: 0
+--- !u!114 &-2092503918607682031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_23
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 8
+  fStatAmount: 13
+  fCoolTime: 10
+--- !u!114 &-2059588751138124861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_7
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 8
+  fStatAmount: 18
+  fCoolTime: 0
+--- !u!114 &-1266450900728251505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_9
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 2
+  fStatAmount: 6
+  fCoolTime: 19
+--- !u!114 &-429110592590765323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_31
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 8
+  fStatAmount: 16
+  fCoolTime: 10
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e881138ee780bec4e988b05abed75e21, type: 3}
+  m_Name: SkillUpgradeData_Container
+  m_EditorClassIdentifier: 
+  listData:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &333749534549331855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_17
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 2
+  fStatAmount: 4
+  fCoolTime: 19
+--- !u!114 &741266577621651533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_11
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 4
+  fStatAmount: 8
+  fCoolTime: 16.5
+--- !u!114 &1682381364622157155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_6
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 7
+  fStatAmount: 16
+  fCoolTime: 0
+--- !u!114 &2517624573803231105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_0
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 1
+  fStatAmount: 7
+  fCoolTime: 0
+--- !u!114 &3463272287695354260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_26
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 3
+  fStatAmount: 8
+  fCoolTime: 17
+--- !u!114 &4168763772081818693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_3
+  m_EditorClassIdentifier: 
+  eSkill: 0
+  iSkillLv: 4
+  fStatAmount: 12
+  fCoolTime: 0
+--- !u!114 &4169867012979133187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_29
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 6
+  fStatAmount: 13
+  fCoolTime: 13
+--- !u!114 &4470106304139118234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_16
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 1
+  fStatAmount: 2
+  fCoolTime: 20
+--- !u!114 &4648781272108872217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_21
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 6
+  fStatAmount: 10
+  fCoolTime: 13
+--- !u!114 &5008169473970745208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_19
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 4
+  fStatAmount: 7
+  fCoolTime: 16
+--- !u!114 &5617836177311563051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_18
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 3
+  fStatAmount: 5
+  fCoolTime: 17
+--- !u!114 &6074047956219308894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_14
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 7
+  fStatAmount: 11
+  fCoolTime: 12.5
+--- !u!114 &6198202307979363348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_22
+  m_EditorClassIdentifier: 
+  eSkill: 2
+  iSkillLv: 7
+  fStatAmount: 11
+  fCoolTime: 11
+--- !u!114 &6320928482658356276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_10
+  m_EditorClassIdentifier: 
+  eSkill: 1
+  iSkillLv: 3
+  fStatAmount: 7
+  fCoolTime: 17.5
+--- !u!114 &8225248096472285177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_25
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 2
+  fStatAmount: 7
+  fCoolTime: 19
+--- !u!114 &8967777672840744310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfa7a406ac1f84c89bdafba9ff0eae, type: 3}
+  m_Name: SkillUpgradeData_30
+  m_EditorClassIdentifier: 
+  eSkill: 3
+  iSkillLv: 7
+  fStatAmount: 14
+  fCoolTime: 11

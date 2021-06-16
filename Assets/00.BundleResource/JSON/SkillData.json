@@ -27,7 +27,7 @@
       "strIconSpriteName": "Icon31",
       "eSkillName": "Skill_Recovery",
       "eSkillDesc": "Skill_Recovery_Desc",
-      "fStatAmount": "30",
+      "fStatAmount": "20",
       "strPrefabPath": "Assets/00.AssetBundlePath/Prefabs/Skill/Skill_Fairy.prefab"
     },
     {

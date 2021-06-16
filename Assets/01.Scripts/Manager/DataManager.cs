@@ -109,6 +109,56 @@ public partial class DataManager : MonoSingleton<DataManager>
     }
 
 
+    /// <summary>
+    /// 스킬 선택 패널에 출력할 스킬 4개를 선정해서 반환한다.
+    /// </summary>
+    /// <returns></returns>
+    public static List<ESkill> DoGet_Select_Skill_List(int iSlotCount)
+    {
+        List<ESkill> listSkillData = new List<ESkill>();
+        while (true)
+        {
+            ESkill eRandSkill = (ESkill)Random.Range(0, 4);
+
+            if (listSkillData.Contains(eRandSkill))
+                continue;
+
+            listSkillData.Add(eRandSkill);
+
+            if (listSkillData.Count >= iSlotCount)
+                break;
+        }
+
+        return listSkillData;
+    }
+
+    /// <summary>
+    /// 유저가 업그레이드 한 스킬의 레벨에 따른 데미지를 반환한다.
+    /// </summary>
+    /// <param name="eSKill"></param>
+    /// <param name="iSkillLv"></param>
+    /// <returns></returns>
+    public static float DoGet_Skill_StatAmount_By_ESkill_N_Lv(ESkill eSKill, int iSkillLv)
+    {
+        var list = SkillUpgradeData_Container.instance.listData;
+
+        SkillUpgradeData pSkillUpgradeData = null;
+        for (int i = 0; i < list.Count; ++i)
+        {
+            if (list[i].eSkill == eSKill && list[i].iSkillLv == iSkillLv)
+            {
+                pSkillUpgradeData = list[i];
+                break;
+            }
+        }
+        float fStat = pSkillUpgradeData.fStatAmount;
+
+        DebugLogManager.Log($"eSkill : {eSKill} / Skill Lv : {iSkillLv} / fStat : {fStat}");
+
+        return fStat;
+    }
+
+
     #endregion
 
     protected override void OnAwake()
@@ -176,6 +226,7 @@ public partial class DataManager : MonoSingleton<DataManager>
         EnemyData_Container.DoInit(LoadData<EnemyData_Container>(), bIsUpdateChildAsset);
         ManaPotionData_Container.DoInit(LoadData<ManaPotionData_Container>(), bIsUpdateChildAsset);
         SkillData_Container.DoInit(LoadData<SkillData_Container>(), bIsUpdateChildAsset);
+        SkillUpgradeData_Container.DoInit(LoadData<SkillUpgradeData_Container>(), bIsUpdateChildAsset);
         MoneyData_Container.DoInit(LoadData<MoneyData_Container>(), bIsUpdateChildAsset);
         EffectData_Container.DoInit(LoadData<EffectData_Container>(), bIsUpdateChildAsset);
 
@@ -252,28 +303,6 @@ public partial class DataManager : MonoSingleton<DataManager>
 
     #region DoGet Function
 
-    /// <summary>
-    /// 스킬 선택 패널에 출력할 스킬 4개를 선정해서 반환한다.
-    /// </summary>
-    /// <returns></returns>
-    public static List<ESkill> DoGet_Select_Skill_List(int iSlotCount)
-    {
-        List<ESkill> listSkillData = new List<ESkill>();
-        while (true)
-        {
-            ESkill eRandSkill = (ESkill) Random.Range(0, 4);
-
-            if (listSkillData.Contains(eRandSkill))
-                continue;
-
-            listSkillData.Add(eRandSkill);
-
-            if (listSkillData.Count >= iSlotCount)
-                break;
-        }
-
-        return listSkillData;
-    }
 
     #endregion
 }

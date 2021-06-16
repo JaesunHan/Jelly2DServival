@@ -1,0 +1,196 @@
+{
+  "array": [
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "1",
+      "fStatAmount": "7",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "2",
+      "fStatAmount": "9",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "3",
+      "fStatAmount": "10",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "4",
+      "fStatAmount": "12",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "5",
+      "fStatAmount": "13",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "6",
+      "fStatAmount": "15",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "7",
+      "fStatAmount": "16",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Summon_Fairy",
+      "iSkillLv": "8",
+      "fStatAmount": "18",
+      "fCoolTime": "0"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "1",
+      "fStatAmount": "5",
+      "fCoolTime": "20"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "2",
+      "fStatAmount": "6",
+      "fCoolTime": "19"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "3",
+      "fStatAmount": "7",
+      "fCoolTime": "17.5"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "4",
+      "fStatAmount": "8",
+      "fCoolTime": "16.5"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "5",
+      "fStatAmount": "9",
+      "fCoolTime": "15"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "6",
+      "fStatAmount": "10",
+      "fCoolTime": "14"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "7",
+      "fStatAmount": "11",
+      "fCoolTime": "12.5"
+    },
+    {
+      "eSkill": "Skill_Meteor",
+      "iSkillLv": "8",
+      "fStatAmount": "12",
+      "fCoolTime": "11.5"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "1",
+      "fStatAmount": "2",
+      "fCoolTime": "20"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "2",
+      "fStatAmount": "4",
+      "fCoolTime": "19"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "3",
+      "fStatAmount": "5",
+      "fCoolTime": "17"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "4",
+      "fStatAmount": "7",
+      "fCoolTime": "16"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "5",
+      "fStatAmount": "8",
+      "fCoolTime": "14"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "6",
+      "fStatAmount": "10",
+      "fCoolTime": "13"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "7",
+      "fStatAmount": "11",
+      "fCoolTime": "11"
+    },
+    {
+      "eSkill": "Skill_Recovery",
+      "iSkillLv": "8",
+      "fStatAmount": "13",
+      "fCoolTime": "10"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "1",
+      "fStatAmount": "5",
+      "fCoolTime": "20"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "2",
+      "fStatAmount": "7",
+      "fCoolTime": "19"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "3",
+      "fStatAmount": "8",
+      "fCoolTime": "17"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "4",
+      "fStatAmount": "10",
+      "fCoolTime": "16"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "5",
+      "fStatAmount": "11",
+      "fCoolTime": "14"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "6",
+      "fStatAmount": "13",
+      "fCoolTime": "13"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "7",
+      "fStatAmount": "14",
+      "fCoolTime": "11"
+    },
+    {
+      "eSkill": "Skill_Shield",
+      "iSkillLv": "8",
+      "fStatAmount": "16",
+      "fCoolTime": "10"
+    }
+  ]
+}

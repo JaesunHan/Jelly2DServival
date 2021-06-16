@@ -5,7 +5,7 @@ using CommonData;
 
 public class PlayerCharacter : ObjectBase
 {
-    const float const_fDefault_HP = 100;
+    const float const_fDefault_HP = 50;
     const float const_fMove_Speed = 2.0f;
 
     //private Animator _pAnim = null;
